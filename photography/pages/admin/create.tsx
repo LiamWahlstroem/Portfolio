@@ -3,7 +3,7 @@ import Head from 'next/head';
 import {useRouter} from "next/router";
 import React, {useEffect, useRef, useState} from "react";
 import AdminNavbar from "../../components/adminNavbar";
-import IsUserAuthenticated from "../../components/hooks/isAuthenticated";
+import IsUserAuthenticated from "../../lib/hooks/useIsAuthenticated";
 
 const create: NextPage = () => {
     const imageInputRef = useRef<HTMLInputElement | null>(null);

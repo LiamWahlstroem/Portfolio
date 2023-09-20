@@ -2,6 +2,7 @@ import * as jwt from 'jsonwebtoken';
 import * as mongoose from 'mongoose';
 import * as bcrypt from 'bcrypt';
 import { Users } from './schema';
+import useDatabase from "../../lib/hooks/useDatabase";
 
 const validatePassword = async (password: string, hash: string): Promise<boolean> => {
     const result = await bcrypt.compare(password, hash);
@@ -9,20 +10,11 @@ const validatePassword = async (password: string, hash: string): Promise<boolean
 };
 
 const Login = async (req: any, res: any) => {
-    mongoose.connect(
-        `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}${process.env.DB_URI}`,
-        {
-            useNewUrlParser: true, // Correct typo from useNewURLParser to useNewUrlParser
-            useUnifiedTopology: true,
-        },
-    );
+    if(req.method !== 'POST') {
+        res.status(405).end();
+    }
 
-    const db = mongoose.connection;
-    db.on('error', console.error.bind(console, 'connection error: '));
-    db.once('open', function () {
-        console.log('Connected successfully');
-    });
-
+    const db = await useDatabase();
     let users = await Users.find({});
 
     for (let i = 0; i < users.length; i++) {

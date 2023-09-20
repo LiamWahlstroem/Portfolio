@@ -1,4 +1,4 @@
-import Tag from "./Types/Tag";
+import Tag from "../lib/Types/Tag";
 
 type Props = {
     tag: Tag;

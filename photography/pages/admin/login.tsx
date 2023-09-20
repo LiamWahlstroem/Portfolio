@@ -1,7 +1,7 @@
 import type {NextPage} from 'next';
 import Head from 'next/head';
 import useRouter from 'next/router';
-import IsUserAuthenticated from '../../components/hooks/isAuthenticated'
+import IsUserAuthenticated from '../../lib/hooks/useIsAuthenticated'
 import {useEffect} from "react";
 
 const handleSubmit = async (ev: any) => {

@@ -1,5 +1,4 @@
-import mongoose, {Schema} from 'mongoose';
-import {object} from "prop-types";
+import mongoose from 'mongoose';
 
 interface IUser {
     username: String;
