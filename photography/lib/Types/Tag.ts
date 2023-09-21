@@ -3,4 +3,4 @@ type Tag = {
     name: string;
 }
 
-export default Tag
+export default Tag;

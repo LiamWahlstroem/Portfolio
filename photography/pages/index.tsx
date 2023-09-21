@@ -4,18 +4,18 @@ import Navbar from '../components/navbar';
 import Footer from '../components/footer';
 
 const Home: NextPage = () => {
-  return (
-      <>
-        <Head>
-          <title>Hey There</title>
-        </Head>
-        <Navbar currentPage='home' />
-        <main>
+	return (
+		<>
+			<Head>
+				<title>Hey There</title>
+			</Head>
+			<Navbar currentPage='home' />
+			<main>
 
-        </main>
-        <Footer />
-      </>
-  );
+			</main>
+			<Footer />
+		</>
+	);
 };
 
 export default Home;
