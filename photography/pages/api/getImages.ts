@@ -1,13 +1,14 @@
 import useDatabase from '../../lib/hooks/useDatabase';
 import {Images} from './schema';
 import ImageResponse from '../../lib/Types/ImageResponse';
+import {NextApiRequest, NextApiResponse} from 'next';
 
-const getImages = async (req: any, res: any) => {
+const getImages = async (req: NextApiRequest, res: NextApiResponse) => {
 	if(req.method !== 'GET') {
 		res.status(405).end();
 	}
 
-	const db = await useDatabase();
+	await useDatabase();
 	const imageData: ImageResponse[] = [];
 
 	Images.find({}).then(r => {
@@ -18,6 +19,7 @@ const getImages = async (req: any, res: any) => {
 		else {
 			for (let i = 0; i < r.length; i++) {
 				imageData.push({
+					imageId: r[i]._id,
 					imageURL: r[i].imageURL,
 					category: r[i].category,
 				});

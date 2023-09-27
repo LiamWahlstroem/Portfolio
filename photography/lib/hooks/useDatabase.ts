@@ -10,8 +10,6 @@ const useDatabase = async () => {
 	db.once('open', function () {
 		console.log('Connected successfully');
 	});
-
-	return db;
 };
 
 export default useDatabase;

@@ -1,11 +1,11 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import {useRouter} from 'next/router';
-import React, {useEffect, useRef, useState} from 'react';
+import React, {ReactElement, useEffect, useRef, useState} from 'react';
 import AdminNavbar from '../../components/adminNavbar';
 import IsUserAuthenticated from '../../lib/hooks/useIsAuthenticated';
 
-const create: NextPage = () => {
+const create: NextPage = (): ReactElement => {
 	const imageInputRef = useRef<HTMLInputElement | null>(null);
 	const [imageURL, setImageURL] = useState<string>('');
 	const router = useRouter();

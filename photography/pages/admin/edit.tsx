@@ -1,16 +1,21 @@
-import {ReactElement, useEffect, useState} from 'react';
+import React, {ReactElement, useEffect, useState} from 'react';
 import {useRouter} from 'next/router';
 import AdminNavbar from '../../components/adminNavbar';
 import IsUserAuthenticated from '../../lib/hooks/useIsAuthenticated';
 import ImageResponse from '../../lib/Types/ImageResponse';
+import EditImageModal from '../../components/editImageModal';
 
-const handleSelect = (ev: any) => {
-	console.log(ev.target.src);
+const handleClick = (ev: React.MouseEvent<HTMLImageElement>, setIsOpen: (value: boolean) => void, setSelectedImage: (value: ImageResponse) => void, images: ImageResponse[]) => {
+	const image = images.filter((el: ImageResponse) => el.imageURL === ev.currentTarget.src);
+	setSelectedImage(image[0]);
+	setIsOpen(true);
 };
 
 const edit = (): ReactElement => {
-	const [imageURLs, setImageURLs] = useState<ImageResponse[]>([]);
+	const [images, setImages] = useState<ImageResponse[]>([]);
 	const router = useRouter();
+	const [isOpen, setIsOpen] = useState<boolean>(false);
+	const [selectedImage, setSelectedImage] = useState<ImageResponse>({imageId: '', imageURL: '', category: ''});
 
 	useEffect(() => {
 		if(!IsUserAuthenticated())
@@ -28,14 +33,14 @@ const edit = (): ReactElement => {
 			} else {
 				router.push('/error').then();
 			}
-		}).then((data: any) => setImageURLs(data.data));
+		}).then((data: {data: ImageResponse[]}) => setImages(data.data));
 	}, []);
-
 
 	return(
 		<>
 			<AdminNavbar currentPage='edit' />
-			{imageURLs.map((el: ImageResponse) => <img src={el.imageURL} height={500} width={500} key={el.imageURL} onClick={(ev) => handleSelect(ev)}/>)}
+			{images.map((el: ImageResponse) => <img src={el.imageURL} height={500} width={500} key={el.imageURL} onClick={ev => handleClick(ev, setIsOpen, setSelectedImage, images)}/>)}
+			{isOpen && <EditImageModal image={selectedImage} modalOpen={setIsOpen}/>}
 		</>
 	);
 };

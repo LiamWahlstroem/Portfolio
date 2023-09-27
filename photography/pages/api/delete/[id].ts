@@ -3,16 +3,17 @@ import authenticateToken from '../../../lib/authenticateToken';
 import useDatabase from '../../../lib/hooks/useDatabase';
 import * as AWS from 'aws-sdk';
 import {DeleteResult} from 'mongodb';
+import {NextApiRequest, NextApiResponse} from 'next';
 
-const deleteHandler = async (req: any, res: any) => {
+const deleteHandler = async (req: NextApiRequest, res: NextApiResponse) => {
 	if(req.method !== 'DELETE') {
 		res.status(405).end();
 	}
 
 	const {id} = req.query;
-	const db = await useDatabase();
+	await useDatabase();
 	const users = await Users.find({});
-	const token = req.headers['authorization'];
+	const token = req.headers['authorization'] || '';
 
 	if(!authenticateToken(token, users)) return res.status(401).end();
 	else {
@@ -33,7 +34,7 @@ const deleteHandler = async (req: any, res: any) => {
 			Key: image.imageName,
 		};
 
-		s3.deleteObject(params, (err: Error, data) => {
+		s3.deleteObject(params, (err: Error) => {
 			if (err) {
 				res.status(500).json({err: err});
 			} else {

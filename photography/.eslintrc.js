@@ -1,6 +1,7 @@
 module.exports = {
 	'env': {
 		'browser': true,
+		'node': true,
 		'es2021': true
 	},
 	'extends': [
@@ -39,5 +40,9 @@ module.exports = {
 		],
 		'react/react-in-jsx-scope': 'off',
 		'react/jsx-uses-react': 'off',
+		'func-style': [
+			'error',
+			'expression'
+		]
 	}
 };

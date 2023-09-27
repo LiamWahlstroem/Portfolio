@@ -28,5 +28,5 @@ const imageSchema = new mongoose.Schema<IImage>({
 
 export const Users = mongoose.models.Users || mongoose.model<IUser>('Users', userSchema, 'Users');
 
-export const Images = mongoose.models.Images || mongoose.model<IImage>('Images', imageSchema, 'Images');
+export const Images = mongoose.models.Image || mongoose.model<IImage>('Image', imageSchema, 'Images');
 

@@ -1,11 +1,13 @@
-import jwt from 'jsonwebtoken';
+import jwt, {JwtPayload} from 'jsonwebtoken';
+import User from './Types/User';
+import TokenPayload from './Types/TokenPayload';
 
-const AuthenticateToken = (token: string, users: any[]): boolean => {
+const AuthenticateToken = (token: string, users: User[]): boolean => {
 	let authenticated = false;
 	token = token.split(' ')[1];
 
-	jwt.verify(token, process.env.JWT_SECRET!, (err: any, payload: any) => {
-		if(err) {
+	jwt.verify(token, process.env.JWT_SECRET!, (err: Error | null, payload: TokenPayload | JwtPayload | string | undefined) => {
+		if(err || payload === undefined) {
 			return;
 		}
 

@@ -4,20 +4,15 @@ import Navbar from '../components/navbar';
 import Footer from '../components/footer';
 import FilterTag from '../components/filterTag';
 import Tag from '../lib/Types/Tag';
-import {useEffect, useState} from 'react';
+import {ReactElement, useEffect, useState} from 'react';
 import {useRouter} from 'next/router';
 import ImageResponse from '../lib/Types/ImageResponse';
 
 const tagsToDisplay: Tag[] = [{displayName: 'Nature', name: 'nature'}, {displayName: 'Urban', name: 'urban'}, {displayName: 'Cars', name: 'cars'}, {displayName: 'Black & White', name: 'blackWhite'}];
-const selectedTags: Tag[] = [];
 
-const gallery: NextPage = () => {
+const gallery: NextPage = (): ReactElement => {
 	const [imageURLs, setImageURLs] = useState<ImageResponse[]>([]);
 	const router = useRouter();
-
-	const TagClicked = (tag: Tag) => {
-		console.log(tag.displayName);
-	};
 
 	useEffect(() => {
 		const URL = '/api/getImages';
@@ -30,7 +25,7 @@ const gallery: NextPage = () => {
 			} else {
 				router.push('/error').then();
 			}
-		}).then((data: any) => setImageURLs(data.data));
+		}).then((data: {data: ImageResponse[]}) => setImageURLs(data.data));
 	}, []);
 
 	return (
@@ -43,7 +38,7 @@ const gallery: NextPage = () => {
 				<div>
 					<h1>Filters</h1>
 					<div>
-						{tagsToDisplay.map((el: Tag) => <FilterTag tag={el} customClickEvent={TagClicked}/>)}
+						{tagsToDisplay.map((el: Tag) => <FilterTag tag={el} key={el.name}/>)}
 					</div>
 				</div>
 				<div>

@@ -1,7 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2b4b463b-bb19-4140-937a-1133cc2162e2" name="Changes" comment="" />
+    <list default="true" id="2b4b463b-bb19-4140-937a-1133cc2162e2" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.eslintrc.js" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/adminNavbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/adminNavbar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/filterTag.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/filterTag.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/footer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/navbar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Types/Category.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Types/Category.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Types/ImageResponse.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Types/ImageResponse.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Types/Tag.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Types/Tag.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/authenticateToken.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/authenticateToken.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/getImageURLs.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/getImageURLs.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/hooks/useDatabase.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/hooks/useDatabase.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/hooks/useImageResize.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/hooks/useIsAuthenticated.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/hooks/useIsAuthenticated.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/next.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/_app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_app.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/admin/create.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/admin/create.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/admin/edit.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/admin/edit.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/admin/login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/admin/login.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/admin/overview.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/admin/overview.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/api/delete/[id].ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/delete/[id].ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/api/editImage.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/api/getImages.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/getImages.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/api/login.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/login.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/api/schema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/schema.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/api/uploadImage.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/uploadImage.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/contact.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/contact.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/gallery.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/gallery.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/gear.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/gear.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/postcss.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/postcss.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,24 +52,29 @@
     <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectId" id="2QTc5s31XiLYW6Or2gbkod7Wh9f" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "javascript.nodejs.core.library.configured.version": "16.13.2",
-    "javascript.nodejs.core.library.typings.version": "16.18.50",
-    "last_opened_file_path": "C:/Users/Liam/Desktop/Projects/PortfolioWebsite/photography",
-    "nodejs_package_manager_path": "yarn",
-    "ts.external.directory.path": "C:\\Users\\Liam\\Desktop\\Projects\\PortfolioWebsite\\photography\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;16.13.2&quot;,
+    &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;16.18.54&quot;,
+    &quot;last_opened_file_path&quot;: &quot;X:/Portfolio/photography&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.stylesheets&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;X:\\Portfolio\\photography\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Liam\Desktop\Projects\PortfolioWebsite\photography" />
@@ -60,6 +100,10 @@
       <workItem from="1694367346019" duration="1172000" />
       <workItem from="1694626215149" duration="4417000" />
       <workItem from="1694703457161" duration="6249000" />
+      <workItem from="1695490182137" duration="4555000" />
+      <workItem from="1695533829606" duration="4731000" />
+      <workItem from="1695750323016" duration="3935000" />
+      <workItem from="1695829711335" duration="3236000" />
     </task>
     <servers />
   </component>
@@ -76,5 +120,16 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/pages/admin/edit.tsx</url>
+          <line>7</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

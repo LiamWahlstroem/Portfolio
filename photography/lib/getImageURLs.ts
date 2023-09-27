@@ -8,7 +8,7 @@ const getImageURLs = async (): Promise<string[]> => {
 		if (r.status === 200) {
 			return r.json();
 		}
-	}).then((data: any) => imageURLs = data.imageURLs);
+	}).then((data: {imageURLs: string[]}) => imageURLs = data.imageURLs);
 	return imageURLs;
 };
 
