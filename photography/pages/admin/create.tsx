@@ -2,7 +2,7 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import {useRouter} from 'next/router';
 import React, {ReactElement, useEffect, useRef, useState} from 'react';
-import AdminNavbar from '../../components/adminNavbar';
+import AdminNavbar from '../../components/Organisms/adminNavbar';
 import IsUserAuthenticated from '../../lib/hooks/useIsAuthenticated';
 
 const create: NextPage = (): ReactElement => {

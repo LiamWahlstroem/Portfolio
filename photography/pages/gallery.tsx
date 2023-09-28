@@ -1,8 +1,8 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import Navbar from '../components/navbar';
-import Footer from '../components/footer';
-import FilterTag from '../components/filterTag';
+import Navbar from '../components/Organisms/navbar';
+import Footer from '../components/Organisms/footer';
+import FilterTag from '../components/Atoms/filterTag';
 import Tag from '../lib/Types/Tag';
 import {ReactElement, useEffect, useState} from 'react';
 import {useRouter} from 'next/router';

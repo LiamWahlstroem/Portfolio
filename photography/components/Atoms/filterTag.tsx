@@ -1,15 +1,13 @@
-import Tag from '../lib/Types/Tag';
+import Tag from '../../lib/Types/Tag';
+import {ReactElement} from 'react';
 
 type Props = {
     tag: Tag;
-    customClickEvent: any;
 }
 
-const FilterTag = (props: Props) => {
-	let selected: boolean;
+const FilterTag = (props: Props): ReactElement => {
 
 	const handleSelect  = () => {
-		props.customClickEvent(props.tag);
 	};
 
 	return (

@@ -1,6 +1,6 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import AdminNavbar from '../../components/adminNavbar';
+import AdminNavbar from '../../components/Organisms/adminNavbar';
 import React from 'react';
 
 const Overview: NextPage = () => {
