@@ -21,7 +21,9 @@ const userSchema = new mongoose.Schema<IUser>({
 
 const imageSchema = new mongoose.Schema<IImage>({
 	imageName: String,
-	imageURL: String,
+	imageURLFull: String,
+	imageURLMedium: String,
+	imageURLSmall: String,
 	category: String,
 	date: {type: Date, default: Date.now},
 });

@@ -2,9 +2,9 @@ import type {NextPage} from 'next';
 import Head from 'next/head';
 import useRouter from 'next/router';
 import IsUserAuthenticated from '../../lib/hooks/useIsAuthenticated';
-import {useEffect} from 'react';
+import React, {useEffect} from 'react';
 
-const handleSubmit = async (ev: any) => {
+const handleSubmit = async (ev: React.FormEvent<HTMLFormElement>) => {
 	ev.preventDefault();
 
 	const URL = '/api/login';
@@ -17,8 +17,8 @@ const handleSubmit = async (ev: any) => {
 			typ: 'JWT',
 		},
 		body: JSON.stringify({
-			username: ev.target.username.value,
-			password: ev.target.password.value,
+			username: ev.currentTarget.username.value,
+			password: ev.currentTarget.password.value,
 		}),
 	});
 

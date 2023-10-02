@@ -1,9 +1,9 @@
 import React, {ReactElement, useEffect, useState} from 'react';
 import {useRouter} from 'next/router';
-import AdminNavbar from '../../components/Organisms/adminNavbar';
 import IsUserAuthenticated from '../../lib/hooks/useIsAuthenticated';
 import ImageResponse from '../../lib/Types/ImageResponse';
-import EditImageModal from '../../components/Organisms/editImageModal';
+import EditImageModal from '../../components/Organisms/EditImageModal';
+import LayoutAdmin from '../../components/Layout/LayoutAdmin';
 
 const handleClick = (ev: React.MouseEvent<HTMLImageElement>, setIsOpen: (value: boolean) => void, setSelectedImage: (value: ImageResponse) => void, images: ImageResponse[]) => {
 	const image = images.filter((el: ImageResponse) => el.imageURL === ev.currentTarget.src);
@@ -37,11 +37,10 @@ const edit = (): ReactElement => {
 	}, []);
 
 	return(
-		<>
-			<AdminNavbar currentPage='edit' />
+		<LayoutAdmin currentPage='edit'>
 			{images.map((el: ImageResponse) => <img src={el.imageURL} height={500} width={500} key={el.imageURL} onClick={ev => handleClick(ev, setIsOpen, setSelectedImage, images)}/>)}
 			{isOpen && <EditImageModal image={selectedImage} modalOpen={setIsOpen}/>}
-		</>
+		</LayoutAdmin>
 	);
 };
 

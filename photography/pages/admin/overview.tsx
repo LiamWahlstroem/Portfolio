@@ -1,19 +1,13 @@
 import type { NextPage } from 'next';
-import Head from 'next/head';
-import AdminNavbar from '../../components/Organisms/adminNavbar';
 import React from 'react';
+import LayoutAdmin from '../../components/Layout/LayoutAdmin';
 
 const Overview: NextPage = () => {
 
 	return (
-		<>
-			<Head>
-				<title>Login</title>
-			</Head>
-			<AdminNavbar currentPage='overview' />
-			<main>
-			</main>
-		</>
+		<LayoutAdmin currentPage='overview' >
+
+		</LayoutAdmin>
 	);
 };
 

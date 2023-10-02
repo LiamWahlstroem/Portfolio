@@ -1,9 +1,11 @@
-import * as AWS from 'aws-sdk';
-import {Images, Users} from './schema';
-import authenticateToken from '../../lib/authenticateToken';
 import multer from 'multer';
 import {NextApiRequest, NextApiResponse, PageConfig} from 'next';
+import sizeOf from 'image-size';
+import {Images, Users} from './schema';
+import authenticateToken from '../../lib/authenticateToken';
 import useDatabase from '../../lib/hooks/useDatabase';
+import resizeImage from '../../lib/resizeImage';
+import s3Upload from '../../lib/s3Upload';
 
 export const config: PageConfig = {
 	api: {
@@ -29,40 +31,68 @@ const uploadImage = async (req: NextApiRequest, res: NextApiResponse ) => {
 	const token = req.headers['authorization'] || '';
 	if(!authenticateToken(token, users)) return res.status(401).end();
 	else {
-		AWS.config.update({region: 'eu-central-2'});
-		const s3 = new AWS.S3();
 		// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 		// @ts-ignore
-		upload.single('image')(req, res, (err) => {
+		upload.single('image')(req, res, async (err) => {
 			if (err) {
 				return res.status(500).json({error: err});
 			}
-			// get category from the form data
-			const category = req.body.category;
+
 			// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 			// @ts-ignore
 			const file = req.file;
+
+			const fileName = file.originalname.split('.')[0];
+
+			const imageDimension = sizeOf(file.buffer);
+
+			if(imageDimension === undefined) {
+				return res.status(500);
+			}
+
+			const imageSmall = await resizeImage(file.buffer, Math.floor(imageDimension.width / 4), Math.floor(imageDimension.height / 4));
+			const imageMedium = await resizeImage(file.buffer, Math.floor(imageDimension.width / 2), Math.floor(imageDimension.height / 2));
+
 			const params = {
 				Bucket: 'photography-portoflio-1',
-				Key: file.originalname,
+				Key: fileName + '.webp',
 				Body: file.buffer,
 			};
-			s3.upload(params, (err: Error) => {
-				if (err) {
-					res.status(500).json({error: err});
-				}
+
+			let status = s3Upload(params);
+
+			const paramsSmall = {
+				Bucket: 'photography-portoflio-1',
+				Key: fileName + '_small.webp',
+				Body: imageSmall,
+			};
+
+			status = s3Upload(paramsSmall);
+
+			const paramsMedium = {
+				Bucket: 'photography-portoflio-1',
+				Key: fileName + '_medium.webp',
+				Body: imageMedium,
+			};
+
+			status = s3Upload(paramsMedium);
+
+			if(status === 200) {
 				const imageData = new Images({
-					imageName: file.originalname,
-					imageURL: process.env.CLOUDFRONT_DOMAIN + file.originalname,
-					category: category,
+					imageName: fileName,
+					imageURLFull: process.env.CLOUDFRONT_DOMAIN + fileName + '.webp',
+					imageURLMedium: process.env.CLOUDFRONT_DOMAIN + fileName + '_medium.webp',
+					imageURLSmall: process.env.CLOUDFRONT_DOMAIN + fileName + '_small.webp',
+					category: req.body.category,
 				});
 				imageData.save().then((err: Error) => {
 					if (err) {
-						res.status(500).json({error: err});
+						status = 500;
 					}
 				});
-				res.status(200).end();
-			});
+			}
+
+			res.status(status);
 		});
 	}
 };

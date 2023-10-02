@@ -1,5 +1,4 @@
-import Link from 'next/link';
-import {useState, useEffect, ReactElement} from 'react';
+import {ReactElement} from 'react';
 import NavbarItem from '../Atoms/NavbarItem';
 import NavbarContainer from '../Atoms/NavbarContainer';
 

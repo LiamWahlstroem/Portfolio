@@ -1,21 +1,12 @@
 import type { NextPage } from 'next';
-import Head from 'next/head';
-import Navbar from '../components/Organisms/navbar';
-import Footer from '../components/Organisms/footer';
 import {ReactElement} from 'react';
+import Layout from '../components/Layout/Layout';
 
 const Collections: NextPage = (): ReactElement => {
 	return (
-		<>
-			<Head>
-				<title>Hey There</title>
-			</Head>
-			<Navbar currentPage='gear' />
-			<main>
+		<Layout currentPage='gear'>
 
-			</main>
-			<Footer />
-		</>
+		</Layout>
 	);
 };
 
