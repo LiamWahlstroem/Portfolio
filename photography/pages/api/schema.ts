@@ -8,8 +8,11 @@ interface IUser {
 
 interface IImage {
     imageName: string;
-    imageURL: string;
+    imageURLFull: string;
+	imageURLMedium: string;
+	imageURLSmall: string;
     category: string;
+	alt: string;
     date: Date;
 }
 
@@ -25,6 +28,7 @@ const imageSchema = new mongoose.Schema<IImage>({
 	imageURLMedium: String,
 	imageURLSmall: String,
 	category: String,
+	alt: String,
 	date: {type: Date, default: Date.now},
 });
 

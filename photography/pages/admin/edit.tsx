@@ -4,18 +4,13 @@ import IsUserAuthenticated from '../../lib/hooks/useIsAuthenticated';
 import ImageResponse from '../../lib/Types/ImageResponse';
 import EditImageModal from '../../components/Organisms/EditImageModal';
 import LayoutAdmin from '../../components/Layout/LayoutAdmin';
-
-const handleClick = (ev: React.MouseEvent<HTMLImageElement>, setIsOpen: (value: boolean) => void, setSelectedImage: (value: ImageResponse) => void, images: ImageResponse[]) => {
-	const image = images.filter((el: ImageResponse) => el.imageURL === ev.currentTarget.src);
-	setSelectedImage(image[0]);
-	setIsOpen(true);
-};
+import GalleryComponent from '../../components/Molecules/GalleryComponent';
 
 const edit = (): ReactElement => {
 	const [images, setImages] = useState<ImageResponse[]>([]);
 	const router = useRouter();
 	const [isOpen, setIsOpen] = useState<boolean>(false);
-	const [selectedImage, setSelectedImage] = useState<ImageResponse>({imageId: '', imageURL: '', category: ''});
+	const [selectedImage, setSelectedImage] = useState<ImageResponse>({imageId: '', imageURL: '', imageURLSmall: '', category: ''});
 
 	useEffect(() => {
 		if(!IsUserAuthenticated())
@@ -36,9 +31,15 @@ const edit = (): ReactElement => {
 		}).then((data: {data: ImageResponse[]}) => setImages(data.data));
 	}, []);
 
+	const handleClick = (ev: React.MouseEvent<HTMLImageElement>) => {
+		const image = images.filter((el: ImageResponse) => el.imageURL === ev.currentTarget.src);
+		setSelectedImage(image[0]);
+		setIsOpen(true);
+	};
+
 	return(
 		<LayoutAdmin currentPage='edit'>
-			{images.map((el: ImageResponse) => <img src={el.imageURL} height={500} width={500} key={el.imageURL} onClick={ev => handleClick(ev, setIsOpen, setSelectedImage, images)}/>)}
+			<GalleryComponent images={images} onClick={handleClick} />
 			{isOpen && <EditImageModal image={selectedImage} modalOpen={setIsOpen}/>}
 		</LayoutAdmin>
 	);

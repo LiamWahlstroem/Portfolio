@@ -1,15 +1,19 @@
 import type { NextPage } from 'next';
 import FilterTag from '../components/Atoms/filterTag';
 import Tag from '../lib/Types/Tag';
-import {ReactElement, useEffect, useState} from 'react';
+import React, {ReactElement, useEffect, useState} from 'react';
 import {useRouter} from 'next/router';
 import ImageResponse from '../lib/Types/ImageResponse';
 import Layout from '../components/Layout/Layout';
+import ImageModal from '../components/Organisms/ImageModal';
+import GalleryComponent from '../components/Molecules/GalleryComponent';
 
 const tagsToDisplay: Tag[] = [{displayName: 'Nature', name: 'nature'}, {displayName: 'Urban', name: 'urban'}, {displayName: 'Cars', name: 'cars'}, {displayName: 'Black & White', name: 'blackWhite'}];
 
 const gallery: NextPage = (): ReactElement => {
-	const [imageURLs, setImageURLs] = useState<ImageResponse[]>([]);
+	const [images, setImages] = useState<ImageResponse[]>([]);
+	const [isOpen, setIsOpen] = useState<boolean>(false);
+	const [selectedImage, setSelectedImage] = useState<ImageResponse>();
 	const router = useRouter();
 
 	useEffect(() => {
@@ -23,8 +27,20 @@ const gallery: NextPage = (): ReactElement => {
 			} else {
 				router.push('/error').then();
 			}
-		}).then((data: {data: ImageResponse[]}) => setImageURLs(data.data));
+		}).then((data: {data: ImageResponse[]}) => {
+			if(data.data) {
+				setImages(data.data);
+			}
+			else {
+				router.push('/error').then();
+			}
+		});
 	}, []);
+
+	const handleClick = (ev: React.MouseEvent<HTMLImageElement>) => {
+		setSelectedImage(images.filter((el: ImageResponse) => el.imageURLSmall === ev.currentTarget.src)[0]);
+		setIsOpen(true);
+	};
 
 	return (
 		<Layout currentPage='collections'>
@@ -34,9 +50,8 @@ const gallery: NextPage = (): ReactElement => {
 					{tagsToDisplay.map((el: Tag) => <FilterTag tag={el} key={el.name}/>)}
 				</div>
 			</div>
-			<div>
-				{imageURLs.map((el: ImageResponse) => <img src={el.imageURL} height={500} width={500} key={el.imageURL}/>)}
-			</div>
+			<GalleryComponent images={images} onClick={handleClick} />
+			{isOpen && <ImageModal modalOpen={setIsOpen} image={selectedImage!} key={selectedImage!.imageId}/>}
 		</Layout>
 	);
 };

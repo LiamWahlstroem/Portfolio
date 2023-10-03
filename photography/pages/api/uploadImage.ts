@@ -84,6 +84,7 @@ const uploadImage = async (req: NextApiRequest, res: NextApiResponse ) => {
 					imageURLMedium: process.env.CLOUDFRONT_DOMAIN + fileName + '_medium.webp',
 					imageURLSmall: process.env.CLOUDFRONT_DOMAIN + fileName + '_small.webp',
 					category: req.body.category,
+					alt: req.body.alt,
 				});
 				imageData.save().then((err: Error) => {
 					if (err) {

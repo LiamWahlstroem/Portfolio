@@ -33,6 +33,7 @@ const create: NextPage = (): ReactElement => {
 			const file = imageInputRef.current.files[0];
 			formData.append('image', file);
 			formData.append('category', ev.currentTarget.category.value);
+			formData.append('alt', ev.currentTarget.alt.value);
 		}
 
 		fetch(URL, {
@@ -76,6 +77,7 @@ const create: NextPage = (): ReactElement => {
 									<option value="blackWhite">Black & White</option>
 								</select>
 							</div>
+							<input type='text' id='alt' placeholder='Alt Text'/>
 						</div>
 						<input type="submit" value="Submit" className="col-span-3 bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded-lg w-full" />
 					</div>

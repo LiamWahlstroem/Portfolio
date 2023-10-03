@@ -20,8 +20,10 @@ const getImages = async (req: NextApiRequest, res: NextApiResponse) => {
 		for (let i = 0; i < images.length; i++) {
 			imageData.push({
 				imageId: images[i]._id,
-				imageURL: images[i].imageURLSmall,
+				imageURL: images[i].imageURLMedium,
+				imageURLSmall: images[i].imageURLSmall,
 				category: images[i].category,
+				alt: images[i].alt,
 			});
 		}
 
