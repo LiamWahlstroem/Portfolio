@@ -50,6 +50,10 @@ const uploadImage = async (req: NextApiRequest, res: NextApiResponse ) => {
 				return res.status(500);
 			}
 
+			if(imageDimension.width === undefined || imageDimension.height === undefined) {
+				return res.status(500).json({error: 'Error Parsing image'});
+			}
+
 			const imageSmall = await resizeImage(file.buffer, Math.floor(imageDimension.width / 4), Math.floor(imageDimension.height / 4));
 			const imageMedium = await resizeImage(file.buffer, Math.floor(imageDimension.width / 2), Math.floor(imageDimension.height / 2));
 

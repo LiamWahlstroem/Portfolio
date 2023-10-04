@@ -3,11 +3,18 @@ import {useRouter} from 'next/router';
 import React, {ReactElement, useEffect, useRef, useState} from 'react';
 import IsUserAuthenticated from '../../lib/hooks/useIsAuthenticated';
 import LayoutAdmin from '../../components/Layout/LayoutAdmin';
+import ButtonSubmit from '../../components/Atoms/ButtonSubmit';
+import TextInputSmall from '../../components/Atoms/TextInputSmall';
 
 const create: NextPage = (): ReactElement => {
 	const imageInputRef = useRef<HTMLInputElement | null>(null);
 	const [imageURL, setImageURL] = useState<string>('');
 	const router = useRouter();
+	const altText = useRef('');
+
+	const setAltText = (value: string) => {
+		altText.current = value;
+	};
 
 	useEffect(() => {
 		if(!IsUserAuthenticated())
@@ -33,7 +40,7 @@ const create: NextPage = (): ReactElement => {
 			const file = imageInputRef.current.files[0];
 			formData.append('image', file);
 			formData.append('category', ev.currentTarget.category.value);
-			formData.append('alt', ev.currentTarget.alt.value);
+			formData.append('alt', altText.current);
 		}
 
 		fetch(URL, {
@@ -54,32 +61,25 @@ const create: NextPage = (): ReactElement => {
 
 	return (
 		<LayoutAdmin currentPage='create'>
-			<div className="h-full w-screen bg-white rounded-lg shadow-md p-8">
+			<div >
 				<form onSubmit={handleSubmit}>
-					<div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-						<div className="md:col-span-2 grid grid-cols-1 gap-4 md:grid-cols-2">
-							<label htmlFor="fileInput" className="cursor-pointer block w-full mx-auto mb-4">
-								<div className="border-2 border-dashed border-gray-400 rounded-lg h-32 flex justify-center items-center">
-									{imageURL && (
-										<img src={imageURL} alt="Uploaded" className="max-h-full max-w-full" />
-									)}
-									{!imageURL && (
-										<span className="text-gray-400">Upload an image</span>
-									)}
-								</div>
-								<input type="file" accept="png" name='imageUpload' onChange={imageSelected} className="" ref={imageInputRef}/>
-							</label>
-							<div className="col-span-1">
-								<select id="category" name="category" className="block w-full rounded-lg border-gray-400 focus:border-indigo-500 mb-4">
-									<option value="urban">Urban</option>
-									<option value="nature">Nature</option>
-									<option value="cars">Cars</option>
-									<option value="blackWhite">Black & White</option>
-								</select>
+					<div className='flex justify-center items-center mt-40'>
+						<div className='flex flex-col w-[28rem] mx-24 items-center'>
+							<div className='h-[32rem]'>
+								{imageURL === '' ? <></> : <img src={imageURL} alt="Current Selected Image" className='h-fit max-h-[31rem] shadow-md'/>}
 							</div>
-							<input type='text' id='alt' placeholder='Alt Text'/>
+							<input type='file' accept='png' name='imageUpload' onChange={imageSelected} ref={imageInputRef}/>
 						</div>
-						<input type="submit" value="Submit" className="col-span-3 bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded-lg w-full" />
+						<div className='flex flex-col'>
+							<select id='category' name='category' >
+								<option value='urban'>Urban</option>
+								<option value='nature'>Nature</option>
+								<option value='cars'>Cars</option>
+								<option value='blackWhite'>Black & White</option>
+							</select>
+							<TextInputSmall placeholder='Alt Text' defaultValue={undefined} inputValue={setAltText}/>
+							<ButtonSubmit buttonText='Upload'/>
+						</div>
 					</div>
 				</form>
 			</div>

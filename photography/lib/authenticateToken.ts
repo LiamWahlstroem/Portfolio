@@ -12,7 +12,7 @@ const AuthenticateToken = (token: string, users: User[]): boolean => {
 		}
 
 		users.forEach(user => {
-			if(user.username === payload.username) {
+			if(user.username === (<TokenPayload>payload).username) {
 				authenticated = true;
 			}
 		});

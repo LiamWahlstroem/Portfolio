@@ -1,7 +1,9 @@
-import React, {ReactElement} from 'react';
+import React, {ReactElement, useRef} from 'react';
 import SelectorOption from '../Atoms/SelectorOption';
 import ButtonDanger from '../Atoms/ButtonDanger';
 import {ModalOpenMethod} from '../../lib/Types/ModalOpenMethod';
+import TextInputSmall from '../Atoms/TextInputSmall';
+import ButtonSubmit from '../Atoms/ButtonSubmit';
 
 type Props = {
 	imageCategory: string;
@@ -17,6 +19,12 @@ const FormEdit = (Props: Props): ReactElement => {
 		{value: 'cars', text: 'Cars'},
 		{value: 'blackWhite', text: 'Black & White'}
 	];
+	const altText = useRef<string>('');
+
+	const setAltText = (value: string) => {
+		altText.current = value;
+	};
+
 
 	const handleDelete = () => {
 		const URL = '/api/delete/' + Props.imageId;
@@ -52,7 +60,7 @@ const FormEdit = (Props: Props): ReactElement => {
 			},
 			body: JSON.stringify({
 				category: ev.currentTarget.category.value,
-				alt: ev.currentTarget.alt.value,
+				alt: altText.current,
 			})
 		}).then(res => res.json())
 			.then(r => {
@@ -70,9 +78,9 @@ const FormEdit = (Props: Props): ReactElement => {
 			<select id='category' defaultValue={Props.imageCategory} className="block w-full rounded-lg border-gray-400 mb-4">
 				{options.map(el => <SelectorOption text={el.text} value={el.value} key={el.value}/>)}
 			</select>
-			<input type='text' id='alt' defaultValue={Props.imageAlt}/>
+			<TextInputSmall placeholder='Alt Text' inputValue={setAltText} defaultValue={Props.imageAlt}/>
 			<ButtonDanger text='Delete' handleClick={handleDelete} />
-			<input className='bg-gray-200 w-32 mx-4 rounded-md text-center px-2 py-1 mt-8' type='submit' value='Save Changes' />
+			<ButtonSubmit buttonText='Save Changes' />
 		</form>
 	);
 };

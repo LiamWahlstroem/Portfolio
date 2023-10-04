@@ -10,7 +10,7 @@ const ButtonIcon = (Props: Props): ReactElement => {
 	const iconSVG = Props.icon.toSvg();
 
 	return (
-		<div dangerouslySetInnerHTML={{__html: iconSVG}} onClick={() => Props.handleClick(false)}/>
+		<div className='hover:cursor-pointer' dangerouslySetInnerHTML={{__html: iconSVG}} onClick={() => Props.handleClick(false)}/>
 	);
 };
 

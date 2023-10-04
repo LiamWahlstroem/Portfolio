@@ -10,7 +10,7 @@ const edit = (): ReactElement => {
 	const [images, setImages] = useState<ImageResponse[]>([]);
 	const router = useRouter();
 	const [isOpen, setIsOpen] = useState<boolean>(false);
-	const [selectedImage, setSelectedImage] = useState<ImageResponse>({imageId: '', imageURL: '', imageURLSmall: '', category: ''});
+	const [selectedImage, setSelectedImage] = useState<ImageResponse>({imageId: '', imageURL: '', imageURLSmall: '', category: '', alt: ''});
 
 	useEffect(() => {
 		if(!IsUserAuthenticated())
@@ -32,7 +32,7 @@ const edit = (): ReactElement => {
 	}, []);
 
 	const handleClick = (ev: React.MouseEvent<HTMLImageElement>) => {
-		const image = images.filter((el: ImageResponse) => el.imageURL === ev.currentTarget.src);
+		const image = images.filter((el: ImageResponse) => el.imageURLSmall === ev.currentTarget.src);
 		setSelectedImage(image[0]);
 		setIsOpen(true);
 	};

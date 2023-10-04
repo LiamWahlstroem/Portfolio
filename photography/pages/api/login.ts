@@ -5,8 +5,7 @@ import useDatabase from '../../lib/hooks/useDatabase';
 import {NextApiRequest, NextApiResponse} from 'next';
 
 const validatePassword = async (password: string, hash: string): Promise<boolean> => {
-	const result = await bcrypt.compare(password, hash);
-	return result;
+	return await bcrypt.compare(password, hash);
 };
 
 const Login = async (req: NextApiRequest, res: NextApiResponse) => {
