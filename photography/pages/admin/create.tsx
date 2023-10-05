@@ -5,6 +5,8 @@ import IsUserAuthenticated from '../../lib/hooks/useIsAuthenticated';
 import LayoutAdmin from '../../components/Layout/LayoutAdmin';
 import ButtonSubmit from '../../components/Atoms/ButtonSubmit';
 import TextInputSmall from '../../components/Atoms/TextInputSmall';
+import uploadImage from '../api/uploadImage';
+import uploadImageFiles from '../../lib/uploadImageFiles';
 
 const create: NextPage = (): ReactElement => {
 	const imageInputRef = useRef<HTMLInputElement | null>(null);
@@ -32,23 +34,21 @@ const create: NextPage = (): ReactElement => {
 
 	const handleSubmit = async (ev: React.FormEvent<HTMLFormElement>) => {
 		ev.preventDefault();
-		const URL = '/api/uploadImage';
+		const URL = '/api/uploadImageFiles';
 		const token = 'Bearer ' + sessionStorage.getItem('JWT');
-		const formData = new FormData();
 
 		if (imageInputRef.current && imageInputRef.current.files && imageInputRef.current.files[0]) {
 			const file = imageInputRef.current.files[0];
-			formData.append('image', file);
-			formData.append('category', ev.currentTarget.category.value);
-			formData.append('alt', altText.current);
+			uploadImageFiles(file);
 		}
 
 		fetch(URL, {
 			method: 'POST',
 			headers: {
 				authorization: token,
+				'Content-Type': 'application/json'
 			},
-			body: formData,
+			body: JSON.stringify({fileName: imageInputRef.current.files[0]}),
 		}).then((res: Response) => {
 			if(res.status == 200) {
 				router.push('/admin/overview').then();

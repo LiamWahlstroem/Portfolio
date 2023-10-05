@@ -4,7 +4,7 @@ module.exports = {
 	async headers() {
 		return [
 			{
-				source: '/api/uploadImage',
+				source: '/api/uploadImageFiles',
 				headers: [
 					{
 						key: 'content-type',
