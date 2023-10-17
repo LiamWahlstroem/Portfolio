@@ -5,7 +5,6 @@ import IsUserAuthenticated from '../../lib/hooks/useIsAuthenticated';
 import LayoutAdmin from '../../components/Layout/LayoutAdmin';
 import ButtonSubmit from '../../components/Atoms/ButtonSubmit';
 import TextInputSmall from '../../components/Atoms/TextInputSmall';
-import uploadImage from '../api/uploadImage';
 import uploadImageFiles from '../../lib/uploadImageFiles';
 
 const create: NextPage = (): ReactElement => {
@@ -14,11 +13,11 @@ const create: NextPage = (): ReactElement => {
 	const router = useRouter();
 	const altText = useRef('');
 
-	const setAltText = (value: string) => {
+	const setAltText = (value: string): void => {
 		altText.current = value;
 	};
 
-	useEffect(() => {
+	useEffect((): void => {
 		if(!IsUserAuthenticated())
 		{
 			router.push('/admin/login').then();
@@ -34,29 +33,11 @@ const create: NextPage = (): ReactElement => {
 
 	const handleSubmit = async (ev: React.FormEvent<HTMLFormElement>) => {
 		ev.preventDefault();
-		const URL = '/api/uploadImageFiles';
-		const token = 'Bearer ' + sessionStorage.getItem('JWT');
 
 		if (imageInputRef.current && imageInputRef.current.files && imageInputRef.current.files[0]) {
 			const file = imageInputRef.current.files[0];
-			uploadImageFiles(file);
+			await uploadImageFiles(file, ev.currentTarget.category.value, altText.current, router);
 		}
-
-		fetch(URL, {
-			method: 'POST',
-			headers: {
-				authorization: token,
-				'Content-Type': 'application/json'
-			},
-			body: JSON.stringify({fileName: imageInputRef.current.files[0]}),
-		}).then((res: Response) => {
-			if(res.status == 200) {
-				router.push('/admin/overview').then();
-			}
-			else {
-				alert('Upload failed: ' + res.status);
-			}
-		});
 	};
 
 	return (

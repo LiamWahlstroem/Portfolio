@@ -6,7 +6,7 @@ module.exports = {
 	],
 	theme: {
 		extend: {
-			fontFamily: { sans: 'Barlow Condensed'}
+			fontFamily: { sans: 'Montserrat'}
 		},
 	},
 	plugins: [],
