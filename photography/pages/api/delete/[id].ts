@@ -1,46 +1,56 @@
-import mongoose, {Types} from "mongoose";
-import {Images, Users} from "../schema";
-import authenticateToken from "../../../components/utilities/authenticateToken";
+import {DeleteResult} from 'mongodb';
+import {NextApiRequest, NextApiResponse} from 'next';
+import {Images, Users} from '../schema';
+import authenticateToken from '../../../lib/authenticateToken';
+import useDatabase from '../../../lib/hooks/useDatabase';
+import s3Delete from '../../../lib/s3Delete';
 
-const deleteHandler = async (req: any, res: any) => {
-    const {id} = req.query;
+const deleteHandler = async (req: NextApiRequest, res: NextApiResponse) => {
+	if(req.method !== 'DELETE') {
+		res.status(405).end();
+	}
 
-    await mongoose.connect(
-        `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}${process.env.DB_URI}`,
-        {
-            useNewURLParser: true,
-            useUnifiedTopology: true,
-        },
-    );
+	const {id} = req.query;
+	await useDatabase();
+	const users = await Users.find({});
+	const token = req.headers['authorization'] || '';
 
-    const db = mongoose.connection;
-    db.on('error', console.error.bind(console, 'connection error: '));
-    db.once('open', function () {
-        console.log('Connected successfully');
-    });
+	if(!authenticateToken(token, users)) return res.status(401).end();
+	else {
+		const query = Images.findOne({_id: id});
+		const image = await query.exec();
 
-    let users = await Users.find({});
+		if(image == undefined) {
+			res.status(500).json({err: 'Could not find image with ID ' + id});
+		}
 
-    const token = req.headers['authorization']
+		const params = {
+			Bucket: 'photography-portoflio-1',
+			Key: image.imageName + '.webp',
+		};
 
-    if(!authenticateToken(token, users)) return res.status(401).end();
-    else {
-        const query = Images.findOne({_id: id});
-        const image = await query.exec();
+		const paramsMedium = {
+			Bucket: 'photography-portoflio-1',
+			Key: image.imageName + '_medium.webp',
+		};
 
-        if(image == undefined) {
-            res.status(500).message('Could not find image with ID ' + id).end();
-        }
+		const paramsSmall = {
+			Bucket: 'photography-portoflio-1',
+			Key: image.imageName + '_small.webp',
+		};
 
-        const deleted = await Images.deleteOne({_id: id});
+		s3Delete(params);
+		s3Delete(paramsMedium);
+		s3Delete(paramsSmall);
 
-        if(deleted == 1) {
-            res.status(200).message('Deleted Successfully').end();
-        }
-        else {
-            res.status(500).message('Something went wrong').end();
-        }
-    }
-}
+		Images.deleteOne({_id: id}).then( (result: DeleteResult) => {
+			if (result.deletedCount >= 1) {
+				res.status(200).json({msg: 'Deleted Image with ID ' + id + ' successfully.'});
+			} else {
+				res.status(500).json({err: 'Failed to delete Image'});
+			}
+		});
+	}
+};
 
 export default deleteHandler;

@@ -1,21 +1,13 @@
 import type { NextPage } from 'next';
-import Head from 'next/head';
-import Navbar from "../components/navbar";
-import Footer from "../components/footer";
+import {ReactElement} from 'react';
+import Layout from '../components/Layout/Layout';
 
-const Collections: NextPage = () => {
-    return (
-        <>
-            <Head>
-                <title>Hey There</title>
-            </Head>
-            <Navbar currentPage='gear' />
-            <main>
+const Collections: NextPage = (): ReactElement => {
+	return (
+		<Layout currentPage='gear'>
 
-            </main>
-            <Footer />
-        </>
-    );
+		</Layout>
+	);
 };
 
 export default Collections;

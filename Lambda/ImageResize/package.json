@@ -1,0 +1,14 @@
+{
+  "name": "imageresize",
+  "version": "1.0.0",
+  "description": "Lambda Function for Rescaling Images and formatting them to .webp Format",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Liam Wahlström",
+  "license": "ISC",
+  "dependencies": {
+    "sharp": "^0.32.6"
+  }
+}

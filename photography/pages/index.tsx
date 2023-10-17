@@ -1,21 +1,13 @@
 import type { NextPage } from 'next';
-import Head from 'next/head';
-import Navbar from '../components/navbar';
-import Footer from '../components/footer';
+import {ReactElement} from 'react';
+import Layout from '../components/Layout/Layout';
 
-const Home: NextPage = () => {
-  return (
-      <>
-        <Head>
-          <title>Hey There</title>
-        </Head>
-        <Navbar currentPage='home' />
-        <main>
-
-        </main>
-        <Footer />
-      </>
-  );
+const Home: NextPage = (): ReactElement => {
+	return (
+		<Layout currentPage='home'>
+			Test
+		</Layout>
+	);
 };
 
 export default Home;

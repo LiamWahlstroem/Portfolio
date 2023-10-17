@@ -1,31 +1,38 @@
-import mongoose, {Schema} from 'mongoose';
-import {object} from "prop-types";
+import mongoose from 'mongoose';
 
 interface IUser {
-    username: String;
-    displayName: String;
-    password: String;
+    username: string;
+    displayName: string;
+    password: string;
 }
 
 interface IImage {
-    imageName: String;
-    imageURL: String;
+    imageName: string;
+    imageURLFull: string;
+	imageURLMedium: string;
+	imageURLSmall: string;
+    category: string;
+	alt: string;
     date: Date;
 }
 
 const userSchema = new mongoose.Schema<IUser>({
-    username: String,
-    displayName: String,
-    password: String,
+	username: String,
+	displayName: String,
+	password: String,
 });
 
 const imageSchema = new mongoose.Schema<IImage>({
-   imageName: String,
-    imageURL: String,
-    date: {type: Date, default: Date.now},
+	imageName: String,
+	imageURLFull: String,
+	imageURLMedium: String,
+	imageURLSmall: String,
+	category: String,
+	alt: String,
+	date: {type: Date, default: Date.now},
 });
 
-export const Users = mongoose.models.Users || mongoose.model<IUser>('Users', userSchema, 'Users')
+export const Users = mongoose.models.Users || mongoose.model<IUser>('Users', userSchema, 'Users');
 
-export const Images = mongoose.models.Images || mongoose.model<IImage>('Images', imageSchema, 'Images')
+export const Images = mongoose.models.Image || mongoose.model<IImage>('Image', imageSchema, 'Images');
 
