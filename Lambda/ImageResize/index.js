@@ -1,14 +1,20 @@
-const sharp = require("sharp");
+import sharp from 'sharp';
+import sizeOf from 'image-size';
 
-exports.handler = async (event) => {
+export async function handler(event) {
     try {
-        const image = event.image;
+        const image = Buffer.from(event.image, 'base64');;
+        const Dimension = sizeOf(image);
+        const sizeX = Dimension.width;
+        const sizeY = Dimension.height;
+
         return await sharp(image)
-            .resize(event.sizeX, event.sizeY)
+            .resize(sizeX, sizeY)
             .webp({quality: 85})
-            .toBuffer();
-    } catch (error) {
+            .toBuffer()
+            .then(b => b.toString('base64'));
+        } catch (error) {
         console.error(error);
         throw new Error('Image processing failed.');
     }
-};
+}
