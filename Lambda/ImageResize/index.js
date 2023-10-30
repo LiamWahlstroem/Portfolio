@@ -21,12 +21,12 @@ export const handler = async (event) => {
 
     let resizedKey = `processed/${s3Event.object.key.split('.')[0] + '_medium.webp'}`;
     
-    await s3.putObject({
+    await s3.upload({
       Bucket: s3Event.bucket.name,
       Key: resizedKey,
       Body: resizedImageBuffer,
       ContentType: 'image/webp'
-    }).promise();
+    });
 
     image = s3Object.Body;
     resizedImageBuffer = await sharp(image)
@@ -36,12 +36,12 @@ export const handler = async (event) => {
 
     resizedKey = `processed/${s3Event.object.key.split('.')[0] + '_small.webp'}`;
     
-    await s3.putObject({
+    await s3.upload({
       Bucket: s3Event.bucket.name,
       Key: resizedKey,
       Body: resizedImageBuffer,
       ContentType: 'image/webp'
-    }).promise();
+    });
 
     return `Successfully resized object and saved to "${resizedKey}"`;
 
