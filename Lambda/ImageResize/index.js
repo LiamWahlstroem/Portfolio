@@ -1,9 +1,9 @@
-import { S3 } from 'aws-sdk';
+import * as AWS from 'aws-sdk';
 import sharp from 'sharp';
 
 export const handler = async (event) => {
   try {
-    const s3 = new S3();
+    const s3 = new AWS.S3();
     const s3Event = event.Records[0].s3;
 
     const getObjectParams = {
