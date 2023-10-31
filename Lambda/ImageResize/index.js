@@ -2,7 +2,7 @@ import * as AWS from 'aws-sdk';
 import sharp from 'sharp';
 import sizeOf from 'image-size'
 
-const s3 = new S3();
+const s3 = new AWS.S3();
 
 export const handler = async (event) => {
   try {
