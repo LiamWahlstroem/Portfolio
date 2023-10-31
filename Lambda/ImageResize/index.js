@@ -15,8 +15,8 @@ export const handler = async (event) => {
     const s3Object = await s3.getObject(getObjectParams).promise();
 
     let image = s3Object.Body;
-    const sizeX = sizeOf(image.buffer).width;
-    const sizeY = sizeOf(image.buffer).height;
+    const sizeX = sizeOf(image).width;
+    const sizeY = sizeOf(image).height;
     let resizedImageBuffer = await sharp(image)
       .resize({ width: sizeX / 2, height: sizeY / 2 })
       .webp({ quality: 85 })
@@ -31,7 +31,6 @@ export const handler = async (event) => {
       ContentType: 'image/webp'
     });
 
-    image = s3Object.Body;
     resizedImageBuffer = await sharp(image)
       .resize({ width: sizeX / 4, height: sizeY / 4 })
       .webp({ quality: 85 })
