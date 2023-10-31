@@ -1,9 +1,11 @@
-import S3 from 'aws-sdk/clients/s3.js';
+import * as AWS from 'aws-sdk';
 import sharp from 'sharp';
+import sizeOf from 'image-size'
+
+const s3 = new S3();
 
 export const handler = async (event) => {
   try {
-    const s3 = new S3();
     const s3Event = event.Records[0].s3;
 
     const getObjectParams = {
@@ -14,6 +16,8 @@ export const handler = async (event) => {
     const s3Object = await s3.getObject(getObjectParams).promise();
 
     let image = s3Object.Body;
+    const sizeX = sizeOf(image.buffer).width;
+    const sizeY = sizeOf(image.buffer).height;
     let resizedImageBuffer = await sharp(image)
       .resize({ width: sizeX / 2, height: sizeY / 2 })
       .webp({ quality: 85 })
