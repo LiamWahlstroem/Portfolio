@@ -22,7 +22,7 @@ export const handler = async (event) => {
       .webp({ quality: 85 })
       .toBuffer();
 
-    let resizedKey = `processed/${s3Event.object.key.split('.')[0] + '_medium.webp'}`;
+    let resizedKey = `processed/${s3Event.object.key.split('/')[1].split('.')[0] + '_medium.webp'}`;
     
     await s3.upload({
       Bucket: s3Event.bucket.name,
@@ -36,7 +36,7 @@ export const handler = async (event) => {
       .webp({ quality: 85 })
       .toBuffer();
 
-    resizedKey = `processed/${s3Event.object.key.split('.')[0] + '_small.webp'}`;
+    resizedKey = `processed/${s3Event.object.key.split('/')[1].split('.')[0] + '_small.webp'}`;
     
     await s3.upload({
       Bucket: s3Event.bucket.name,
