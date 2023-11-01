@@ -1,76 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AutoImportSettings">
-    <option name="autoReloadType" value="SELECTIVE" />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="2b4b463b-bb19-4140-937a-1133cc2162e2" name="Changes" comment="">
-<<<<<<< Updated upstream
-      <change afterPath="$PROJECT_DIR$/../Lambda/ImageResize/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.eslintrc.js" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc.js" afterDir="false" />
+    <list default="true" id="577f8b35-f983-449f-b184-0f61b29a384a" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/PortfolioWebsite.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/jsLinters/eslint.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lambda/ImageResize/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Lambda/ImageResize/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lambda/ImageResize/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Lambda/ImageResize/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lambda/ImageResize/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Lambda/ImageResize/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Atoms/Button.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Atoms/Button.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Atoms/ButtonDanger.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Atoms/ButtonDanger.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Atoms/ButtonIcon.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Atoms/ButtonIcon.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Atoms/ButtonSubmit.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Atoms/ButtonSubmit.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Atoms/FooterItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Atoms/FooterItem.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Atoms/NavbarContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Atoms/NavbarContainer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Atoms/NavbarItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Atoms/NavbarItem.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Atoms/SelectorOption.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Atoms/SelectorOption.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Atoms/TextInputPassword.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Atoms/TextInputPassword.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Atoms/TextInputSmall.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Atoms/TextInputSmall.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Atoms/filterTag.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Atoms/filterTag.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Layout/Layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Layout/Layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Layout/LayoutAdmin.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Layout/LayoutAdmin.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Molecules/FormEdit.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Molecules/FormEdit.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Molecules/GalleryComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Molecules/GalleryComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Molecules/Modal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Molecules/Modal.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Organisms/AdminNavbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Organisms/AdminNavbar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Organisms/EditImageModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Organisms/EditImageModal.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Organisms/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Organisms/Footer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Organisms/ImageModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Organisms/ImageModal.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Organisms/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Organisms/Navbar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Types/Dimension.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Types/Dimension.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Types/ImageResponse.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Types/ImageResponse.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Types/S3DeleteParams.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Types/S3DeleteParams.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Types/S3Params.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Types/S3Params.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Types/Tag.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Types/Tag.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Types/TokenPayload.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Types/TokenPayload.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Types/User.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Types/User.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/authenticateToken.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/authenticateToken.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/hooks/useDatabase.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/hooks/useDatabase.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/hooks/useIsAuthenticated.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/hooks/useIsAuthenticated.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/resizeImage.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/resizeImage.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/s3Delete.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/s3Delete.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/resizeImage.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/s3Upload.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/s3Upload.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/uploadImageFiles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/uploadImageFiles.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/next.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/_app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_app.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/admin/create.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/admin/create.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/admin/edit.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/admin/edit.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/admin/login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/admin/login.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/admin/overview.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/admin/overview.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/api/delete/[id].ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/delete/[id].ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/api/getImages.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/getImages.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/api/login.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/login.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/api/put/[id].ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/put/[id].ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/api/schema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/schema.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/api/uploadImage.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/uploadImage.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/contact.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/contact.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/gallery.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/gallery.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/gear.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/gear.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/postcss.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/postcss.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/globals.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/api/register.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/register.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
-=======
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/next.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/admin/create.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/admin/create.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/api/uploadImage.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/uploadImage.ts" afterDir="false" />
->>>>>>> Stashed changes
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,10 +31,7 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
-  </component>
-  <component name="ProjectId" id="2QTc5s31XiLYW6Or2gbkod7Wh9f" />
+  <component name="ProjectId" id="2WwmkRU6uv2ul6VE2CQkAwCUzti" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
   </component>
@@ -94,94 +39,42 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-<<<<<<< Updated upstream
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "Development",
-    "ignore.virus.scanning.warn.message": "true",
-    "javascript.nodejs.core.library.configured.version": "18.16.0",
-    "javascript.nodejs.core.library.typings.version": "18.16.0",
-    "last_opened_file_path": "D:/BBB/Translator",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "yarn",
-    "settings.editor.selected.configurable": "editing.templates",
-    "ts.external.directory.path": "D:\\Personal\\Portfolio\\photography\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
-=======
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;16.13.2&quot;,
-    &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;16.18.57&quot;,
-    &quot;last_opened_file_path&quot;: &quot;X:/Portfolio/photography&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editing.templates&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;ts.external.directory.path&quot;: &quot;X:\\Portfolio\\photography\\node_modules\\typescript\\lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
->>>>>>> Stashed changes
   }
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="X:\Portfolio\photography\lib" />
-      <recent name="X:\Portfolio\photography\components\Layout" />
-      <recent name="X:\Portfolio\photography\components\Atoms" />
-      <recent name="X:\Portfolio\photography\components\Atoms\SelectorOption" />
-      <recent name="X:\Portfolio\photography\components\Molecules" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="2b4b463b-bb19-4140-937a-1133cc2162e2" name="Changes" comment="" />
-      <created>1685380832259</created>
+      <changelist id="577f8b35-f983-449f-b184-0f61b29a384a" name="Changes" comment="" />
+      <created>1697652166848</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1685380832259</updated>
-      <workItem from="1685380835842" duration="3191000" />
-      <workItem from="1692520406719" duration="4579000" />
-      <workItem from="1692725295536" duration="1132000" />
-      <workItem from="1692896065680" duration="1578000" />
-      <workItem from="1694109715136" duration="1048000" />
-      <workItem from="1694201998720" duration="2002000" />
-      <workItem from="1694240205181" duration="3270000" />
-      <workItem from="1694250639511" duration="711000" />
-      <workItem from="1694276019222" duration="2214000" />
-      <workItem from="1694367346019" duration="1172000" />
-      <workItem from="1694626215149" duration="4417000" />
-      <workItem from="1694703457161" duration="6249000" />
-      <workItem from="1695490182137" duration="4555000" />
-      <workItem from="1695533829606" duration="4731000" />
-      <workItem from="1695750323016" duration="3935000" />
-      <workItem from="1695829711335" duration="8406000" />
-<<<<<<< Updated upstream
-      <workItem from="1695920761029" duration="5972000" />
-      <workItem from="1697111194198" duration="198000" />
-      <workItem from="1697111396458" duration="5818000" />
-      <workItem from="1697453730571" duration="237000" />
-=======
-      <workItem from="1695920761029" duration="6188000" />
-      <workItem from="1696004500351" duration="5558000" />
-      <workItem from="1696061866832" duration="2551000" />
-      <workItem from="1696084832376" duration="2952000" />
-      <workItem from="1696142610379" duration="2758000" />
-      <workItem from="1696264761267" duration="6248000" />
-      <workItem from="1696349865714" duration="7474000" />
-      <workItem from="1696432900652" duration="7985000" />
-      <workItem from="1696444772801" duration="440000" />
-      <workItem from="1696527832432" duration="2395000" />
->>>>>>> Stashed changes
+      <updated>1697652166848</updated>
+      <workItem from="1697652193135" duration="1217000" />
+      <workItem from="1697730253416" duration="6241000" />
+      <workItem from="1697878030794" duration="3714000" />
+      <workItem from="1697957091273" duration="7427000" />
+      <workItem from="1698494114864" duration="149000" />
+      <workItem from="1698513297455" duration="2287000" />
+      <workItem from="1698575614645" duration="1251000" />
+      <workItem from="1698596690270" duration="6653000" />
+      <workItem from="1698696938704" duration="1597000" />
+      <workItem from="1698770182987" duration="3959000" />
+      <workItem from="1698860303065" duration="1083000" />
     </task>
     <servers />
   </component>
@@ -198,21 +91,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/pages/admin/edit.tsx</url>
-          <line>5</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/pages/gallery.tsx</url>
-          <line>50</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
