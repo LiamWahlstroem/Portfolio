@@ -29,7 +29,7 @@ export const handler = async (event) => {
       Key: resizedKey,
       Body: resizedImageBuffer,
       ContentType: 'image/webp'
-    });
+    }).promise();
 
     resizedImageBuffer = await sharp(image)
       .resize({ width: sizeX / 4, height: sizeY / 4 })
@@ -43,7 +43,7 @@ export const handler = async (event) => {
       Key: resizedKey,
       Body: resizedImageBuffer,
       ContentType: 'image/webp'
-    });
+    }).promise();
 
     return `Successfully resized object and saved to "${resizedKey}"`;
 
