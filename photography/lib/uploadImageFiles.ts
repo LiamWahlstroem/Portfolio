@@ -4,10 +4,10 @@ import {NextRouter} from 'next/router';
 import getTemporaryCredentials from './getTemporaryCredentials';
 import AWS from 'aws-sdk';
 
-const uploadImageFiles = async (file: File, category: string, alt: string, router: NextRouter) => {
+const uploadImageFiles = async (file: File, alt: string, location: string, date: string,  router: NextRouter) => {
 	const fileBuffer = Buffer.from(await file.arrayBuffer());
 	const fileName = file.name.split('.')[0];
-	const URL = '/api/uploadImage';
+	const URL = '/api/image/uploadImage';
 	const token = 'Bearer ' + sessionStorage.getItem('JWT');
 
 	let data = await getTemporaryCredentials(token);
@@ -42,8 +42,9 @@ const uploadImageFiles = async (file: File, category: string, alt: string, route
 		},
 		body: JSON.stringify({
 			fileName: fileName,
-			category: category,
 			alt: alt,
+			location: location,
+			date: date,
 		}),
 	}).then((res: Response) => {
 		if(res.status == 200) {

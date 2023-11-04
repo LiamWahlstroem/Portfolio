@@ -1,7 +1,7 @@
 import * as jwt from 'jsonwebtoken';
 import * as bcrypt from 'bcrypt';
-import { Users } from './schema';
-import useDatabase from '../../lib/hooks/useDatabase';
+import { Users } from '../schema';
+import useDatabase from '../../../lib/hooks/useDatabase';
 import {NextApiRequest, NextApiResponse} from 'next';
 
 const validatePassword = async (password: string, hash: string): Promise<boolean> => {
@@ -22,7 +22,7 @@ const Login = async (req: NextApiRequest, res: NextApiResponse) => {
 				const token = jwt.sign(
 					{
 						username: req.body.username,
-						displayName: req.body.displayName
+						role: users[i].role,
 					},
 					process.env.JWT_SECRET || '',
 				);

@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="577f8b35-f983-449f-b184-0f61b29a384a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/pages/admin/users.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/PortfolioWebsite.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
@@ -9,16 +10,37 @@
       <change beforePath="$PROJECT_DIR$/../.idea/jsLinters/eslint.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lambda/ImageResize/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Lambda/ImageResize/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lambda/ImageResize/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Lambda/ImageResize/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lambda/ImageResize/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Lambda/ImageResize/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/resizeImage.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/s3Upload.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/s3Upload.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Atoms/NavbarContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Atoms/NavbarContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Atoms/SelectorOption.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Atoms/filterTag.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Molecules/FormEdit.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Molecules/FormEdit.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Organisms/AdminNavbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Organisms/AdminNavbar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Organisms/EditImageModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Organisms/EditImageModal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Organisms/ImageModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Organisms/ImageModal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Organisms/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Organisms/Navbar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Types/ImageResponse.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Types/ImageResponse.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Types/Tag.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Types/TokenPayload.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Types/TokenPayload.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Types/User.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Types/User.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/uploadImageFiles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/uploadImageFiles.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/admin/create.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/admin/create.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/api/register.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/register.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/admin/edit.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/admin/edit.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/admin/login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/admin/login.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/api/delete/[id].ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/image/delete/[id].ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/api/getAWSCredentials.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/getAWSCredentials.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/api/getImages.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/image/getImages.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/api/login.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/user/login.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/api/put/[id].ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/image/put/[id].ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/api/register.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/user/register.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/api/schema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/schema.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/api/uploadImage.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/image/uploadImage.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/gallery.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/gear.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/gear.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,20 +61,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;X:\\Portfolio\\photography\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "X:\\Portfolio\\photography\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="X:\Portfolio\photography\pages\api\user" />
+      <recent name="X:\Portfolio\photography\pages\api\image" />
       <recent name="X:\Portfolio\photography\lib" />
     </key>
   </component>
@@ -74,7 +98,9 @@
       <workItem from="1698596690270" duration="6653000" />
       <workItem from="1698696938704" duration="1597000" />
       <workItem from="1698770182987" duration="3959000" />
-      <workItem from="1698860303065" duration="1083000" />
+      <workItem from="1698860303065" duration="6108000" />
+      <workItem from="1698946765550" duration="5012000" />
+      <workItem from="1699087796771" duration="6865000" />
     </task>
     <servers />
   </component>

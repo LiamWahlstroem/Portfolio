@@ -1,7 +1,7 @@
 import {NextApiRequest, NextApiResponse} from 'next';
-import {Images, Users} from './schema';
-import authenticateToken from '../../lib/authenticateToken';
-import useDatabase from '../../lib/hooks/useDatabase';
+import {Images, Users} from '../schema';
+import authenticateToken from '../../../lib/authenticateToken';
+import useDatabase from '../../../lib/hooks/useDatabase';
 
 const uploadImage = async (req: NextApiRequest, res: NextApiResponse ) => {
 	if(req.method !== 'POST') {
@@ -15,10 +15,11 @@ const uploadImage = async (req: NextApiRequest, res: NextApiResponse ) => {
 		const imageData = new Images({
 			imageName: req.body.fileName,
 			imageURLFull: process.env.CLOUDFRONT_DOMAIN + req.body.fileName + '.webp',
-			imageURLMedium: process.env.CLOUDFRONT_DOMAIN + req.body.fileName + '_medium.webp',
-			imageURLSmall: process.env.CLOUDFRONT_DOMAIN + req.body.fileName + '_small.webp',
-			category: req.body.category,
+			imageURLMedium: process.env.CLOUDFRONT_DOMAIN + 'processed/' + req.body.fileName + '_medium.webp',
+			imageURLSmall: process.env.CLOUDFRONT_DOMAIN+ 'processed/' + req.body.fileName + '_small.webp',
 			alt: req.body.alt,
+			location: req.body.location,
+			date: req.body.date
 		});
 		imageData.save().then((err: Error) => {
 			if (err) {

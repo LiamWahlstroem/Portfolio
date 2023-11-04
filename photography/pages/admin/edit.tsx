@@ -18,7 +18,7 @@ const edit = (): ReactElement => {
 			router.push('/admin/login').then();
 		}
 
-		const URL = '/api/getImages';
+		const URL = '/api/image/getImages';
 
 		fetch(URL, {
 			method: 'GET',

@@ -18,6 +18,7 @@ const getAWSCredentials = async (req: NextApiRequest, res: NextApiResponse) => {
 		const params: AWS.STS.AssumeRoleRequest = {
 			RoleArn: 'arn:aws:iam::251709611170:role/portfolioS3Role',
 			RoleSessionName: 'S3AccessSession',
+			DurationSeconds: 900
 		};
 
 		sts.assumeRole(params , (err, data) => {

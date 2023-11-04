@@ -1,6 +1,6 @@
-import {Images, Users} from '../schema';
-import authenticateToken from '../../../lib/authenticateToken';
-import useDatabase from '../../../lib/hooks/useDatabase';
+import {Images, Users} from '../../schema';
+import authenticateToken from '../../../../lib/authenticateToken';
+import useDatabase from '../../../../lib/hooks/useDatabase';
 import {NextApiRequest, NextApiResponse} from 'next';
 
 const putHandler = async (req: NextApiRequest, res: NextApiResponse) => {
@@ -17,7 +17,7 @@ const putHandler = async (req: NextApiRequest, res: NextApiResponse) => {
 	if(!authenticateToken(token, users)) return res.status(401).end();
 	else {
 		console.log(req.body.category);
-		const image = await Images.findOneAndUpdate({_id: id}, {category: req.body.category, alt: req.body.alt}, {new: true});
+		const image = await Images.findOneAndUpdate({_id: id}, {alt: req.body.alt}, {new: true});
 
 		if(image == undefined) {
 			res.json({err: 'Could not find image with ID ' + id});

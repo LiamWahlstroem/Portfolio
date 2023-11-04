@@ -1,9 +1,9 @@
 import {DeleteResult} from 'mongodb';
 import {NextApiRequest, NextApiResponse} from 'next';
-import {Images, Users} from '../schema';
-import authenticateToken from '../../../lib/authenticateToken';
-import useDatabase from '../../../lib/hooks/useDatabase';
-import s3Delete from '../../../lib/s3Delete';
+import {Images, Users} from '../../schema';
+import authenticateToken from '../../../../lib/authenticateToken';
+import useDatabase from '../../../../lib/hooks/useDatabase';
+import s3Delete from '../../../../lib/s3Delete';
 
 const deleteHandler = async (req: NextApiRequest, res: NextApiResponse) => {
 	if(req.method !== 'DELETE') {
@@ -26,17 +26,17 @@ const deleteHandler = async (req: NextApiRequest, res: NextApiResponse) => {
 
 		const params = {
 			Bucket: 'photography-portoflio-1',
-			Key: image.imageName + '.webp',
+			Key: 'processed/' + image.imageName + '.webp',
 		};
 
 		const paramsMedium = {
 			Bucket: 'photography-portoflio-1',
-			Key: image.imageName + '_medium.webp',
+			Key: 'processed/' + image.imageName + '_medium.webp',
 		};
 
 		const paramsSmall = {
 			Bucket: 'photography-portoflio-1',
-			Key: image.imageName + '_small.webp',
+			Key: 'processed/' + image.imageName + '_small.webp',
 		};
 
 		s3Delete(params);

@@ -11,7 +11,8 @@ const AdminNavbar = (Props: Props): ReactElement => {
 	const items = [
 		{text: 'Overview', value: 'overview', link: '/admin/overview'},
 		{text: 'Create', value: 'create', link: '/admin/create'},
-		{text: 'Edit', value: 'edit', link: '/admin/edit'}
+		{text: 'Edit', value: 'edit', link: '/admin/edit'},
+		{text: 'User management', value: 'users', link: '/admin/users'},
 	];
 
 	return (

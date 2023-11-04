@@ -15,7 +15,7 @@ const EditImageModal: NextPage<Props> = (Props: Props): ReactElement => {
 			<div className='relative h-full overflow-hidden flex-grow pb-8 px-8'>
 				<img src={Props.image.imageURL} alt={Props.image.alt} className='max-w-full max-h-full'/>
 			</div>
-			<FormEdit imageCategory={Props.image.category} imageId={Props.image.imageId} modalOpen={Props.modalOpen} imageAlt={Props.image.alt}/>
+			<FormEdit imageId={Props.image.imageId} modalOpen={Props.modalOpen} imageAlt={Props.image.alt}/>
 		</Modal>
 	);
 };

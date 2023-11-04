@@ -1,6 +1,6 @@
-import useDatabase from '../../lib/hooks/useDatabase';
-import {Images} from './schema';
-import ImageResponse from '../../lib/Types/ImageResponse';
+import useDatabase from '../../../lib/hooks/useDatabase';
+import {Images} from '../schema';
+import ImageResponse from '../../../lib/Types/ImageResponse';
 import {NextApiRequest, NextApiResponse} from 'next';
 
 const getImages = async (req: NextApiRequest, res: NextApiResponse) => {
@@ -13,7 +13,7 @@ const getImages = async (req: NextApiRequest, res: NextApiResponse) => {
 
 	const images = await Images.find({}).exec();
 	if(images.length === 0) {
-		res.json('No images found.');
+		res.json('No image found.');
 		res.status(500).end();
 	}
 	else {
@@ -22,7 +22,6 @@ const getImages = async (req: NextApiRequest, res: NextApiResponse) => {
 				imageId: images[i]._id,
 				imageURL: images[i].imageURLMedium,
 				imageURLSmall: images[i].imageURLSmall,
-				category: images[i].category,
 				alt: images[i].alt,
 			});
 		}

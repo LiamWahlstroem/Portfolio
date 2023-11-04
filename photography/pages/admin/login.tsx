@@ -29,7 +29,7 @@ const Login: NextPage = () => {
 	const handleSubmit = async (ev: React.FormEvent<HTMLFormElement>) => {
 		ev.preventDefault();
 
-		const URL = '/api/login';
+		const URL = '/api/user/login';
 
 		const res = await fetch(URL, {
 			method: 'POST',
