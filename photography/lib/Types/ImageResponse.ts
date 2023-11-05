@@ -3,6 +3,8 @@ type ImageResponse = {
     imageURL: string;
     imageURLSmall: string;
     alt: string;
+    location: string;
+    date: string;
 };
 
 export default ImageResponse;

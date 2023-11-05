@@ -6,7 +6,6 @@ import IsUserAuthenticated from '../../lib/hooks/useIsAuthenticated';
 import LayoutAdmin from '../../components/Layout/LayoutAdmin';
 import uploadImageFiles from '../../lib/uploadImageFiles';
 import FormCreate from '../../components/Organisms/FormCreate';
-import {imageConfigDefault} from 'next/dist/shared/lib/image-config';
 
 const create: NextPage = (): ReactElement => {
 	const imageInputRef = useRef<HTMLInputElement | null>(null);

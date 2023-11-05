@@ -21,7 +21,7 @@ const Login: NextPage = () => {
 
 	useEffect(() => {
 		if (IsUserAuthenticated()) {
-			useRouter.push('/admin/overview').then(() => {
+			useRouter.push('/admin/edit').then(() => {
 			});
 		}
 	}, []);
@@ -47,7 +47,7 @@ const Login: NextPage = () => {
 		if (res.ok) {
 			const data = await res.json();
 			sessionStorage.setItem('JWT', data.token);
-			await useRouter.push('/admin/overview');
+			await useRouter.push('/admin/create');
 		} else {
 			alert('Login failed');
 		}

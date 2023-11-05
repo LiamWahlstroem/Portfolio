@@ -9,9 +9,8 @@ type Props = {
 
 const AdminNavbar = (Props: Props): ReactElement => {
 	const items = [
-		{text: 'Overview', value: 'overview', link: '/admin/overview'},
-		{text: 'Create', value: 'create', link: '/admin/create'},
 		{text: 'Edit', value: 'edit', link: '/admin/edit'},
+		{text: 'Create', value: 'create', link: '/admin/create'},
 		{text: 'User management', value: 'users', link: '/admin/users'},
 	];
 

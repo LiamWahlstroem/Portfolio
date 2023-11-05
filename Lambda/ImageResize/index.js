@@ -18,6 +18,7 @@ export const handler = async (event) => {
     const sizeX = sizeOf(image).width;
     const sizeY = sizeOf(image).height;
     let resizedImageBuffer = await sharp(image)
+      .rotate(0)
       .resize({ width: sizeX / 2, height: sizeY / 2 })
       .webp({ quality: 85 })
       .toBuffer();
@@ -32,11 +33,26 @@ export const handler = async (event) => {
     }).promise();
 
     resizedImageBuffer = await sharp(image)
+      .rotate(0)
       .resize({ width: sizeX / 4, height: sizeY / 4 })
       .webp({ quality: 85 })
       .toBuffer();
 
     resizedKey = `processed/${s3Event.object.key.split('/')[1].split('.')[0] + '_small.webp'}`;
+    
+    await s3.upload({
+      Bucket: s3Event.bucket.name,
+      Key: resizedKey,
+      Body: resizedImageBuffer,
+      ContentType: 'image/webp'
+    }).promise();
+    
+    resizedImageBuffer = await sharp(image)
+      .rotate(0)
+      .webp({ quality: 85 })
+      .toBuffer();
+
+    resizedKey = `processed/${s3Event.object.key.split('/')[1].split('.')[0] + '.webp'}`;
     
     await s3.upload({
       Bucket: s3Event.bucket.name,

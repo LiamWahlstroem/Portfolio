@@ -8,15 +8,26 @@ type Props = {
 	imageId: string;
 	modalOpen: ModalOpenMethod;
 	imageAlt: string;
+	location: string;
+	date: string;
 }
 
 const FormEdit = (Props: Props): ReactElement => {
-	const altText = useRef<string>('');
+	const altText = useRef<string>(Props.imageAlt);
+	const locationText = useRef<string>(Props.location);
+	const dateText = useRef<string>(Props.date);
 
 	const setAltText = (value: string) => {
 		altText.current = value;
 	};
 
+	const setLocationText = (value: string) => {
+		locationText.current = value;
+	};
+
+	const setDateText = (value: string) => {
+		dateText.current = value;
+	};
 
 	const handleDelete = () => {
 		const URL = '/api/image/delete/' + Props.imageId;
@@ -52,6 +63,8 @@ const FormEdit = (Props: Props): ReactElement => {
 			},
 			body: JSON.stringify({
 				alt: altText.current,
+				location: locationText.current,
+				date: dateText.current
 			})
 		}).then(res => res.json())
 			.then(r => {
@@ -66,7 +79,9 @@ const FormEdit = (Props: Props): ReactElement => {
 
 	return (
 		<form className='pr-8 flex flex-col justify-end pb-8' onSubmit={(ev) => handleSave(ev)}>
-			<TextInputSmall placeholder='Alt Text' inputValue={setAltText} defaultValue={Props.imageAlt}/>
+			<TextInputSmall placeholder='Location' inputValue={setLocationText} defaultValue={locationText.current} />
+			<TextInputSmall placeholder='Date' inputValue={setDateText} defaultValue={dateText.current} />
+			<TextInputSmall placeholder='Alt Text' inputValue={setAltText} defaultValue={altText.current}/>
 			<ButtonDanger text='Delete' handleClick={handleDelete} />
 			<ButtonSubmit buttonText='Save Changes' />
 		</form>

@@ -23,6 +23,8 @@ const getImages = async (req: NextApiRequest, res: NextApiResponse) => {
 				imageURL: images[i].imageURLMedium,
 				imageURLSmall: images[i].imageURLSmall,
 				alt: images[i].alt,
+				location: images[i].location,
+				date: images[i].date,
 			});
 		}
 

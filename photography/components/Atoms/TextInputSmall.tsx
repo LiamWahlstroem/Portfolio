@@ -6,7 +6,12 @@ type Props = {
 
 const TextInputSmall = (Props: Props) => {
 	return (
-		<input type='text' defaultValue={Props.defaultValue} placeholder={Props.placeholder} onChange={(ev) => Props.inputValue(ev.currentTarget.value)} className='w-60 text-lg mx-8 my-4 border-b border-black hover:bg-gray-100 transition-all focus:outline-none'/>
+		<div className='my-4 mx-8 flex flex-col'>
+			<input type='text' defaultValue={Props.defaultValue} placeholder={Props.placeholder} onChange={(ev) => Props.inputValue(ev.currentTarget.value)} className='w-60 text-lg border-b border-black hover:bg-gray-100 transition-all focus:outline-none'/>
+			<label className='text-sm text-gray-500'>
+				<i>{Props.placeholder}</i>
+			</label>
+		</div>
 	);
 };
 
