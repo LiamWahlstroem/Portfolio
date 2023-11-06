@@ -3,6 +3,7 @@ import s3Upload from './s3Upload';
 import {NextRouter} from 'next/router';
 import getTemporaryCredentials from './getTemporaryCredentials';
 import AWS from 'aws-sdk';
+import STSResponse from './Types/STSResponse';
 
 const uploadImageFiles = async (file: File, alt: string, location: string, date: string,  router: NextRouter) => {
 	const fileBuffer = Buffer.from(await file.arrayBuffer());
@@ -14,9 +15,9 @@ const uploadImageFiles = async (file: File, alt: string, location: string, date:
 	if(data.status === 200) {
 		data = await data.json();
 		AWS.config.update({
-			accessKeyId: data.Credentials.AccessKeyId,
-			secretAccessKey: data.Credentials.SecretAccessKey,
-			sessionToken: data.Credentials.SessionToken,
+			accessKeyId: (<STSResponse>data).Credentials.AccessKeyId,
+			secretAccessKey: (<STSResponse>data).Credentials.SecretAccessKey,
+			sessionToken: (<STSResponse>data).Credentials.SessionToken,
 			region: 'eu-central-2'
 		});
 	}

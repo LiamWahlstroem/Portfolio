@@ -10,7 +10,7 @@ const edit = (): ReactElement => {
 	const [images, setImages] = useState<ImageResponse[]>([]);
 	const router = useRouter();
 	const [isOpen, setIsOpen] = useState<boolean>(false);
-	const [selectedImage, setSelectedImage] = useState<ImageResponse>({imageId: '', imageURL: '', imageURLSmall: '', category: '', alt: ''});
+	const [selectedImage, setSelectedImage] = useState<ImageResponse>({imageId: '', imageURL: '', imageURLSmall: '', alt: '', location: '', date: ''});
 
 	useEffect(() => {
 		if(!IsUserAuthenticated())
