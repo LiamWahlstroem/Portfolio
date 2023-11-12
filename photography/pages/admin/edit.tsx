@@ -2,7 +2,7 @@ import React, {ReactElement, useEffect, useState} from 'react';
 import {useRouter} from 'next/router';
 import IsUserAuthenticated from '../../lib/hooks/useIsAuthenticated';
 import ImageResponse from '../../lib/Types/ImageResponse';
-import EditImageModal from '../../components/Organisms/EditImageModal';
+import ModalEditImage from '../../components/Organisms/ModalEditImage';
 import LayoutAdmin from '../../components/Layout/LayoutAdmin';
 import GalleryComponent from '../../components/Molecules/GalleryComponent';
 
@@ -40,7 +40,7 @@ const edit = (): ReactElement => {
 	return(
 		<LayoutAdmin currentPage='edit'>
 			<GalleryComponent images={images} onClick={handleClick} />
-			{isOpen && <EditImageModal image={selectedImage} modalOpen={setIsOpen}/>}
+			{isOpen && <ModalEditImage image={selectedImage} modalOpen={setIsOpen}/>}
 		</LayoutAdmin>
 	);
 };

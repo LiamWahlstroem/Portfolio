@@ -8,7 +8,7 @@ type Props = {
 	modalOpen: (value: boolean) => void,
 }
 
-const ImageModal: NextPage<Props> = (Props: Props): ReactElement => {
+const ModalImage: NextPage<Props> = (Props: Props): ReactElement => {
 	return (
 		<Modal modalOpen={Props.modalOpen}>
 			<div className='relative h-full overflow-hidden flex-grow pb-2 px-8'>
@@ -21,4 +21,4 @@ const ImageModal: NextPage<Props> = (Props: Props): ReactElement => {
 	);
 };
 
-export default ImageModal;
+export default ModalImage;

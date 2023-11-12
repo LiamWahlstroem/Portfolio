@@ -1,15 +1,16 @@
+import {DeleteResult} from 'mongodb';
 import {NextApiRequest, NextApiResponse} from 'next';
+import {Users} from '../../schema';
+import useDatabase from '../../../../lib/hooks/useDatabase';
 import jwt, {JwtPayload} from 'jsonwebtoken';
-import TokenPayload from '../../../lib/Types/TokenPayload';
-import useDatabase from '../../../lib/hooks/useDatabase';
-import {Users} from '../schema';
-import UserResponse from '../../../lib/Types/UserResponse';
+import TokenPayload from '../../../../lib/Types/TokenPayload';
 
-const getAllUsers = async (req: NextApiRequest, res: NextApiResponse) => {
-	if(req.method !== 'GET') {
+const deleteHandler = async (req: NextApiRequest, res: NextApiResponse) => {
+	if(req.method !== 'DELETE') {
 		res.status(405).end();
 	}
 
+	const {id} = req.query;
 	await useDatabase();
 	const token = req.headers['authorization'] || '';
 	let username = '';
@@ -26,14 +27,13 @@ const getAllUsers = async (req: NextApiRequest, res: NextApiResponse) => {
 	if(user == undefined) res.status(401);
 	else if(role !== 'admin' || user.role !== 'admin') res.status(401);
 
-	const users = await Users.find({});
-	const parsedUsers: UserResponse[] = [];
-
-	users.map(u => {
-		parsedUsers.push({id: u._id, username: u.username, role: u.role});
+	Users.deleteOne({_id: id}).then( (result: DeleteResult) => {
+		if (result.deletedCount >= 1) {
+			res.status(200).json({msg: 'Deleted Image with ID ' + id + ' successfully.'});
+		} else {
+			res.status(500).json({err: 'Failed to delete Image'});
+		}
 	});
-
-	return res.status(200).json({users: parsedUsers});
 };
 
-export default getAllUsers;
+export default deleteHandler;

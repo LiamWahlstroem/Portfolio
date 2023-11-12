@@ -9,20 +9,20 @@
       <change beforePath="$PROJECT_DIR$/../.idea/jsLinters/eslint.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lambda/ImageResize/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Lambda/ImageResize/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Atoms/TextInputSmall.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Atoms/TextInputSmall.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Molecules/FormEdit.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Molecules/FormEdit.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Organisms/AdminNavbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Organisms/AdminNavbar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Organisms/EditImageModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Organisms/EditImageModal.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Organisms/ImageModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Organisms/ImageModal.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Types/ImageResponse.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Types/ImageResponse.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/admin/create.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/admin/create.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/admin/login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/admin/login.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/admin/overview.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/api/image/getImages.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/image/getImages.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/api/image/put/[id].ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/image/put/[id].ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Atoms/Button.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Atoms/Button.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Atoms/TextInputPassword.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Atoms/TextInputPassword.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Molecules/FormEdit.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Molecules/FormImageEdit.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Molecules/UserCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Molecules/UserCard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Organisms/EditImageModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Organisms/ModalEditImage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Organisms/ImageModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Organisms/ModalImage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/s3Delete.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/s3Delete.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/admin/edit.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/admin/edit.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/admin/users.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/admin/users.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/api/user/getAllUsers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/user/getAllUsers.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/api/user/getUser.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/user/getUser.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/gear.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/gear.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,6 +57,8 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="X:\Portfolio\photography\components\Molecules" />
+      <recent name="X:\Portfolio\photography\components\Organisms" />
       <recent name="X:\Portfolio\photography\pages\api\user" />
       <recent name="X:\Portfolio\photography\pages\api\image" />
       <recent name="X:\Portfolio\photography\lib" />
@@ -83,7 +85,12 @@
       <workItem from="1698860303065" duration="6108000" />
       <workItem from="1698946765550" duration="5012000" />
       <workItem from="1699087796771" duration="7199000" />
-      <workItem from="1699184281965" duration="6083000" />
+      <workItem from="1699184281965" duration="7343000" />
+      <workItem from="1699551667894" duration="3702000" />
+      <workItem from="1699639067512" duration="2563000" />
+      <workItem from="1699699899850" duration="22551000" />
+      <workItem from="1699784441344" duration="1216000" />
+      <workItem from="1699812282903" duration="3918000" />
     </task>
     <servers />
   </component>

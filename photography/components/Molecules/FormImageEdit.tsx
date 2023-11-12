@@ -12,7 +12,7 @@ type Props = {
 	date: string;
 }
 
-const FormEdit = (Props: Props): ReactElement => {
+const FormImageEdit = (Props: Props): ReactElement => {
 	const altText = useRef<string>(Props.imageAlt);
 	const locationText = useRef<string>(Props.location);
 	const dateText = useRef<string>(Props.date);
@@ -88,4 +88,4 @@ const FormEdit = (Props: Props): ReactElement => {
 	);
 };
 
-export default FormEdit;
+export default FormImageEdit;

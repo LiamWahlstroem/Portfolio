@@ -3,7 +3,7 @@ import React, {ReactElement, useEffect, useState} from 'react';
 import {useRouter} from 'next/router';
 import ImageResponse from '../lib/Types/ImageResponse';
 import Layout from '../components/Layout/Layout';
-import ImageModal from '../components/Organisms/ImageModal';
+import ModalImage from '../components/Organisms/ModalImage';
 import GalleryComponent from '../components/Molecules/GalleryComponent';
 
 const gallery: NextPage = (): ReactElement => {
@@ -41,7 +41,7 @@ const gallery: NextPage = (): ReactElement => {
 	return (
 		<Layout currentPage='home'>
 			<GalleryComponent images={images} onClick={handleClick} />
-			{isOpen && <ImageModal modalOpen={setIsOpen} image={selectedImage!} key={selectedImage!.imageId}/>}
+			{isOpen && <ModalImage modalOpen={setIsOpen} image={selectedImage!} key={selectedImage!.imageId}/>}
 		</Layout>
 	);
 };
