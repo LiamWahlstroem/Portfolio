@@ -17,12 +17,12 @@ const Register = async (req: NextApiRequest, res: NextApiResponse) => {
 	const users = await Users.find({});
 	const token = req.headers['authorization'] || '';
 
-	if(!authenticateToken(token, users)) res.status(401);
+	if(!authenticateToken(token, users)) return res.status(401);
 
 	const username: string = req.body.username;
 	const password: string = req.body.password;
 
-	if(await Users.findOne({username: username}) == undefined) res.status(500).json({err: 'Username already taken.'});
+	if(await Users.findOne({username: username}) == undefined) return res.status(500).json({err: 'Username already taken.'});
 
 	const hash: string = await hashPassword(password);
 

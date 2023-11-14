@@ -9,7 +9,7 @@ type Props = {
 const ModalChangePassword = (Props: Props) => {
 	return (
 		<Modal modalOpen={Props.isOpen}>
-			<FormChangePassword />
+			<FormChangePassword isModalOpen={Props.isOpen}/>
 		</Modal>
 	);
 };

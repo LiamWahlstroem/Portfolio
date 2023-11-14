@@ -11,7 +11,7 @@ const getAllUsers = async (req: NextApiRequest, res: NextApiResponse) => {
 	}
 
 	await useDatabase();
-	const token = req.headers['authorization'] || '';
+	const token = req.headers['authorization']?.split(' ')[1] || '';
 	let username = '';
 	let role = '';
 	jwt.verify(token, process.env.JWT_SECRET!, (err: Error | null, payload: TokenPayload | JwtPayload | string | undefined) => {

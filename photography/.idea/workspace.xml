@@ -9,26 +9,14 @@
       <change beforePath="$PROJECT_DIR$/../.idea/jsLinters/eslint.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Atoms/Button.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Atoms/Button.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Atoms/TextInputPassword.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Atoms/TextInputPassword.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/Molecules/FormChangePassword.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Molecules/FormChangePassword.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Molecules/FormImageEdit.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Molecules/FormImageEdit.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/Molecules/FormUserEdit.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Molecules/FormUserEdit.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Molecules/UserCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Molecules/UserCard.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/Organisms/ModalChangePassword.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Organisms/ModalChangePassword.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Organisms/ModalEditImage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Organisms/ModalEditImage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Organisms/ModalEditUser.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Organisms/ModalEditUser.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Organisms/ModalImage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Organisms/ModalImage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Types/STSResponse.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Types/STSResponse.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/s3Delete.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/s3Delete.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/uploadImageFiles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/uploadImageFiles.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/admin/edit.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/admin/edit.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/admin/users.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/admin/users.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/api/user/delete/[id].ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/user/delete/[id].ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/api/user/getAllUsers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/user/getAllUsers.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/api/user/getUser.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/user/getUser.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/api/user/register.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/user/register.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/gear.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/gear.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +85,8 @@
       <workItem from="1699699899850" duration="22551000" />
       <workItem from="1699784441344" duration="1216000" />
       <workItem from="1699812282903" duration="3918000" />
-      <workItem from="1699817571584" duration="350000" />
+      <workItem from="1699817571584" duration="462000" />
+      <workItem from="1699983618381" duration="3351000" />
     </task>
     <servers />
   </component>
