@@ -7,6 +7,7 @@ import UserCard from '../../components/Molecules/UserCard';
 import ModalEditUser from '../../components/Organisms/ModalEditUser';
 import userResponse from '../../lib/Types/UserResponse';
 import ModalChangePassword from '../../components/Organisms/ModalChangePassword';
+import AllUsersCards from '../../components/Organisms/allUsersCards';
 
 const Users = () => {
 	const router = useRouter();
@@ -16,8 +17,7 @@ const Users = () => {
 	const selectedUser = useRef<UserResponse>();
 
 	useEffect(() => {
-		if(!IsUserAuthenticated())
-		{
+		if(!IsUserAuthenticated()) {
 			router.push('/admin/login').then();
 		}
 
@@ -39,6 +39,8 @@ const Users = () => {
 			setSignedInUser(data);
 			console.log('data');
 		});
+
+
 	}, []);
 
 	const handleSelectEdit = (user: userResponse) => {
@@ -55,11 +57,9 @@ const Users = () => {
 		<LayoutAdmin currentPage='users'>
 			<div>
 				<h1>My account</h1>
-				<UserCard user={signedInUser} edit={true} password={true} handleSelectEdit={handleSelectEdit}  handleSelectPassword={handleSelectPassword}/>
+				<UserCard user={signedInUser} edit={sessionStorage.getItem('role') === 'admin'} password={true} handleSelectEdit={handleSelectEdit}  handleSelectPassword={handleSelectPassword}/>
 			</div>
-			<div>
-				<h1>Manage Accounts</h1>
-			</div>
+			{sessionStorage.getItem('role') === 'admin' && <AllUsersCards users={}/>}
 			{isOpenEdit && <ModalEditUser user={selectedUser.current!} modalOpen={setIsOpenEdit}/>}
 			{isOpenPassword && <ModalChangePassword isOpen={setIsOpenPassword} />}
 		</LayoutAdmin>

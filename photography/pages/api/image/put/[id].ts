@@ -12,7 +12,7 @@ const putHandler = async (req: NextApiRequest, res: NextApiResponse) => {
 	const {id} = req.query;
 	await useDatabase();
 	const users = await Users.find({});
-	const token = req.headers['authorization'] || '';
+	const token = req.headers['authorization']?.split(' ')[1] || '';
 
 	if(!authenticateToken(token, users)) return res.status(401).end();
 	else {
@@ -24,7 +24,7 @@ const putHandler = async (req: NextApiRequest, res: NextApiResponse) => {
 			res.status(500).end();
 		}
 		else if(image.category !== req.body.category) {
-			res.json({err: 'Failed to update Image'});
+			res.json({err: 'Failed to put Image'});
 			res.status(500).end();
 		}
 		else {

@@ -47,6 +47,7 @@ const Login: NextPage = () => {
 		if (res.ok) {
 			const data = await res.json();
 			sessionStorage.setItem('JWT', data.token);
+			sessionStorage.setItem('role', data.role);
 			await useRouter.push('/admin/create');
 		} else {
 			alert('Login failed');

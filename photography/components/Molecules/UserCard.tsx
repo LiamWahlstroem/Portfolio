@@ -7,8 +7,8 @@ type Props = {
 	user: userResponse;
 	edit: boolean;
 	password: boolean;
-	handleSelectEdit: (value: userResponse) => void;
-	handleSelectPassword: (value: userResponse) => void;
+	handleSelectEdit: (value: userResponse) => void | undefined;
+	handleSelectPassword: (value: userResponse) => void | undefined;
 }
 
 const UserCard = (Props: Props) => {

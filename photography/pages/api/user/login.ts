@@ -21,7 +21,7 @@ const Login = async (req: NextApiRequest, res: NextApiResponse) => {
 			if (await validatePassword(req.body.password, users[i].password)) {
 				const token = jwt.sign(
 					{
-						username: req.body.username,
+						id: users[i]._id,
 						role: users[i].role,
 					},
 					process.env.JWT_SECRET || '',
@@ -29,6 +29,7 @@ const Login = async (req: NextApiRequest, res: NextApiResponse) => {
 
 				res.json({
 					token: token,
+					role: users[i].role,
 				});
 				res.status(200);
 				return;

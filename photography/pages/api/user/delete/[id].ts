@@ -13,17 +13,15 @@ const deleteHandler = async (req: NextApiRequest, res: NextApiResponse) => {
 	const {id} = req.query;
 	await useDatabase();
 	const token = req.headers['authorization'] || '';
-	let username = '';
 	let role = '';
 	jwt.verify(token, process.env.JWT_SECRET!, (err: Error | null, payload: TokenPayload | JwtPayload | string | undefined) => {
 		if(err) return res.status(401);
 		else {
-			username = (<TokenPayload>payload).username;
 			role = (<TokenPayload>payload).role;
 		}
 	});
 
-	const user = await Users.findOne({username});
+	const user = await Users.findOne({_id: id});
 	if(user == undefined) res.status(401);
 	else if(role !== 'admin' || user.role !== 'admin') res.status(401);
 

@@ -13,7 +13,7 @@ const deleteHandler = async (req: NextApiRequest, res: NextApiResponse) => {
 	const {id} = req.query;
 	await useDatabase();
 	const users = await Users.find({});
-	const token = req.headers['authorization'] || '';
+	const token = req.headers['authorization']?.split(' ')[1] || '';
 
 	if(!authenticateToken(token, users)) return res.status(401).end();
 	else {

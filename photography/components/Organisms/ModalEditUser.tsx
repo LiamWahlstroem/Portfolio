@@ -11,7 +11,7 @@ type Props = {
 const ModalEditUser = (Props: Props) => {
 	return (
 		<Modal modalOpen={Props.modalOpen}>
-			<FormUserEdit username={Props.user.username} role={Props.user.role}/>
+			<FormUserEdit user={Props.user} isOpen={Props.modalOpen}/>
 		</Modal>
 	);
 };

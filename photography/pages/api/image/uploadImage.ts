@@ -9,7 +9,7 @@ const uploadImage = async (req: NextApiRequest, res: NextApiResponse ) => {
 	}
 	await useDatabase();
 	const users = await Users.find({});
-	const token = req.headers['authorization'] || '';
+	const token = req.headers['authorization']?.split(' ')[1] || '';
 	if(!authenticateToken(token, users)) res.status(401);
 	else {
 		const imageData = new Images({

@@ -16,19 +16,19 @@ const changePassword = async (req: NextApiRequest, res: NextApiResponse) => {
 
 	await useDatabase();
 	const token = req.headers['authorization']?.split(' ')[1] || '';
-	let username = '';
+	let id = '';
 	jwt.verify(token, process.env.JWT_SECRET!, (err: Error | null, payload: TokenPayload | JwtPayload | string | undefined) => {
 		if(err) return res.status(401);
 		else {
-			username = (<TokenPayload>payload).username;
+			id = (<TokenPayload>payload).id;
 		}
 	});
 
-	const user = await Users.findOne({username});
+	const user = await Users.findOne({_id: id});
 	if(user == undefined) return res.status(401);
 
 	const hash = await hashPassword(req.body.password);
-	const updatedUser = await Users.findOneAndUpdate({username}, {password: hash});
+	const updatedUser = await Users.findOneAndUpdate({_id: id}, {password: hash});
 	if(updatedUser.password !== hash) return res.status(500);
 
 	return res.status(200);
