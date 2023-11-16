@@ -12,39 +12,54 @@ import AllUsersCards from '../../components/Organisms/allUsersCards';
 const Users = () => {
 	const router = useRouter();
 	const [signedInUser, setSignedInUser] = useState<UserResponse>({username: '', id: '', role: ''});
+	const [allUsers, setAllUsers] = useState<UserResponse[]>([]);
 	const [isOpenEdit, setIsOpenEdit] = useState<boolean>(false);
 	const [isOpenPassword, setIsOpenPassword] = useState<boolean>(false);
 	const selectedUser = useRef<UserResponse>();
+	const [role, setRole] = useState<string>('');
+	const edit = useRef<boolean>(true);
 
 	useEffect(() => {
 		if(!IsUserAuthenticated()) {
 			router.push('/admin/login').then();
 		}
 
-		const URL = '/api/user/getUser';
 		const token = 'Bearer ' + sessionStorage.getItem('JWT');
+		setRole(sessionStorage.getItem('role') || '');
 
-		fetch(URL, {
+		fetch('/api/user/getUser', {
 			method: 'GET',
 			headers: {
 				authorization: token,
 			},
-		}).then(r => {
-			if (r.status === 200) {
-				return r.json();
+		}).then((res: Response) => {
+			if (res.status === 200) {
+				return res.json();
 			} else {
-				alert(r.status);
+				alert(res.status);
 			}
 		}).then((data: UserResponse) => {
 			setSignedInUser(data);
-			console.log('data');
 		});
 
-
+		if(sessionStorage.getItem('role') === 'admin') {
+			fetch('/api/user/getAllUsers', {
+				method: 'GET',
+				headers: {
+					authorization: token,
+				},
+			}).then((res: Response) => {
+				if(res.status === 200) return res.json();
+				else alert(res.status);
+			}).then((data) => {
+				setAllUsers(data.users);
+			});
+		}
 	}, []);
 
-	const handleSelectEdit = (user: userResponse) => {
+	const handleSelectEdit = (user: userResponse, isEdit: boolean) => {
 		selectedUser.current = user;
+		edit.current = isEdit;
 		setIsOpenEdit(true);
 	};
 
@@ -57,10 +72,10 @@ const Users = () => {
 		<LayoutAdmin currentPage='users'>
 			<div>
 				<h1>My account</h1>
-				<UserCard user={signedInUser} edit={sessionStorage.getItem('role') === 'admin'} password={true} handleSelectEdit={handleSelectEdit}  handleSelectPassword={handleSelectPassword}/>
+				<UserCard user={signedInUser} edit={role === 'admin'} password={true} handleSelectEdit={handleSelectEdit}  handleSelectPassword={handleSelectPassword}/>
 			</div>
-			{sessionStorage.getItem('role') === 'admin' && <AllUsersCards users={}/>}
-			{isOpenEdit && <ModalEditUser user={selectedUser.current!} modalOpen={setIsOpenEdit}/>}
+			{role === 'admin' && <AllUsersCards users={allUsers} handleSelectEdit={handleSelectEdit}/>}
+			{isOpenEdit && <ModalEditUser user={selectedUser.current!} modalOpen={setIsOpenEdit} editUser={edit.current}/>}
 			{isOpenPassword && <ModalChangePassword isOpen={setIsOpenPassword} />}
 		</LayoutAdmin>
 	);

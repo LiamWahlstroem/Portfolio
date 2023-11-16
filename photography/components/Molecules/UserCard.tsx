@@ -7,8 +7,8 @@ type Props = {
 	user: userResponse;
 	edit: boolean;
 	password: boolean;
-	handleSelectEdit: (value: userResponse) => void | undefined;
-	handleSelectPassword: (value: userResponse) => void | undefined;
+	handleSelectEdit: (value: userResponse, edit: boolean) => void;
+	handleSelectPassword: ((value: userResponse) => void) | undefined;
 }
 
 const UserCard = (Props: Props) => {
@@ -35,8 +35,8 @@ const UserCard = (Props: Props) => {
 			<p>Username: {Props.user.username}</p>
 			<p>Role: {Props.user.role}</p>
 			<div className=''>
-				{Props.edit && <Button handleClick={() => Props.handleSelectEdit(Props.user)} text='Edit User'/>}
-				{Props.password && <Button handleClick={() => Props.handleSelectPassword(Props.user)} text='Change Password'/>}
+				{Props.edit && <Button handleClick={() => Props.handleSelectEdit(Props.user, true)} text='Edit User'/>}
+				{Props.password && Props.handleSelectPassword !== undefined && <Button handleClick={() => Props.handleSelectPassword!(Props.user)} text='Change Password'/>}
 				{Props.edit && <ButtonDanger text="Delete User" handleClick={handleDelete} />}
 			</div>
 		</div>

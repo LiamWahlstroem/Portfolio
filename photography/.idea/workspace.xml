@@ -13,19 +13,9 @@
       <change beforePath="$PROJECT_DIR$/components/Molecules/FormUserEdit.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Molecules/FormUserEdit.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/Molecules/UserCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Molecules/UserCard.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/Organisms/ModalEditUser.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Organisms/ModalEditUser.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Types/TokenPayload.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Types/TokenPayload.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/authenticateToken.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/authenticateToken.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/s3Delete.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/s3Delete.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/admin/login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/admin/login.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/admin/users.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/admin/users.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/api/image/delete/[id].ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/image/delete/[id].ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/api/image/put/[id].ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/image/put/[id].ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/api/image/uploadImage.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/image/uploadImage.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/api/user/changePassword.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/user/changePassword.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/api/user/delete/[id].ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/user/delete/[id].ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/api/user/getAllUsers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/user/getAllUsers.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/api/user/getUser.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/user/getUser.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/api/user/login.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/user/login.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/api/user/register.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/user/register.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/gear.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/gear.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -97,7 +87,8 @@
       <workItem from="1699812282903" duration="3918000" />
       <workItem from="1699817571584" duration="462000" />
       <workItem from="1699983618381" duration="3574000" />
-      <workItem from="1700069796114" duration="4528000" />
+      <workItem from="1700069796114" duration="4700000" />
+      <workItem from="1700159509271" duration="2849000" />
     </task>
     <servers />
   </component>
