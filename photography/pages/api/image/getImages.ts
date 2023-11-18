@@ -5,7 +5,7 @@ import {NextApiRequest, NextApiResponse} from 'next';
 
 const getImages = async (req: NextApiRequest, res: NextApiResponse) => {
 	if(req.method !== 'GET') {
-		res.status(405).end();
+		return res.status(405).end();
 	}
 
 	await useDatabase();
@@ -14,7 +14,7 @@ const getImages = async (req: NextApiRequest, res: NextApiResponse) => {
 	const images = await Images.find({}).exec();
 	if(images.length === 0) {
 		res.json('No image found.');
-		res.status(500).end();
+		return res.status(500).end();
 	}
 	else {
 		for (let i = 0; i < images.length; i++) {
@@ -29,7 +29,7 @@ const getImages = async (req: NextApiRequest, res: NextApiResponse) => {
 		}
 
 		res.json({data: imageData});
-		res.status(200).end();
+		return res.status(200).end();
 	}
 };
 

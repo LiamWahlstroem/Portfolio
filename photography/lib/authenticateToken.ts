@@ -1,9 +1,15 @@
 import jwt, {JwtPayload} from 'jsonwebtoken';
-import User from './Types/User';
 import TokenPayload from './Types/TokenPayload';
+import useDatabase from './hooks/useDatabase';
+import {Users} from '../pages/api/schema';
 
-const AuthenticateToken = (token: string, users: User[]): boolean => {
+const AuthenticateToken = async (token: string) => {
 	let authenticated = false;
+	let role = '';
+	let id = '';
+
+	await useDatabase();
+	const users = await Users.find({});
 
 	jwt.verify(token, process.env.JWT_SECRET!, (err: Error | null, payload: TokenPayload | JwtPayload | string | undefined) => {
 		if(err || payload === undefined) {
@@ -11,12 +17,14 @@ const AuthenticateToken = (token: string, users: User[]): boolean => {
 		}
 
 		users.forEach(user => {
-			if(user._id === (<TokenPayload>payload).id) {
+			if(user._id.toString() === (<TokenPayload>payload).id) {
 				authenticated = true;
+				role = user.role;
+				id = user._id.toString();
 			}
 		});
 	});
-	return authenticated;
+	return [authenticated, role, id];
 };
 
 export default AuthenticateToken;

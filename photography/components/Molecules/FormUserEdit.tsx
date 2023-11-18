@@ -42,7 +42,7 @@ const FormUserEdit = (Props: Props) => {
 			})
 		}).then((res) => {
 			if(res.status === 200) Props.isOpen(false);
-			else console.log(res)
+			else console.log(res);
 		});
 	};
 

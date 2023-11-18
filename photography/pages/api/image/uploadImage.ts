@@ -1,16 +1,16 @@
 import {NextApiRequest, NextApiResponse} from 'next';
-import {Images, Users} from '../schema';
+import {Images} from '../schema';
 import authenticateToken from '../../../lib/authenticateToken';
-import useDatabase from '../../../lib/hooks/useDatabase';
 
 const uploadImage = async (req: NextApiRequest, res: NextApiResponse ) => {
 	if(req.method !== 'POST') {
-		res.status(405).end();
+		return res.status(405).end();
 	}
-	await useDatabase();
-	const users = await Users.find({});
+
 	const token = req.headers['authorization']?.split(' ')[1] || '';
-	if(!authenticateToken(token, users)) res.status(401);
+	const [authenticated, role] = await authenticateToken(token);
+
+	if(!authenticated || role !== 'admin') res.status(401).end();
 	else {
 		const imageData = new Images({
 			imageName: req.body.fileName,
@@ -23,15 +23,13 @@ const uploadImage = async (req: NextApiRequest, res: NextApiResponse ) => {
 		});
 		imageData.save().then((err: Error) => {
 			if (err) {
-				res.status(500);
+				return res.status(500).end();
 			}
 			else {
-				res.status(200);
+				return res.status(200).end();
 			}
 		});
 	}
-
-	return res;
 };
 
 export default uploadImage;

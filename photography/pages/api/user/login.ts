@@ -4,13 +4,13 @@ import { Users } from '../schema';
 import useDatabase from '../../../lib/hooks/useDatabase';
 import {NextApiRequest, NextApiResponse} from 'next';
 
-const validatePassword = async (password: string, hash: string): Promise<boolean> => {
-	return await bcrypt.compare(password, hash);
+const validatePassword = async (p1: string, p2: string): Promise<boolean> => {
+	return await bcrypt.compare(p1, p2);
 };
 
 const Login = async (req: NextApiRequest, res: NextApiResponse) => {
 	if(req.method !== 'POST') {
-		res.status(405).end();
+		return res.status(405).end();
 	}
 
 	await useDatabase();
@@ -31,16 +31,15 @@ const Login = async (req: NextApiRequest, res: NextApiResponse) => {
 					token: token,
 					role: users[i].role,
 				});
-				res.status(200);
-				return;
+				return res.status(200).end();
 			} else {
-				res.status(401);
+				return res.status(401).end();
 			}
 		}
 	}
 
 	res.status(401);
-	res.send('Invalid username or password');
+	return res.send('Invalid username or password');
 };
 
 export default Login;

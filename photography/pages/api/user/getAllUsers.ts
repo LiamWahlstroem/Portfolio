@@ -1,30 +1,17 @@
 import {NextApiRequest, NextApiResponse} from 'next';
-import jwt, {JwtPayload} from 'jsonwebtoken';
-import TokenPayload from '../../../lib/Types/TokenPayload';
-import useDatabase from '../../../lib/hooks/useDatabase';
 import {Users} from '../schema';
 import UserResponse from '../../../lib/Types/UserResponse';
+import authenticateToken from '../../../lib/authenticateToken';
 
 const getAllUsers = async (req: NextApiRequest, res: NextApiResponse) => {
 	if(req.method !== 'GET') {
-		res.status(405).end();
+		return res.status(405).end();
 	}
 
-	await useDatabase();
 	const token = req.headers['authorization']?.split(' ')[1] || '';
-	let id = '';
-	let role = '';
-	jwt.verify(token, process.env.JWT_SECRET!, (err: Error | null, payload: TokenPayload | JwtPayload | string | undefined) => {
-		if(err) return res.status(401);
-		else {
-			id = (<TokenPayload>payload).id;
-			role = (<TokenPayload>payload).role;
-		}
-	});
+	const [authenticated, role] = await authenticateToken(token);
 
-	const user = await Users.findOne({_id: id});
-	if(user == undefined) res.status(401);
-	else if(role !== 'admin' || user.role !== 'admin') res.status(401);
+	if(!authenticated || role !== 'admin') return res.status(401).end();
 
 	const users = await Users.find({});
 	const parsedUsers: UserResponse[] = [];
@@ -33,7 +20,8 @@ const getAllUsers = async (req: NextApiRequest, res: NextApiResponse) => {
 		parsedUsers.push({id: u._id, username: u.username, role: u.role});
 	});
 
-	return res.status(200).json({users: parsedUsers});
+	res.json({users: parsedUsers});
+	return res.status(200).end();
 };
 
 export default getAllUsers;

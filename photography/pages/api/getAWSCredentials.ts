@@ -1,18 +1,17 @@
 import {NextApiRequest, NextApiResponse} from 'next';
-import useDatabase from '../../lib/hooks/useDatabase';
-import {Users} from './schema';
-import authenticateToken from '../../lib/authenticateToken';
 import AWS from 'aws-sdk';
+import authenticateToken from '../../lib/authenticateToken';
 
 const getAWSCredentials = async (req: NextApiRequest, res: NextApiResponse) => {
 	if(req.method !== 'GET') {
-		res.status(405).end();
+		return res.status(405).end();
 	}
 
-	await useDatabase();
-	const users = await Users.find({});
-	const token = req.headers['authorization'] || '';
-	if(!authenticateToken(token, users)) res.status(401);
+	const token = req.headers['authorization']?.split(' ')[1] || '';
+	const [authenticated, role] = await authenticateToken(token);
+
+	if(!authenticated || role !== 'admin') return res.status(401).end();
+
 	else {
 		const sts = new AWS.STS({apiVersion: '2011-06-15', region: 'eu-central-2', endpoint: 'sts.eu-central-2.amazonaws.com'});
 		const params: AWS.STS.AssumeRoleRequest = {
@@ -22,9 +21,14 @@ const getAWSCredentials = async (req: NextApiRequest, res: NextApiResponse) => {
 		};
 
 		sts.assumeRole(params , (err, data) => {
-			console.log(err);
-			if(err) return res.status(500).json({err: err});
-			else return res.status(200).json(data);
+			if(err) {
+				res.json({err: err});
+				return res.status(500).end();
+			}
+			else {
+				res.json(data);
+				return res.status(200).end();
+			}
 		});
 	}
 };

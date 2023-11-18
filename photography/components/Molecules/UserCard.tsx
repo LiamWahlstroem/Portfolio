@@ -30,11 +30,11 @@ const UserCard = (Props: Props) => {
 	};
 
 	return (
-		<div className='flex flex-row items-center space-x-5 py-2 px-4 mx-12 border-solid border-black border-2 rounded-md'>
+		<div className='flex flex-row items-center space-x-5 py-2 px-4 mx-12 border-solid border-black border-2 rounded-md mb-6'>
 			<p>ID: {Props.user.id}</p>
 			<p>Username: {Props.user.username}</p>
 			<p>Role: {Props.user.role}</p>
-			<div className=''>
+			<div className='flex flex-row items-center'>
 				{Props.edit && <Button handleClick={() => Props.handleSelectEdit(Props.user, true)} text='Edit User'/>}
 				{Props.password && Props.handleSelectPassword !== undefined && <Button handleClick={() => Props.handleSelectPassword!(Props.user)} text='Change Password'/>}
 				{Props.edit && <ButtonDanger text="Delete User" handleClick={handleDelete} />}
