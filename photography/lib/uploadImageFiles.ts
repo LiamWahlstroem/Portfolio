@@ -49,7 +49,7 @@ const uploadImageFiles = async (file: File, alt: string, location: string, date:
 		}),
 	}).then((res: Response) => {
 		if(res.status == 200) {
-			router.push('/admin/overview').then();
+			router.push('/admin/edit').then();
 		}
 		else {
 			alert('Upload failed: ' + res.status);

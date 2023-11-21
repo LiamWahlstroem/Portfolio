@@ -9,6 +9,7 @@ type Props = {
 	password: boolean;
 	handleSelectEdit: (value: userResponse, edit: boolean) => void;
 	handleSelectPassword: ((value: userResponse) => void) | undefined;
+	fetchData: () => void;
 }
 
 const UserCard = (Props: Props) => {
@@ -25,6 +26,8 @@ const UserCard = (Props: Props) => {
 			.then(r => {
 				if(r.err) {
 					alert(r.err.message);
+				} else {
+					Props.fetchData();
 				}
 			});
 	};

@@ -8,6 +8,7 @@ type Props = {
 	user: userResponse;
 	isOpen: (value: boolean) => void;
 	editUser: boolean;
+	fetchData: () => void;
 }
 
 const FormUserEdit = (Props: Props) => {
@@ -41,8 +42,10 @@ const FormUserEdit = (Props: Props) => {
 				password: password.current,
 			})
 		}).then((res) => {
-			if(res.status === 200) Props.isOpen(false);
-			else console.log(res);
+			if(res.status === 200) {
+				Props.fetchData();
+				Props.isOpen(false);
+			}
 		});
 	};
 

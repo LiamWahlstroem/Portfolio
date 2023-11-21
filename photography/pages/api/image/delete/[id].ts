@@ -22,11 +22,6 @@ const deleteHandler = async (req: NextApiRequest, res: NextApiResponse) => {
 		return res.status(500).json({err: 'Could not find image with ID ' + id});
 	}
 
-	const params = {
-		Bucket: 'photography-portoflio-1',
-		Key: 'processed/' + image.imageName + '.webp',
-	};
-
 	const paramsMedium = {
 		Bucket: 'photography-portoflio-1',
 		Key: 'processed/' + image.imageName + '_medium.webp',
@@ -37,7 +32,6 @@ const deleteHandler = async (req: NextApiRequest, res: NextApiResponse) => {
 		Key: 'processed/' + image.imageName + '_small.webp',
 	};
 
-	s3Delete(params);
 	s3Delete(paramsMedium);
 	s3Delete(paramsSmall);
 

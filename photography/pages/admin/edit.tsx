@@ -4,7 +4,7 @@ import IsUserAuthenticated from '../../lib/hooks/useIsAuthenticated';
 import ImageResponse from '../../lib/Types/ImageResponse';
 import ModalEditImage from '../../components/Organisms/ModalEditImage';
 import LayoutAdmin from '../../components/Layout/LayoutAdmin';
-import GalleryComponent from '../../components/Molecules/GalleryComponent';
+import GalleryComponent from '../../components/Organisms/GalleryComponent';
 
 const edit = (): ReactElement => {
 	const [images, setImages] = useState<ImageResponse[]>([]);

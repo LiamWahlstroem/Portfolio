@@ -7,6 +7,7 @@ import Heading from '../Atoms/Heading';
 type Props = {
 	users: userResponse[];
 	handleSelectEdit: (value: userResponse, edit: boolean) => void;
+	fetchData: () => void;
 }
 
 const AllUsersCards = (Props: Props) => {
@@ -17,7 +18,7 @@ const AllUsersCards = (Props: Props) => {
 				<Button handleClick={() => Props.handleSelectEdit({username: '', role: 'admin', id: ''}, false)} text='Create User'/>
 			</div>
 			<div>
-				{Props.users.map((el: userResponse) => <UserCard user={el} edit={true} password={false} handleSelectEdit={() => Props.handleSelectEdit(el, true)} handleSelectPassword={undefined} key={el.id}/>)}
+				{Props.users.map((el: userResponse) => <UserCard user={el} edit={true} password={false} handleSelectEdit={() => Props.handleSelectEdit(el, true)} handleSelectPassword={undefined} key={el.id} fetchData={Props.fetchData}/>)}
 			</div>
 		</div>
 	);

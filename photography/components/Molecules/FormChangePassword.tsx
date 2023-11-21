@@ -26,7 +26,6 @@ const FormChangePassword = (Props: Props) => {
 				password: password.current,
 			})
 		}).then((res: Response) => {
-			console.log(res.status);
 			if(res.status === 200) {
 				Props.isModalOpen(false);
 			}

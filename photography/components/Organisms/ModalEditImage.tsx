@@ -12,8 +12,8 @@ type Props = {
 const ModalEditImage: NextPage<Props> = (Props: Props): ReactElement => {
 	return (
 		<Modal modalOpen={Props.modalOpen}>
-			<div className='relative h-full overflow-hidden flex-grow pb-8 px-8'>
-				<img src={Props.image.imageURL} alt={Props.image.alt} className='max-w-full max-h-full'/>
+			<div className='relative max-h-[92vh] overflow-hidden flex-grow pb-8 px-8'>
+				<img src={Props.image.imageURL} alt={Props.image.alt} className='max-w-full max-h-[88vh]'/>
 			</div>
 			<FormImageEdit
 				imageId={Props.image.imageId}

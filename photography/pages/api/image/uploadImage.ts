@@ -21,14 +21,9 @@ const uploadImage = async (req: NextApiRequest, res: NextApiResponse ) => {
 			location: req.body.location,
 			date: req.body.date
 		});
-		imageData.save().then((err: Error) => {
-			if (err) {
-				return res.status(500).end();
-			}
-			else {
-				return res.status(200).end();
-			}
-		});
+		await imageData.save();
+
+		return res.status(200).end();
 	}
 };
 

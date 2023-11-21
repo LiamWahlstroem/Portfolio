@@ -8,6 +8,7 @@ import ModalEditUser from '../../components/Organisms/ModalEditUser';
 import userResponse from '../../lib/Types/UserResponse';
 import ModalChangePassword from '../../components/Organisms/ModalChangePassword';
 import AllUsersCards from '../../components/Organisms/allUsersCards';
+import Heading from '../../components/Atoms/Heading';
 
 const Users = () => {
 	const router = useRouter();
@@ -23,9 +24,13 @@ const Users = () => {
 		if(!IsUserAuthenticated()) {
 			router.push('/admin/login').then();
 		}
-
-		const token = 'Bearer ' + sessionStorage.getItem('JWT');
 		setRole(sessionStorage.getItem('role') || '');
+
+		fetchData();
+	}, []);
+
+	const fetchData = () => {
+		const token = 'Bearer ' + sessionStorage.getItem('JWT');
 
 		fetch('/api/user/getUser', {
 			method: 'GET',
@@ -55,7 +60,7 @@ const Users = () => {
 				setAllUsers(data.users);
 			});
 		}
-	}, []);
+	};
 
 	const handleSelectEdit = (user: userResponse, isEdit: boolean) => {
 		selectedUser.current = user;
@@ -71,11 +76,13 @@ const Users = () => {
 	return (
 		<LayoutAdmin currentPage='users'>
 			<div>
-				<h1>My account</h1>
-				<UserCard user={signedInUser} edit={role === 'admin'} password={true} handleSelectEdit={handleSelectEdit}  handleSelectPassword={handleSelectPassword}/>
+				<div className='ml-12 mb-4'>
+					<Heading text='My account'></Heading>
+				</div>
+				<UserCard user={signedInUser} edit={role === 'admin'} password={true} handleSelectEdit={handleSelectEdit}  handleSelectPassword={handleSelectPassword} fetchData={fetchData}/>
 			</div>
-			{role === 'admin' && <AllUsersCards users={allUsers} handleSelectEdit={handleSelectEdit}/>}
-			{isOpenEdit && <ModalEditUser user={selectedUser.current!} modalOpen={setIsOpenEdit} editUser={edit.current}/>}
+			{role === 'admin' && <AllUsersCards users={allUsers} handleSelectEdit={handleSelectEdit} fetchData={fetchData}/>}
+			{isOpenEdit && <ModalEditUser user={selectedUser.current!} modalOpen={setIsOpenEdit} editUser={edit.current} fetchData={fetchData}/>}
 			{isOpenPassword && <ModalChangePassword isOpen={setIsOpenPassword} />}
 		</LayoutAdmin>
 	);

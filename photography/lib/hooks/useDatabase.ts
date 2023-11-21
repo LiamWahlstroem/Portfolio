@@ -6,10 +6,8 @@ const useDatabase = async () => {
 	);
 
 	const db = mongoose.connection;
-	db.on('error', console.error.bind(console, 'connection error: '));
-	db.once('open', function () {
-		console.log('Connected successfully');
-	});
+	db.on('error', () => {});
+	db.once('open', () => {});
 };
 
 export default useDatabase;

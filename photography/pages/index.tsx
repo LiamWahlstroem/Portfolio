@@ -4,7 +4,7 @@ import {useRouter} from 'next/router';
 import ImageResponse from '../lib/Types/ImageResponse';
 import Layout from '../components/Layout/Layout';
 import ModalImage from '../components/Organisms/ModalImage';
-import GalleryComponent from '../components/Molecules/GalleryComponent';
+import GalleryComponent from '../components/Organisms/GalleryComponent';
 
 const gallery: NextPage = (): ReactElement => {
 	const [images, setImages] = useState<ImageResponse[]>([]);
