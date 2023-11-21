@@ -18,7 +18,8 @@ export const handler = async (event) => {
     const sizeX = sizeOf(image).width;
     const sizeY = sizeOf(image).height;
     let resizedImageBuffer = await sharp(image)
-      .resize({ width: Math.floor(sizeX / 2), height: Math.floor(sizeY / 2)})
+      .rotate(0)
+      .resize({ width: sizeX / 3, height: sizeY / 3 })
       .webp({ quality: 85 })
       .toBuffer();
 
@@ -32,7 +33,8 @@ export const handler = async (event) => {
     }).promise();
 
     resizedImageBuffer = await sharp(image)
-      .resize({ width: Math.floor(sizeX / 4), height: Math.floor(sizeY / 4)})
+      .rotate(0)
+      .resize({ width: sizeX / 5, height: sizeY / 5 })
       .webp({ quality: 85 })
       .toBuffer();
 

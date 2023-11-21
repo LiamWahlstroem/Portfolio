@@ -2,8 +2,8 @@ import mongoose from 'mongoose';
 
 interface IUser {
     username: string;
-    displayName: string;
     password: string;
+	role: string;
 }
 
 interface IImage {
@@ -11,15 +11,15 @@ interface IImage {
     imageURLFull: string;
 	imageURLMedium: string;
 	imageURLSmall: string;
-    category: string;
 	alt: string;
-    date: Date;
+	location: string;
+    date: string;
 }
 
 const userSchema = new mongoose.Schema<IUser>({
 	username: String,
-	displayName: String,
 	password: String,
+	role: String,
 });
 
 const imageSchema = new mongoose.Schema<IImage>({
@@ -27,9 +27,9 @@ const imageSchema = new mongoose.Schema<IImage>({
 	imageURLFull: String,
 	imageURLMedium: String,
 	imageURLSmall: String,
-	category: String,
 	alt: String,
-	date: {type: Date, default: Date.now},
+	location: String,
+	date: String,
 });
 
 export const Users = mongoose.models.Users || mongoose.model<IUser>('Users', userSchema, 'Users');

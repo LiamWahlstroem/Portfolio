@@ -1,6 +1,6 @@
 type TokenPayload = {
-	username: string,
-	displayName: string
+	id: string,
+	role: string
 }
 
 export default TokenPayload;

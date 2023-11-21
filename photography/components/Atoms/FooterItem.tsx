@@ -10,13 +10,11 @@ type Props = {
 
 const FooterItem = (Props: Props) => {
 	return (
-		<div>
-			<li className='hover:cursor-pointer'>
-				<Link href={Props.link}>
-					<Image src={Props.image} alt={Props.imageAlt} width={50} height={50}/>
-				</Link>
-			</li>
-		</div>
+		<li className='hover:cursor-pointer'>
+			<Link href={Props.link}>
+				<Image src={Props.image} alt={Props.imageAlt} width={50} height={50}/>
+			</Link>
+		</li>
 	);
 };
 

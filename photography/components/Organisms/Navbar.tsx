@@ -9,10 +9,7 @@ type Props = {
 
 const Navbar = (Props: Props): ReactElement => {
 	const headerItems = [
-		{text: 'Home', value: 'home', link: '/'},
-		{text: 'Gallery', value: 'gallery', link: '/gallery'},
-		{text: 'My Gear', value: 'gear', link: '/gear'},
-		{text: 'Contact', value: 'contact', link: '/contact'}
+		{text: 'Gallery', value: 'home', link: '/'},
 	];
 
 	return (

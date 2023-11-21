@@ -16,7 +16,7 @@ const handleOuterDivClick = (event: React.MouseEvent<HTMLDivElement>, modalOpen:
 
 const Modal = (Props: Props): ReactElement => {
 	return (
-		<div className='bg-black bg-opacity-95 fixed inset-0 flex items-center justify-center' onClick={(ev) => handleOuterDivClick(ev, Props.modalOpen)}>
+		<div className='bg-black bg-opacity-95 fixed inset-0 flex items-center justify-center z-10' onClick={(ev) => handleOuterDivClick(ev, Props.modalOpen)}>
 			<div className='bg-white mx-20'>
 				<div className='flex justify-end mr-2 mt-2 h-8'>
 					<ButtonIcon icon={feather.icons.x} handleClick={Props.modalOpen}/>

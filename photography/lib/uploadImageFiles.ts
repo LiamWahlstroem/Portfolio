@@ -1,46 +1,39 @@
-import resizeImage from './resizeImage';
-import sizeOf from 'image-size';
-import Dimension from './Types/Dimension';
 import S3Params from './Types/S3Params';
 import s3Upload from './s3Upload';
 import {NextRouter} from 'next/router';
+import getTemporaryCredentials from './getTemporaryCredentials';
+import AWS from 'aws-sdk';
+import STSResponse from './Types/STSResponse';
 
-const uploadImageFiles = async (file: File, category: string, alt: string, router: NextRouter) => {
+const uploadImageFiles = async (file: File, alt: string, location: string, date: string,  router: NextRouter) => {
 	const fileBuffer = Buffer.from(await file.arrayBuffer());
-	const imageDimension: Dimension = {width: 0, height: 0};
 	const fileName = file.name.split('.')[0];
-	const URL = '/api/uploadImageFiles';
+	const URL = '/api/image/uploadImage';
 	const token = 'Bearer ' + sessionStorage.getItem('JWT');
 
-	const Dimension = sizeOf(fileBuffer);
-
-	imageDimension.width = Dimension.width;
-	imageDimension.height = Dimension.height;
-
-	const imageSmall = await resizeImage(fileBuffer, Math.floor(imageDimension.width! / 4), Math.floor(imageDimension.height! / 4));
-	const imageMedium = await resizeImage(fileBuffer, Math.floor(imageDimension.width! / 2), Math.floor(imageDimension.height! / 2));
+	let data = await getTemporaryCredentials(token);
+	if(data.status === 200) {
+		data = await data.json();
+		AWS.config.update({
+			accessKeyId: (<STSResponse>data).Credentials.AccessKeyId,
+			secretAccessKey: (<STSResponse>data).Credentials.SecretAccessKey,
+			sessionToken: (<STSResponse>data).Credentials.SessionToken,
+			region: 'eu-central-2'
+		});
+	}
+	else {
+		data = await data.json();
+		alert('An Error Occurred: ' + data);
+		return;
+	}
 
 	const params: S3Params = {
 		Bucket: 'photography-portoflio-1',
-		Key: fileName + '.webp',
+		Key: 'original/' + file.name,
 		Body: fileBuffer,
 	};
 
-	const paramsSmall: S3Params = {
-		Bucket: 'photography-portoflio-1',
-		Key: fileName + '_small.webp',
-		Body: imageSmall,
-	};
-
-	const paramsMedium: S3Params = {
-		Bucket: 'photography-portoflio-1',
-		Key: fileName + '_medium.webp',
-		Body: imageMedium,
-	};
-
-	s3Upload(params);
-	s3Upload(paramsSmall);
-	s3Upload(paramsMedium);
+	await s3Upload(params);
 
 	fetch(URL, {
 		method: 'POST',
@@ -50,12 +43,13 @@ const uploadImageFiles = async (file: File, category: string, alt: string, route
 		},
 		body: JSON.stringify({
 			fileName: fileName,
-			category: category,
 			alt: alt,
+			location: location,
+			date: date,
 		}),
 	}).then((res: Response) => {
 		if(res.status == 200) {
-			router.push('/admin/overview').then();
+			router.push('/admin/edit').then();
 		}
 		else {
 			alert('Upload failed: ' + res.status);

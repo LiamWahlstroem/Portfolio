@@ -21,7 +21,7 @@ const Login: NextPage = () => {
 
 	useEffect(() => {
 		if (IsUserAuthenticated()) {
-			useRouter.push('/admin/overview').then(() => {
+			useRouter.push('/admin/edit').then(() => {
 			});
 		}
 	}, []);
@@ -29,7 +29,7 @@ const Login: NextPage = () => {
 	const handleSubmit = async (ev: React.FormEvent<HTMLFormElement>) => {
 		ev.preventDefault();
 
-		const URL = '/api/login';
+		const URL = '/api/user/login';
 
 		const res = await fetch(URL, {
 			method: 'POST',
@@ -47,7 +47,8 @@ const Login: NextPage = () => {
 		if (res.ok) {
 			const data = await res.json();
 			sessionStorage.setItem('JWT', data.token);
-			await useRouter.push('/admin/overview');
+			sessionStorage.setItem('role', data.role);
+			await useRouter.push('/admin/create');
 		} else {
 			alert('Login failed');
 		}

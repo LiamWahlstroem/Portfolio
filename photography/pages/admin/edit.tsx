@@ -2,15 +2,15 @@ import React, {ReactElement, useEffect, useState} from 'react';
 import {useRouter} from 'next/router';
 import IsUserAuthenticated from '../../lib/hooks/useIsAuthenticated';
 import ImageResponse from '../../lib/Types/ImageResponse';
-import EditImageModal from '../../components/Organisms/EditImageModal';
+import ModalEditImage from '../../components/Organisms/ModalEditImage';
 import LayoutAdmin from '../../components/Layout/LayoutAdmin';
-import GalleryComponent from '../../components/Molecules/GalleryComponent';
+import GalleryComponent from '../../components/Organisms/GalleryComponent';
 
 const edit = (): ReactElement => {
 	const [images, setImages] = useState<ImageResponse[]>([]);
 	const router = useRouter();
 	const [isOpen, setIsOpen] = useState<boolean>(false);
-	const [selectedImage, setSelectedImage] = useState<ImageResponse>({imageId: '', imageURL: '', imageURLSmall: '', category: '', alt: ''});
+	const [selectedImage, setSelectedImage] = useState<ImageResponse>({imageId: '', imageURL: '', imageURLSmall: '', alt: '', location: '', date: ''});
 
 	useEffect(() => {
 		if(!IsUserAuthenticated())
@@ -18,7 +18,7 @@ const edit = (): ReactElement => {
 			router.push('/admin/login').then();
 		}
 
-		const URL = '/api/getImages';
+		const URL = '/api/image/getImages';
 
 		fetch(URL, {
 			method: 'GET',
@@ -40,7 +40,7 @@ const edit = (): ReactElement => {
 	return(
 		<LayoutAdmin currentPage='edit'>
 			<GalleryComponent images={images} onClick={handleClick} />
-			{isOpen && <EditImageModal image={selectedImage} modalOpen={setIsOpen}/>}
+			{isOpen && <ModalEditImage image={selectedImage} modalOpen={setIsOpen}/>}
 		</LayoutAdmin>
 	);
 };

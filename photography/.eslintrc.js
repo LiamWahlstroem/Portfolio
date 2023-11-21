@@ -43,6 +43,7 @@ module.exports = {
 		'func-style': [
 			'error',
 			'expression'
-		]
+		],
+		'no-console': 'error',
 	}
 };
