@@ -1,40 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="577f8b35-f983-449f-b184-0f61b29a384a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/PortfolioWebsite.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/jsLinters/eslint.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lambda/ImageResize/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Lambda/ImageResize/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.eslintrc.js" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Atoms/FooterItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Atoms/FooterItem.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Atoms/NavbarContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Atoms/NavbarContainer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Molecules/FormChangePassword.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Molecules/FormChangePassword.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Molecules/FormUserEdit.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Molecules/FormUserEdit.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Molecules/GalleryComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Organisms/GalleryComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Molecules/UserCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Molecules/UserCard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Organisms/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Organisms/Footer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Organisms/ModalEditImage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Organisms/ModalEditImage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Organisms/ModalEditUser.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Organisms/ModalEditUser.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Organisms/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Organisms/Navbar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Organisms/allUsersCards.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Organisms/allUsersCards.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/hooks/useDatabase.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/hooks/useDatabase.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/s3Delete.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/s3Delete.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/s3Upload.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/s3Upload.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/uploadImageFiles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/uploadImageFiles.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/next.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/admin/edit.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/admin/edit.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/admin/users.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/admin/users.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/api/image/delete/[id].ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/image/delete/[id].ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/api/image/uploadImage.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/image/uploadImage.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/contact.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.tsx" afterDir="false" />
-    </list>
+    <list default="true" id="577f8b35-f983-449f-b184-0f61b29a384a" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -54,18 +21,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;X:\\Portfolio\\photography\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "X:/Portfolio/portfolio",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "X:\\Portfolio\\photography\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="X:\Portfolio\photography\components\Organisms" />
@@ -112,6 +80,7 @@
       <workItem from="1700333956144" duration="113000" />
       <workItem from="1700388048972" duration="8904000" />
       <workItem from="1700588837288" duration="1229000" />
+      <workItem from="1700674990134" duration="29000" />
     </task>
     <servers />
   </component>
