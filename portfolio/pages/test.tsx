@@ -1,20 +1,29 @@
 import React, { useEffect, useRef } from 'react';
 
 const Test = () => {
-	const drawElement = useRef<HTMLDivElement>();
+	const drawElement = useRef(); // Initialize with null
+	const numVerts = 20;
+	const radius = 150;
 
 	useEffect(() => {
 		import('p5').then((p5) => {
 			const sketch = (p: p5) => {
 				p.setup = () => {
-					p.createCanvas(200, 200);
-					p.background(0);
+					p.createCanvas(p.windowWidth, p.windowHeight);
 				};
 
 				p.draw = () => {
-					p.background(0);
-					p.fill(255);
-					p.ellipse(p.mouseX, p.mouseY, 50, 50);
+					p.beginShape();
+
+					for(let i = 0; i < numVerts; i++) {
+						const rad = i * (2 * Math.PI / numVerts);
+						const x = (radius * Math.cos(rad)) + 400;
+						const y = (radius * Math.sin(rad)) + 400;
+
+						p.curveVertex(x, y);
+					}
+
+					p.endShape();
 				};
 			};
 
@@ -22,7 +31,7 @@ const Test = () => {
 		});
 	}, []);
 
-	return <div className='w-full h-full' ref={drawElement}></div>;
+	return <div className='w-full h-full' ref={drawElement}></div>; // Remove .current
 };
 
 export default Test;
