@@ -2,7 +2,7 @@ import React, {useEffect, useRef} from 'react';
 
 const Test = () => {
 	const drawElement = useRef();
-	const numVerts = 12;
+	const numVerts = 14;
 	const radius = 250;
 	let verts: {
 		x: number;
@@ -20,8 +20,8 @@ const Test = () => {
 
 	const moveVerts = () => {
 		for (let i = 0; i < numVerts; i++) {
-			verts[i].x += Math.random() * 1;
-			verts[i].y += Math.random() * 1;
+			verts[i].x += Math.random() * 0.35;
+			verts[i].y += Math.random() * 0.35;
 		}
 	};
 
@@ -31,7 +31,7 @@ const Test = () => {
 		import('p5').then((p5) => {
 			const sketch = (p) => {
 				p.setup = () => {
-					p.createCanvas(590, 400);
+					p.createCanvas(window.innerWidth, window.innerHeight);
 					p.frameRate(60);
 				};
 
