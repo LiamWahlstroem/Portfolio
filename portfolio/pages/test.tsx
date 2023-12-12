@@ -1,12 +1,11 @@
-import React, {useEffect, useRef} from 'react';
+import drawMovingShape from '../lib/drawMovingShape';
+import {useEffect, useRef} from 'react';
 
 const Test = () => {
 	const drawElement = useRef();
 	const numVerts = 14;
 	const radius = 250;
-	let verts: {
-		x: number;
-		y: number; }[] = [];
+	const verts: { x: number; y: number; }[] = [];
 
 	const createVerts = () => {
 		for (let i = 0; i < numVerts; i++) {
@@ -18,13 +17,6 @@ const Test = () => {
 		}
 	};
 
-	const moveVerts = () => {
-		for (let i = 0; i < numVerts; i++) {
-			verts[i].x += Math.random() * 0.35;
-			verts[i].y += Math.random() * 0.35;
-		}
-	};
-
 	useEffect(() => {
 		createVerts();
 
@@ -32,37 +24,29 @@ const Test = () => {
 			const sketch = (p) => {
 				p.setup = () => {
 					p.createCanvas(window.innerWidth, window.innerHeight);
-					p.frameRate(60);
+					p.noLoop();
 				};
 
 				p.draw = () => {
 					p.background(0);
-
-					moveVerts();
-
-					p.beginShape();
-					p.fill(255, 93, 0);
-					p.stroke(255, 93, 0);
-
-					for (let i = 0; i < verts.length; i++) {
-						p.curveVertex(verts[i].x, verts[i].y);
-					}
-
-					p.curveVertex(verts[0].x, verts[0].y);
-					p.curveVertex(verts[1].x, verts[1].y);
-					p.curveVertex(verts[2].x, verts[2].y);
-
-					p.endShape();
+					drawMovingShape(p, verts);
 				};
 			};
 
 			const p5Instance = new p5.default(sketch, drawElement.current);
 
-			return () => p5Instance.remove();
+			const intervalId = setInterval(() => {
+				p5Instance.redraw();
+			}, 15);
+
+			return () => {
+				clearInterval(intervalId);
+				p5Instance.remove();
+			};
 		});
 	}, []);
 
-	return <div className='w-full h-full' ref={drawElement.current}></div>;
+	return <div className='w-full h-full overflow-hidden' ref={drawElement.current}></div>;
 };
 
 export default Test;
