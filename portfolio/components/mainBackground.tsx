@@ -1,7 +1,9 @@
+'use client';
+
 import drawMovingShape from '../lib/drawMovingShape';
 import {useEffect, useRef} from 'react';
 
-const Test = () => {
+const MainBackground = () => {
 	const drawElement = useRef();
 	const numVerts = 14;
 	const radius = 250;
@@ -46,7 +48,7 @@ const Test = () => {
 		});
 	}, []);
 
-	return <div className='w-full h-full overflow-hidden' ref={drawElement.current}></div>;
+	return <div className='w-full h-full overflow-hidden relative z-1' ref={drawElement.current}></div>;
 };
 
-export default Test;
+export default MainBackground;
