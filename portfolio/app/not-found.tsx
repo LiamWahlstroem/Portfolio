@@ -1,22 +1,24 @@
+'use client';
+
 import SealNJump from '../components/sealNJump';
 import {useState} from 'react';
 
-const error = () => {
+const Page404 = () => {
 	const [gameLoaded, setGameLoaded] = useState(false);
 
 	return (
-		<>
+		<div className='h-40'>
 			{gameLoaded ?
 				<div>
 					<div className='w-screen h-screen bg-black flex flex-col justify-center items-center'>
 						<h1 className='text-white text-[3.5rem] mb-12'>Seal n' Jump</h1>
-						<div className='w-[1050px] h-[700px] overflow-hidden'>
+						<div className=''>
 							<SealNJump />
 						</div>
 					</div>
 				</div>
 				:
-				<div className='bg-black h-screen w-screen flex flex-col items-center justify-center'>
+				<div className='bg-black w-screen flex flex-col items-center justify-center'>
 					<div className='text-white text-[6rem] flex'>
 						<h1 className=''>404</h1>
 						<h1 className='ml-16 pl-12 border-l-2 border-l-white'>Page not found</h1>
@@ -26,8 +28,8 @@ const error = () => {
 					</div>
 				</div>
 			}
-		</>
+		</div>
 	);
 };
 
-export default error;
+export default Page404;

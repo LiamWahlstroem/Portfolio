@@ -12,8 +12,8 @@ const MainBackground = () => {
 	const createVerts = () => {
 		for (let i = 0; i < numVerts; i++) {
 			const rad = (i * 2 * Math.PI) / numVerts;
-			const x = radius * Math.cos(rad) + 400 + Math.random() * 60;
-			const y = radius * Math.sin(rad) + 400 + Math.random() * 60;
+			const x = radius * Math.cos(rad) + window.innerWidth - 400 + Math.random() * 60;
+			const y = radius * Math.sin(rad) + 300 + Math.random() * 60;
 
 			verts.push({ x, y });
 		}
@@ -48,7 +48,7 @@ const MainBackground = () => {
 		});
 	}, []);
 
-	return <div className='w-full h-full overflow-hidden relative z-1' ref={drawElement.current}></div>;
+	return <div className='max-w-40 h-full overflow-hidden absolute' ref={drawElement.current}></div>;
 };
 
 export default MainBackground;

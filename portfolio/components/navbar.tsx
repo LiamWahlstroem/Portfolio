@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import {useState, useEffect} from 'react';
 
 type Props = {
 	currentPage: string;
@@ -12,8 +11,7 @@ const Navbar = (props: Props) => {
 			<ul className='flex space-x-10 ml-12 text-[1.5rem] text-gray-400'>
 				<li className={props.currentPage === 'home' ? 'underline' : ''}><Link className='hover:cursor-pointer' href='/'>Home</Link></li>
 				<li className={props.currentPage === 'stack' ? 'underline' : ''}><Link className='hover:cursor-pointer' href='/stack'>Tech Stack</Link></li>
-				<li className={props.currentPage === 'programming' ? 'underline' : ''}><Link className='hover:cursor-pointer' href='/programming'>Programming</Link></li>
-				<li className={props.currentPage === 'contact' ? 'underline' : ''}><Link className='hover:cursor-pointer' href='/contact'>Contact</Link></li>
+				<li className={props.currentPage === 'projects' ? 'underline' : ''}><Link className='hover:cursor-pointer' href='/projects'>Projects</Link></li>
 			</ul>
 		</div>
 		
