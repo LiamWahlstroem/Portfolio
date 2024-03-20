@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="577f8b35-f983-449f-b184-0f61b29a384a" name="Changes" comment="" />
+    <list default="true" id="577f8b35-f983-449f-b184-0f61b29a384a" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/api/image/delete/[id].ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/image/delete/[id].ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/api/image/put/[id].ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/image/put/[id].ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/api/user/delete/[id].ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/user/delete/[id].ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/api/user/put/[id].ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/user/put/[id].ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/api/user/register.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/user/register.ts" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -26,11 +37,14 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "Development",
     "last_opened_file_path": "X:/Portfolio/portfolio",
     "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "ts.external.directory.path": "X:\\Portfolio\\photography\\node_modules\\typescript\\lib",
+    "ts.external.directory.path": "D:\\Personal\\Portfolio\\photography\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -81,6 +95,7 @@
       <workItem from="1700388048972" duration="8904000" />
       <workItem from="1700588837288" duration="1229000" />
       <workItem from="1700674990134" duration="29000" />
+      <workItem from="1710926249414" duration="1067000" />
     </task>
     <servers />
   </component>

@@ -18,7 +18,7 @@ const Register = async (req: NextApiRequest, res: NextApiResponse) => {
 	const username: string = req.body.username;
 	const password: string = req.body.password;
 
-	const userWithUsername = await Users.findOne({username: username});
+	const userWithUsername = await Users.findOne({username: {$eq: username}});
 
 	if(userWithUsername != undefined) {
 		return res.status(500).end();

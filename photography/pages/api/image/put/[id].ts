@@ -1,6 +1,7 @@
 import {Images} from '../../schema';
 import authenticateToken from '../../../../lib/authenticateToken';
 import {NextApiRequest, NextApiResponse} from 'next';
+import * as sanitize from 'mongo-sanitize';
 
 const putHandler = async (req: NextApiRequest, res: NextApiResponse) => {
 	if(req.method !== 'PUT') {
@@ -13,7 +14,7 @@ const putHandler = async (req: NextApiRequest, res: NextApiResponse) => {
 
 	if(!authenticated || role !== 'admin') return res.status(401).end();
 
-	const image = await Images.findOneAndUpdate({_id: id}, {alt: req.body.alt, location: req.body.location, date: req.body.date}, {new: true});
+	const image = await Images.findOneAndUpdate({_id: {$eq: id}}, {alt: sanitize(req.body.alt), location: sanitize(req.body.location), date: sanitize(req.body.date)}, {new: true});
 
 	if(image == undefined) {
 		res.json({err: 'Could not find image with ID ' + id});

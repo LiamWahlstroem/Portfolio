@@ -1,6 +1,7 @@
 import {NextApiRequest, NextApiResponse} from 'next';
 import {Users} from '../../schema';
 import authenticateToken from '../../../../lib/authenticateToken';
+import * as sanitize from 'mongo-sanitize';
 
 const id = async (req: NextApiRequest, res: NextApiResponse) => {
 	if(req.method !== 'PUT') {
@@ -13,7 +14,7 @@ const id = async (req: NextApiRequest, res: NextApiResponse) => {
 
 	if(!authenticated || role !== 'admin') return res.status(401).end();
 
-	const user = await Users.findOneAndUpdate({_id: id}, {username: req.body.username, role: req.body.role}, {new: true});
+	const user = await Users.findOneAndUpdate({_id: {$eq: id}}, {username: sanitize(req.body.username), role: sanitize(req.body.role)}, {new: true});
 
 	if(user == undefined) {
 		res.json({err: 'Could not find user with ID ' + id});

@@ -14,7 +14,7 @@ const deleteHandler = async (req: NextApiRequest, res: NextApiResponse) => {
 
 	if(!authenticated || role !== 'admin') return res.status(401).end();
 
-	Users.deleteOne({_id: id}).then( (result: DeleteResult) => {
+	Users.deleteOne({_id: {$eq: id}}).then( (result: DeleteResult) => {
 		if (result.deletedCount >= 1) {
 			res.json({msg: 'Deleted Image with ID ' + id + ' successfully.'});
 			return res.status(200).end();

@@ -14,8 +14,8 @@ const deleteHandler = async (req: NextApiRequest, res: NextApiResponse) => {
 	const [authenticated, role] = await authenticateToken(token);
 
 	if(!authenticated || role !== 'admin') return res.status(401).end();
-	
-	const query = Images.findOne({_id: id});
+
+	const query = Images.findOne({_id: {$eq: id}});
 	const image = await query.exec();
 
 	if(image == undefined) {
@@ -35,7 +35,7 @@ const deleteHandler = async (req: NextApiRequest, res: NextApiResponse) => {
 	s3Delete(paramsMedium);
 	s3Delete(paramsSmall);
 
-	Images.deleteOne({_id: id}).then( (result: DeleteResult) => {
+	Images.deleteOne({_id: {$eq: id}}).then( (result: DeleteResult) => {
 		if (result.deletedCount >= 1) {
 			res.json({msg: 'Deleted Image with ID ' + id + ' successfully.'});
 			return res.status(200).end();
