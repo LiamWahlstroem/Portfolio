@@ -1,31 +1,14 @@
-/** @type {DefaultColors} */
-
-const colors = require('tailwindcss/colors');
-const {
-	default: flattenColorPalette,
-} = require('tailwindcss/lib/util/flattenColorPalette');
-
 module.exports = {
 	content: [
-		'./pages/**/*.{js,ts,jsx,tsx}',
-		'./components/**/*.{js,ts,jsx,tsx}',
-		'./app/**/*.{js, jsx, ts, tsx}'
+		'./app/**/*.{js,ts,jsx,tsx,mdx}',
+		'./pages/**/*.{js,ts,jsx,tsx,mdx}',
+		'./components/**/*.{js,ts,jsx,tsx,mdx}',
+
+		// Or if using `src` directory:
+		'./src/**/*.{js,ts,jsx,tsx,mdx}',
 	],
 	theme: {
-		extend: {
-			fontFamily: { sans: 'Bitter', norm: 'Roboto Condensed'}
-		},
+		extend: {},
 	},
-	plugins: [require('@tailwindcss/aspect-ratio'), addVariablesForColors],
+	plugins: [],
 };
-
-function addVariablesForColors({ addBase, theme }: any) {
-	let allColors = flattenColorPalette(theme('colors'));
-	let newVars = Object.fromEntries(
-		Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
-	);
-
-	addBase({
-		':root': newVars,
-	});
-}

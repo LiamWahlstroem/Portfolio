@@ -1,6 +1,6 @@
 import {useRef, useEffect, useState} from 'react';
 import {Seal, drawSeal} from '../lib/sealNJump/seal';
-import {getRandom} from '../utilities/functions';
+import {getRandom} from '../utils/functions';
 import {Stone, drawStones} from '../lib/sealNJump/stone';
 import scoreCounter from '../lib/sealNJump/scoreCounter';
 import collisions from '../lib/sealNJump/collisions';

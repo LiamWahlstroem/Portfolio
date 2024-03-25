@@ -11,7 +11,7 @@ const Page = () => {
 	const data = projectData.projects;
 
 	return (
-		<div className='flex flex-col h-screen bg-black'>
+		<div className='flex flex-col bg-black'>
 			<Navbar currentPage={'projects'} />
 			<main className='h-80'>
 				<div className='mx-40'>

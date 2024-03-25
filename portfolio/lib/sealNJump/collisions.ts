@@ -1,6 +1,6 @@
 import {Seal} from './seal';
 import {Stone} from './stone';
-import {checkForCollision} from '../../utilities/functions';
+import {checkForCollision} from '../../utils/functions';
 
 const collisions = (canvasContext: any, seal: Seal, stones: Stone[]) => {
 	const sealCollision = {posX: seal.sealX, posY: seal.sealY, width: 200, height: 150 };
