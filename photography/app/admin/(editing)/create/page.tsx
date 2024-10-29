@@ -1,11 +1,13 @@
+'use client';
+
 import type { NextPage } from 'next';
-import {useRouter} from 'next/router';
+import {useRouter} from 'next/navigation';
 import React, {ReactElement, useEffect, useRef, useState} from 'react';
 import * as exif from 'exifr';
-import IsUserAuthenticated from '../../lib/hooks/useIsAuthenticated';
-import LayoutAdmin from '../../components/Layout/LayoutAdmin';
-import uploadImageFiles from '../../lib/uploadImageFiles';
-import FormCreate from '../../components/Organisms/FormCreate';
+import IsUserAuthenticated from '../../../../lib/hooks/useIsAuthenticated';
+import LayoutAdmin from '../layout';
+import uploadImageFiles from '../../../../lib/uploadImageFiles';
+import FormCreate from '../../../../components/Organisms/FormCreate';
 
 const create: NextPage = (): ReactElement => {
 	const imageInputRef = useRef<HTMLInputElement | null>(null);
@@ -30,7 +32,7 @@ const create: NextPage = (): ReactElement => {
 	useEffect((): void => {
 		if(!IsUserAuthenticated())
 		{
-			router.push('/admin/login').then();
+			router.push('/admin/login');
 		}
 	}, []);
 

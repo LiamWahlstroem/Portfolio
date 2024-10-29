@@ -1,12 +1,13 @@
+'use client';
+
 import type { NextPage } from 'next';
 import React, {ReactElement, useEffect, useState} from 'react';
-import {useRouter} from 'next/router';
+import {useRouter} from 'next/navigation';
 import ImageResponse from '../../lib/Types/ImageResponse';
-import Layout from '../../components/Layout/Layout';
 import ModalImage from '../../components/Organisms/ModalImage';
 import GalleryComponent from '../../components/Organisms/GalleryComponent';
 
-const gallery: NextPage = (): ReactElement => {
+const HomePage: NextPage = (): ReactElement => {
 	const [images, setImages] = useState<ImageResponse[]>([]);
 	const [isOpen, setIsOpen] = useState<boolean>(false);
 	const [selectedImage, setSelectedImage] = useState<ImageResponse>();
@@ -21,14 +22,14 @@ const gallery: NextPage = (): ReactElement => {
 			if (r.status === 200) {
 				return r.json();
 			} else {
-				router.push('/error').then();
+				router.push('/error');
 			}
 		}).then((data: {data: ImageResponse[]}) => {
 			if(data.data) {
 				setImages(data.data);
 			}
 			else {
-				router.push('/error').then();
+				router.push('/error');
 			}
 		});
 	}, []);
@@ -39,11 +40,11 @@ const gallery: NextPage = (): ReactElement => {
 	};
 
 	return (
-		<Layout currentPage='home'>
+		<>
 			<GalleryComponent images={images} onClick={handleClick} />
 			{isOpen && <ModalImage modalOpen={setIsOpen} image={selectedImage!} key={selectedImage!.imageId}/>}
-		</Layout>
+		</>
 	);
 };
 
-export default gallery;
+export default HomePage;

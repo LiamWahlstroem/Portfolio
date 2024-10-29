@@ -1,11 +1,11 @@
 import S3Params from './Types/S3Params';
 import s3Upload from './s3Upload';
-import {NextRouter} from 'next/router';
 import getTemporaryCredentials from './getTemporaryCredentials';
 import AWS from 'aws-sdk';
 import STSResponse from './Types/STSResponse';
+import {AppRouterInstance} from 'next/dist/shared/lib/app-router-context.shared-runtime';
 
-const uploadImageFiles = async (file: File, alt: string, location: string, date: string,  router: NextRouter) => {
+const uploadImageFiles = async (file: File, alt: string, location: string, date: string,  router: AppRouterInstance) => {
 	const fileBuffer = Buffer.from(await file.arrayBuffer());
 	const fileName = file.name.split('.')[0];
 	const URL = '/api/image/uploadImage';

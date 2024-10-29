@@ -1,15 +1,18 @@
+'use client';
+
 import type {NextPage} from 'next';
 import Head from 'next/head';
-import useRouter from 'next/router';
-import IsUserAuthenticated from '../../lib/hooks/useIsAuthenticated';
+import {useRouter, notFound} from 'next/navigation';
+import IsUserAuthenticated from '../../../lib/hooks/useIsAuthenticated';
 import React, {useEffect, useRef} from 'react';
-import TextInputSmall from '../../components/Atoms/TextInputSmall';
-import TextInputPassword from '../../components/Atoms/TextInputPassword';
-import ButtonSubmit from '../../components/Atoms/ButtonSubmit';
+import TextInputSmall from '../../../components/Atoms/TextInputSmall';
+import TextInputPassword from '../../../components/Atoms/TextInputPassword';
+import ButtonSubmit from '../../../components/Atoms/ButtonSubmit';
 
 const Login: NextPage = () => {
 	const username = useRef<string>('');
 	const password = useRef<string>('');
+	const router = useRouter();
 
 	const setUsername = (value: string) => {
 		username.current = value;
@@ -21,8 +24,7 @@ const Login: NextPage = () => {
 
 	useEffect(() => {
 		if (IsUserAuthenticated()) {
-			useRouter.push('/admin/edit').then(() => {
-			});
+			router.push('/admin/edit');
 		}
 	}, []);
 
@@ -48,19 +50,18 @@ const Login: NextPage = () => {
 			const data = await res.json();
 			sessionStorage.setItem('JWT', data.token);
 			sessionStorage.setItem('role', data.role);
-			await useRouter.push('/admin/create');
+			router.push('/admin/create');
 		} else {
 			alert('Login failed');
 		}
 	};
-
 
 	return (
 		<>
 			<Head>
 				<title>Login</title>
 			</Head>
-			<main>
+			<div>
 				<form onSubmit={handleSubmit}>
 					<div className='flex flex-col items-center mt-40'>
 						<TextInputSmall  placeholder='Username' inputValue={setUsername} defaultValue={undefined}/>
@@ -68,7 +69,7 @@ const Login: NextPage = () => {
 						<ButtonSubmit buttonText='Login' />
 					</div>
 				</form>
-			</main>
+			</div>
 		</>
 	);
 };

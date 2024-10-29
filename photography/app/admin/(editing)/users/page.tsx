@@ -1,14 +1,14 @@
+'use client';
+
 import React, {useEffect, useRef, useState} from 'react';
-import LayoutAdmin from '../../components/Layout/LayoutAdmin';
-import IsUserAuthenticated from '../../lib/hooks/useIsAuthenticated';
-import {useRouter} from 'next/router';
-import UserResponse from '../../lib/Types/UserResponse';
-import UserCard from '../../components/Molecules/UserCard';
-import ModalEditUser from '../../components/Organisms/ModalEditUser';
-import userResponse from '../../lib/Types/UserResponse';
-import ModalChangePassword from '../../components/Organisms/ModalChangePassword';
-import AllUsersCards from '../../components/Organisms/allUsersCards';
-import Heading from '../../components/Atoms/Heading';
+import IsUserAuthenticated from '../../../../lib/hooks/useIsAuthenticated';
+import {useRouter} from 'next/navigation';
+import UserResponse from '../../../../lib/Types/UserResponse';
+import UserCard from '../../../../components/Molecules/UserCard';
+import ModalEditUser from '../../../../components/Organisms/ModalEditUser';
+import ModalChangePassword from '../../../../components/Organisms/ModalChangePassword';
+import AllUsersCards from '../../../../components/Organisms/allUsersCards';
+import Heading from '../../../../components/Atoms/Heading';
 
 const Users = () => {
 	const router = useRouter();
@@ -22,7 +22,7 @@ const Users = () => {
 
 	useEffect(() => {
 		if(!IsUserAuthenticated()) {
-			router.push('/admin/login').then();
+			router.push('/admin/login');
 		}
 		setRole(sessionStorage.getItem('role') || '');
 
@@ -62,19 +62,19 @@ const Users = () => {
 		}
 	};
 
-	const handleSelectEdit = (user: userResponse, isEdit: boolean) => {
+	const handleSelectEdit = (user: UserResponse, isEdit: boolean) => {
 		selectedUser.current = user;
 		edit.current = isEdit;
 		setIsOpenEdit(true);
 	};
 
-	const handleSelectPassword = (user: userResponse) => {
+	const handleSelectPassword = (user: UserResponse) => {
 		selectedUser.current = user;
 		setIsOpenPassword(true);
 	};
 
 	return (
-		<LayoutAdmin currentPage='users'>
+		<>
 			<div>
 				<div className='ml-12 mb-4'>
 					<Heading text='My account'></Heading>
@@ -84,7 +84,7 @@ const Users = () => {
 			{role === 'admin' && <AllUsersCards users={allUsers} handleSelectEdit={handleSelectEdit} fetchData={fetchData}/>}
 			{isOpenEdit && <ModalEditUser user={selectedUser.current!} modalOpen={setIsOpenEdit} editUser={edit.current} fetchData={fetchData}/>}
 			{isOpenPassword && <ModalChangePassword isOpen={setIsOpenPassword} />}
-		</LayoutAdmin>
+		</>
 	);
 };
 
