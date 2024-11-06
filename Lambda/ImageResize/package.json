@@ -10,7 +10,6 @@
   "license": "ISC",
   "type": "module",
   "dependencies": {
-    "aws-sdk": "^2.1483.0",
     "@aws-sdk/client-s3": "^3.373.0",
     "image-size": "^1.0.2",
     "sharp": "^0.32.6"

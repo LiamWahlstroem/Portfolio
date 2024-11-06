@@ -1,20 +1,20 @@
-import AWS from 'aws-sdk';
+import {S3Client, HeadObjectCommand, GetObjectCommand, PutObjectCommand} from '@aws-sdk/client-s3';
 import sharp from 'sharp';
 import sizeOf from 'image-size'
 
 export const handler = async (event) => {
+  const client = new S3Client({});
+  const bucket = event.Records[0].s3.bucket.name;
+  const key = decodeURIComponent(event.Records[0].s3.object.key.replace(/\+/g, ' '));
+
   try {
-    const s3 = new AWS.S3();
-    const s3Event = event.Records[0].s3;
+      const getObjectParams = {
+        Bucket: bucket,
+        Key: key,
+      };
+      const { Body } = await client.send(new GetObjectCommand(getObjectParams));
 
-    const getObjectParams = {
-      Bucket: s3Event.bucket.name,
-      Key: s3Event.object.key
-    };
-
-    const s3Object = await s3.getObject(getObjectParams).promise();
-
-    let image = s3Object.Body;
+    let image = await Body.transformToByteArray();
     const sizeX = sizeOf(image).width;
     const sizeY = sizeOf(image).height;
     let resizedImageBuffer = await sharp(image)
@@ -23,14 +23,15 @@ export const handler = async (event) => {
       .webp({ quality: 85 })
       .toBuffer();
 
-    let resizedKey = `processed/${s3Event.object.key.split('/')[1].split('.')[0] + '_medium.webp'}`;
-    
-    await s3.upload({
-      Bucket: s3Event.bucket.name,
+    let resizedKey = key.split('.')[0] + '_medium.webp';
+
+    let putObjectParams = {
+      Bucket: bucket,
       Key: resizedKey,
       Body: resizedImageBuffer,
       ContentType: 'image/webp'
-    }).promise();
+    };
+    await client.send(new PutObjectCommand(putObjectParams));
 
     resizedImageBuffer = await sharp(image)
       .rotate(0)
@@ -38,14 +39,15 @@ export const handler = async (event) => {
       .webp({ quality: 85 })
       .toBuffer();
 
-    resizedKey = `processed/${s3Event.object.key.split('/')[1].split('.')[0] + '_small.webp'}`;
-    
-    await s3.upload({
-      Bucket: s3Event.bucket.name,
+    resizedKey = key.split('.')[0] + '_small.webp';
+
+    putObjectParams = {
+      Bucket: bucket,
       Key: resizedKey,
       Body: resizedImageBuffer,
       ContentType: 'image/webp'
-    }).promise();
+    };
+    await client.send(new PutObjectCommand(putObjectParams));
 
     return `Successfully resized object and saved to "${resizedKey}"`;
 
