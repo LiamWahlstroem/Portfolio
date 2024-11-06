@@ -1,4 +1,4 @@
-import {S3Client, HeadObjectCommand, GetObjectCommand, PutObjectCommand} from '@aws-sdk/client-s3';
+import {S3Client, GetObjectCommand, PutObjectCommand, DeleteObjectCommand} from '@aws-sdk/client-s3';
 import sharp from 'sharp';
 import sizeOf from 'image-size'
 
@@ -23,7 +23,7 @@ export const handler = async (event) => {
       .webp({ quality: 85 })
       .toBuffer();
 
-    let resizedKey = key.split('.')[0] + '_medium.webp';
+    let resizedKey = key.split('/')[1] + key.split('/')[2] + '_medium.webp';
 
     let putObjectParams = {
       Bucket: bucket,
@@ -39,7 +39,7 @@ export const handler = async (event) => {
       .webp({ quality: 85 })
       .toBuffer();
 
-    resizedKey = key.split('.')[0] + '_small.webp';
+    resizedKey = key.split('/')[1] + key.split('/')[2] + '_small.webp';
 
     putObjectParams = {
       Bucket: bucket,
@@ -48,6 +48,12 @@ export const handler = async (event) => {
       ContentType: 'image/webp'
     };
     await client.send(new PutObjectCommand(putObjectParams));
+
+    const deleteObjectParams = {
+      Bucket: bucket,
+      Key: key,
+    };
+    await client.send(new DeleteObjectCommand(deleteObjectParams));
 
     return `Successfully resized object and saved to "${resizedKey}"`;
 
