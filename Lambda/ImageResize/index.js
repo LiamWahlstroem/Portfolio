@@ -17,14 +17,13 @@ export const handler = async (event) => {
     let image = await streamToBuffer(Body);
 
     const sizeX = sizeOf(image).width;
-    const sizeY = sizeOf(image).height;
     let resizedImageBuffer = await sharp(image)
       .rotate(0)
       .resize({ width: Math.round(sizeX / 3), height: null })
       .webp({ quality: 85 })
       .toBuffer();
 
-    let resizedKey = key.split('/')[1] + key.split('/')[2].split('.')[0] + '_medium.webp';
+    let resizedKey = key.split('/')[1] + '/' + key.split('/')[2].split('.')[0] + '_medium.webp';
 
     let putObjectParams = {
       Bucket: bucket,
@@ -40,7 +39,7 @@ export const handler = async (event) => {
       .webp({ quality: 85 })
       .toBuffer();
 
-    resizedKey = key.split('/')[1] + key.split('/')[2].split('.')[0] + '_small.webp';
+    resizedKey = key.split('/')[1] + '/' + key.split('/')[2].split('.')[0] + '_small.webp';
 
     putObjectParams = {
       Bucket: bucket,
