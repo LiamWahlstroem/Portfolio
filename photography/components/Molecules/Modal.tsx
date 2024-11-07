@@ -1,5 +1,4 @@
 import React, {ReactElement} from 'react';
-import {ModalOpenMethod} from '../../lib/Types/ModalOpenMethod';
 import ButtonIcon from '../Atoms/ButtonIcon';
 import * as feather from 'feather-icons';
 
@@ -8,7 +7,7 @@ type Props = {
 	children: React.ReactNode;
 }
 
-const handleOuterDivClick = (event: React.MouseEvent<HTMLDivElement>, modalOpen: ModalOpenMethod): void => {
+const handleOuterDivClick = (event: React.MouseEvent<HTMLDivElement>, modalOpen: (value: boolean) => void): void => {
 	if (event.target === event.currentTarget) {
 		modalOpen(false);
 	}

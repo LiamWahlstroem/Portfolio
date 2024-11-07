@@ -1,4 +1,4 @@
-import ImageResponse from '../../lib/Types/ImageResponse';
+import {ImageResponse} from '../../lib/Types/ImageType';
 import React from 'react';
 
 type Props = {

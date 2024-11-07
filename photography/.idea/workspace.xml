@@ -5,19 +5,62 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="577f8b35-f983-449f-b184-0f61b29a384a" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../Lambda/ImageResize/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Lambda/ImageResize/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.eslintrc.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLinters/eslint.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLinters/eslint.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Layout/Layout.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Layout/LayoutAdmin.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(main)/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(main)/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(main)/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(main)/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/admin/(editing)/create/page.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/admin/(editing)/edit/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/admin/(editing)/edit/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/admin/(editing)/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/admin/(editing)/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/admin/(editing)/users/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/admin/(editing)/users/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/admin/login/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/admin/login/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/admin/login/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/admin/login/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Atoms/TextInputPassword.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Atoms/TextInputPassword.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Atoms/TextInputSmall.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Atoms/TextInputSmall.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Molecules/FormImageEdit.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Molecules/FormImageEdit.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Molecules/FormUserEdit.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Molecules/FormUserEdit.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Molecules/Modal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Molecules/Modal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Molecules/UserCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Molecules/UserCard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Organisms/AdminNavbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Organisms/AdminNavbar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Organisms/FormCreate.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Organisms/FormCreate.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Organisms/GalleryComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Organisms/GalleryComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Organisms/ModalEditImage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Organisms/ModalEditImage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Organisms/ModalEditUser.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Organisms/ModalEditUser.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Organisms/ModalImage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Organisms/ModalImage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Organisms/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Organisms/Navbar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Organisms/allUsersCards.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Organisms/allUsersCards.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Types/Dimension.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Types/ImageResponse.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Types/ModalOpenMethod.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Types/Roles.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Types/S3DeleteParams.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Types/S3Params.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Types/STSResponse.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Types/User.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Types/UserResponse.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/getTemporaryCredentials.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/s3Delete.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/s3Delete.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/s3Upload.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/s3Upload.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/uploadImageFiles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/uploadImageFiles.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/admin/create.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/admin/edit.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/admin/login.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/admin/users.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/index.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/_app.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/api/getAWSCredentials.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/getAWSCredentials.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/api/image/delete/[id].ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/image/delete/[id].ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/api/image/getImages.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/image/getImages.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/api/image/put/[id].ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/image/put/[id].ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/api/image/uploadImage.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/image/uploadImage.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/api/schema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/schema.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/api/user/changePassword.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/user/changePassword.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/api/user/delete/[id].ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/user/delete/[id].ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/api/user/getAllUsers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/user/getAllUsers.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/api/user/getUser.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/user/getUser.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/api/user/login.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/user/login.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/api/user/put/[id].ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/user/put/[id].ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/api/user/register.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/user/register.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,12 +73,15 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
+  <component name="OptimizeOnSaveOptions">
+    <option name="myRunOnSave" value="true" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 2
-}]]></component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
   <component name="ProjectId" id="2WwmkRU6uv2ul6VE2CQkAwCUzti" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -44,36 +90,37 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "Development",
-    "js.linters.configure.manually.selectedeslint": "true",
-    "last_opened_file_path": "/media/liam/New Volume/Personal/Portfolio/photography",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.standard": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "/media/liam/New Volume/Personal/Portfolio/photography/node_modules/eslint",
-    "node.js.selected.package.standard": "",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "settings.javascript.linters.eslint",
-    "ts.external.directory.path": "/media/liam/New Volume/Personal/Portfolio/photography/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Development&quot;,
+    &quot;js.linters.configure.manually.selectedeslint&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/media/liam/New Volume/Personal/Portfolio/Lambda&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;/media/liam/New Volume/Personal/Portfolio/photography/node_modules/eslint&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.qodana&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/media/liam/New Volume/Personal/Portfolio/photography/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/pages/api/collection/getCollection" />
+      <recent name="$PROJECT_DIR$/app/admin/(editing)/edit" />
+      <recent name="$PROJECT_DIR$/app/admin/(editing)/editCollection/[id]" />
+      <recent name="$PROJECT_DIR$/app/admin/(editing)/createCollection" />
       <recent name="$PROJECT_DIR$/app/(admin)/(editing)" />
-      <recent name="$PROJECT_DIR$/app/(main)" />
-      <recent name="$PROJECT_DIR$/app/admin" />
-      <recent name="$PROJECT_DIR$/app" />
-      <recent name="X:\Portfolio\photography\components\Organisms" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -122,6 +169,13 @@
       <workItem from="1700588837288" duration="1229000" />
       <workItem from="1700674990134" duration="29000" />
       <workItem from="1710926249414" duration="1067000" />
+      <workItem from="1730287718198" duration="11692000" />
+      <workItem from="1730379432951" duration="672000" />
+      <workItem from="1730440837406" duration="11023000" />
+      <workItem from="1730456510084" duration="3486000" />
+      <workItem from="1730711179124" duration="8087000" />
+      <workItem from="1730788249568" duration="11767000" />
+      <workItem from="1730894936430" duration="6079000" />
     </task>
     <servers />
   </component>

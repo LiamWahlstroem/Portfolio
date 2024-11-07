@@ -1,17 +1,17 @@
 import {NextApiRequest, NextApiResponse} from 'next';
 import {Users} from '../schema';
-import UserResponse from '../../../lib/Types/UserResponse';
+import {UserResponse} from '../../../lib/Types/UserTypes';
 import authenticateToken from '../../../lib/authenticateToken';
 
 const getAllUsers = async (req: NextApiRequest, res: NextApiResponse) => {
 	if(req.method !== 'GET') {
-		return res.status(405).end();
+		res.status(405).end();
 	}
 
 	const token = req.headers['authorization']?.split(' ')[1] || '';
 	const [authenticated, role] = await authenticateToken(token);
 
-	if(!authenticated || role !== 'admin') return res.status(401).end();
+	if(!authenticated || role !== 'admin') res.status(401).end();
 
 	const users = await Users.find({});
 	const parsedUsers: UserResponse[] = [];
@@ -21,7 +21,7 @@ const getAllUsers = async (req: NextApiRequest, res: NextApiResponse) => {
 	});
 
 	res.json({users: parsedUsers});
-	return res.status(200).end();
+	res.status(200).end();
 };
 
 export default getAllUsers;

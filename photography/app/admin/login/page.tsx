@@ -2,7 +2,7 @@
 
 import type {NextPage} from 'next';
 import Head from 'next/head';
-import {useRouter, notFound} from 'next/navigation';
+import {useRouter} from 'next/navigation';
 import IsUserAuthenticated from '../../../lib/hooks/useIsAuthenticated';
 import React, {useEffect, useRef} from 'react';
 import TextInputSmall from '../../../components/Atoms/TextInputSmall';
@@ -50,7 +50,7 @@ const Login: NextPage = () => {
 			const data = await res.json();
 			sessionStorage.setItem('JWT', data.token);
 			sessionStorage.setItem('role', data.role);
-			router.push('/admin/create');
+			router.push('/admin/edit');
 		} else {
 			alert('Login failed');
 		}

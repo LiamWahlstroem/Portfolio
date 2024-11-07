@@ -1,5 +1,5 @@
 import React, {ReactElement} from 'react';
-import ImageResponse from '../../lib/Types/ImageResponse';
+import {ImageResponse} from '../../lib/Types/ImageType';
 import {NextPage} from 'next';
 import Modal from '../Molecules/Modal';
 import FormImageEdit from '../Molecules/FormImageEdit';
@@ -16,7 +16,7 @@ const ModalEditImage: NextPage<Props> = (Props: Props): ReactElement => {
 				<img src={Props.image.imageURL} alt={Props.image.alt} className='max-w-full max-h-[88vh]'/>
 			</div>
 			<FormImageEdit
-				imageId={Props.image.imageId}
+				imageId={Props.image._id}
 				modalOpen={Props.modalOpen}
 				imageAlt={Props.image.alt}
 				location={Props.image.location}

@@ -14,7 +14,7 @@ export const handler = async (event) => {
       };
       const { Body } = await client.send(new GetObjectCommand(getObjectParams));
 
-    let image = await Body.transformToByteArray();
+    let image = Body;
     const sizeX = sizeOf(image).width;
     const sizeY = sizeOf(image).height;
     let resizedImageBuffer = await sharp(image)

@@ -1,22 +1,23 @@
+'use client';
+
 import {ReactElement} from 'react';
 import NavbarItem from '../Atoms/NavbarItem';
 import NavbarContainer from '../Atoms/NavbarContainer';
+import {useNavbar} from '../../app/shared/NavbarContext';
 
-type Props = {
-    currentPage: string;
-    backgroundBlack?: boolean;
-}
-
-const AdminNavbar = (Props: Props): ReactElement => {
+const AdminNavbar = (): ReactElement => {
 	const items = [
 		{text: 'Edit', value: 'edit', link: '/admin/edit'},
-		{text: 'Create', value: 'create', link: '/admin/create'},
+		{text: 'Add Image', value: 'create', link: '/admin/addImage'},
+		{text: 'Create Collections', value: 'collectionCreate', link: '/admin/createCollection'},
 		{text: 'User management', value: 'users', link: '/admin/users'},
 	];
 
+	const { value } = useNavbar();
+
 	return (
 		<NavbarContainer>
-			{items.map(el => <NavbarItem text={el.text} value={el.value} link={el.link} currentPage={Props.currentPage} key={el.link}/>)}
+			{items.map(el => <NavbarItem text={el.text} value={el.value} link={el.link} currentPage={value} key={el.link}/>)}
 		</NavbarContainer>
 	);
 };

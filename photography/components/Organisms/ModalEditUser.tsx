@@ -1,10 +1,10 @@
 import React from 'react';
 import Modal from '../Molecules/Modal';
 import FormUserEdit from '../Molecules/FormUserEdit';
-import userResponse from '../../lib/Types/UserResponse';
+import {UserResponse} from '../../lib/Types/UserTypes';
 
 type Props = {
-	user: userResponse;
+	user: UserResponse;
 	modalOpen: (value: boolean) => void;
 	editUser: boolean;
 	fetchData: () => void;

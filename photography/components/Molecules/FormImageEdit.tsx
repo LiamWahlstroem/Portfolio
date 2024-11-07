@@ -1,12 +1,11 @@
 import React, {ReactElement, useRef} from 'react';
 import ButtonDanger from '../Atoms/ButtonDanger';
-import {ModalOpenMethod} from '../../lib/Types/ModalOpenMethod';
 import TextInputSmall from '../Atoms/TextInputSmall';
 import ButtonSubmit from '../Atoms/ButtonSubmit';
 
 type Props = {
 	imageId: string;
-	modalOpen: ModalOpenMethod;
+	modalOpen: (value: boolean) => void;
 	imageAlt: string;
 	location: string;
 	date: string;

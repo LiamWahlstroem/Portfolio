@@ -3,23 +3,23 @@
 import React, {ReactElement, useEffect, useState} from 'react';
 import {useRouter} from 'next/navigation';
 import IsUserAuthenticated from '../../../../lib/hooks/useIsAuthenticated';
-import ImageResponse from '../../../../lib/Types/ImageResponse';
-import ModalEditImage from '../../../../components/Organisms/ModalEditImage';
-import GalleryComponent from '../../../../components/Organisms/GalleryComponent';
+import {useNavbar} from '../../../shared/NavbarContext';
+import {CollectionResponse} from '../../../../lib/Types/CollectionType';
+import CollectionCard from '../../../../components/Molecules/CollectionCard';
 
 const edit = (): ReactElement => {
-	const [images, setImages] = useState<ImageResponse[]>([]);
+	const [collections, setCollections] = useState<CollectionResponse[]>([]);
 	const router = useRouter();
-	const [isOpen, setIsOpen] = useState<boolean>(false);
-	const [selectedImage, setSelectedImage] = useState<ImageResponse>({imageId: '', imageURL: '', imageURLSmall: '', alt: '', location: '', date: ''});
+	const { setValue } = useNavbar();
 
 	useEffect(() => {
-		if(!IsUserAuthenticated())
-		{
+		setValue('edit');
+
+		if(!IsUserAuthenticated()) {
 			router.push('/admin/login');
 		}
 
-		const URL = '/api/image/getImages';
+		const URL = '/api/collection/getCollections';
 
 		fetch(URL, {
 			method: 'GET',
@@ -29,20 +29,24 @@ const edit = (): ReactElement => {
 			} else {
 				router.push('/error');
 			}
-		}).then((data: {data: ImageResponse[]}) => setImages(data.data));
+		}).then((data: {data: CollectionResponse[]}) => setCollections(data.data));
 	}, []);
 
-	const handleClick = (ev: React.MouseEvent<HTMLImageElement>) => {
-		const image = images.filter((el: ImageResponse) => el.imageURLSmall === ev.currentTarget.src);
-		setSelectedImage(image[0]);
-		setIsOpen(true);
+	const handleClick = (ev: React.MouseEvent<HTMLDivElement>) => {
+		router.push('/admin/edit/' + ev.currentTarget.dataset.id);
 	};
 
-	return(
-		<>
-			<GalleryComponent images={images} onClick={handleClick} />
-			{isOpen && <ModalEditImage image={selectedImage} modalOpen={setIsOpen}/>}
-		</>
+	return (
+		<div className="flex flex-col md:flex-row justify-center md:space-x-6 md:space-y-0 space-y-6">
+			{collections.map((el: CollectionResponse) =>
+				<CollectionCard
+					CollectionCardDate={el.collectionDate}
+					CollectionCardName={el.collectionName}
+					key={el._id}
+					collectionId={el._id}
+					onClick={handleClick}
+				/>)}
+		</div>
 	);
 };
 

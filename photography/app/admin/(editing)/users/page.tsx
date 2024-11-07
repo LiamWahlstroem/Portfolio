@@ -3,12 +3,13 @@
 import React, {useEffect, useRef, useState} from 'react';
 import IsUserAuthenticated from '../../../../lib/hooks/useIsAuthenticated';
 import {useRouter} from 'next/navigation';
-import UserResponse from '../../../../lib/Types/UserResponse';
+import {UserResponse} from '../../../../lib/Types/UserTypes';
 import UserCard from '../../../../components/Molecules/UserCard';
 import ModalEditUser from '../../../../components/Organisms/ModalEditUser';
 import ModalChangePassword from '../../../../components/Organisms/ModalChangePassword';
 import AllUsersCards from '../../../../components/Organisms/allUsersCards';
 import Heading from '../../../../components/Atoms/Heading';
+import {useNavbar} from '../../../shared/NavbarContext';
 
 const Users = () => {
 	const router = useRouter();
@@ -19,6 +20,11 @@ const Users = () => {
 	const selectedUser = useRef<UserResponse>();
 	const [role, setRole] = useState<string>('');
 	const edit = useRef<boolean>(true);
+	const { setValue } = useNavbar();
+
+	useEffect(() => {
+		setValue('users');
+	});
 
 	useEffect(() => {
 		if(!IsUserAuthenticated()) {

@@ -1,9 +1,9 @@
 'use client';
 
-import type { NextPage } from 'next';
+import type {NextPage} from 'next';
 import React, {ReactElement, useEffect, useState} from 'react';
 import {useRouter} from 'next/navigation';
-import ImageResponse from '../../lib/Types/ImageResponse';
+import {ImageResponse} from '../../lib/Types/ImageType';
 import ModalImage from '../../components/Organisms/ModalImage';
 import GalleryComponent from '../../components/Organisms/GalleryComponent';
 
@@ -42,7 +42,7 @@ const HomePage: NextPage = (): ReactElement => {
 	return (
 		<>
 			<GalleryComponent images={images} onClick={handleClick} />
-			{isOpen && <ModalImage modalOpen={setIsOpen} image={selectedImage!} key={selectedImage!.imageId}/>}
+			{isOpen && <ModalImage modalOpen={setIsOpen} image={selectedImage!} key={selectedImage!._id}/>}
 		</>
 	);
 };

@@ -1,4 +1,4 @@
-import S3DeleteParams from './Types/S3DeleteParams';
+import {S3DeleteParams} from './Types/AwsTypes';
 import * as AWS from 'aws-sdk';
 
 const s3Delete = (params: S3DeleteParams) =>{

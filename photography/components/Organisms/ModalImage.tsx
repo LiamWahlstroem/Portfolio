@@ -1,4 +1,4 @@
-import ImageResponse from '../../lib/Types/ImageResponse';
+import {ImageResponse} from '../../lib/Types/ImageType';
 import {NextPage} from 'next';
 import React, {ReactElement} from 'react';
 import Modal from '../Molecules/Modal';
