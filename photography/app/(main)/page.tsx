@@ -4,17 +4,20 @@ import type {NextPage} from 'next';
 import React, {ReactElement, useEffect, useState} from 'react';
 import {useRouter} from 'next/navigation';
 import {ImageResponse} from '../../lib/Types/ImageType';
-import ModalImage from '../../components/Organisms/ModalImage';
-import GalleryComponent from '../../components/Organisms/GalleryComponent';
+import {CollectionResponse} from '../../lib/Types/CollectionType';
+import CollectionCard from '../../components/Molecules/CollectionCard';
+import IsUserAuthenticated from '../../lib/hooks/useIsAuthenticated';
+import {useNavbar} from '../shared/NavbarContext';
 
 const HomePage: NextPage = (): ReactElement => {
-	const [images, setImages] = useState<ImageResponse[]>([]);
-	const [isOpen, setIsOpen] = useState<boolean>(false);
-	const [selectedImage, setSelectedImage] = useState<ImageResponse>();
+	const [collections, setCollections] = useState<CollectionResponse[]>([]);
+	const { setValue } = useNavbar();
 	const router = useRouter();
 
 	useEffect(() => {
-		const URL = '/api/image/getImages';
+		setValue('Home');
+
+		const URL = '/api/collection/getCollections';
 
 		fetch(URL, {
 			method: 'GET',
@@ -24,26 +27,24 @@ const HomePage: NextPage = (): ReactElement => {
 			} else {
 				router.push('/error');
 			}
-		}).then((data: {data: ImageResponse[]}) => {
-			if(data.data) {
-				setImages(data.data);
-			}
-			else {
-				router.push('/error');
-			}
-		});
+		}).then((data: {data: CollectionResponse[]}) => setCollections(data.data));
 	}, []);
 
-	const handleClick = (ev: React.MouseEvent<HTMLImageElement>) => {
-		setSelectedImage(images.filter((el: ImageResponse) => el.imageURLSmall === ev.currentTarget.src)[0]);
-		setIsOpen(true);
+	const handleClick = (ev: React.MouseEvent<HTMLDivElement>) => {
+		router.push('/' + ev.currentTarget.dataset.id);
 	};
 
 	return (
-		<>
-			<GalleryComponent images={images} onClick={handleClick} />
-			{isOpen && <ModalImage modalOpen={setIsOpen} image={selectedImage!} key={selectedImage!._id}/>}
-		</>
+		<div className="flex flex-col md:flex-row justify-center md:space-x-6 md:space-y-0 space-y-6">
+			{collections.map((el: CollectionResponse) =>
+				<CollectionCard
+					CollectionCardDate={el.collectionDate}
+					CollectionCardName={el.collectionName}
+					key={el._id}
+					collectionId={el._id}
+					onClick={handleClick}
+				/>)}
+		</div>
 	);
 };
 

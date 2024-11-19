@@ -25,7 +25,7 @@ const uploadImageFiles = async (file: File, alt: string, location: string, date:
 
 	data = await data.json();
 
-	const key = 'original/' + encodeURIComponent(collection.collectionName) + '/' + file.name;
+	const key = 'original/' + encodeURIComponent(collection.collectionName) + '/' + encodeURIComponent(file.name);
 
 	const params: S3Params = {
 		Bucket: 'photography-portoflio-1',

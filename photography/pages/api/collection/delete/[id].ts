@@ -27,19 +27,6 @@ const deleteHandler = async (req: NextApiRequest, res: NextApiResponse) => {
 
 	if(images != undefined) {
 		for(const i of images) {
-			const paramsMedium = {
-				Bucket: 'photography-portoflio-1',
-				Key: 'processed/' + i.imageName + '_medium.webp',
-			};
-
-			const paramsSmall = {
-				Bucket: 'photography-portoflio-1',
-				Key: 'processed/' + i.imageName + '_small.webp',
-			};
-
-			s3Delete(paramsMedium);
-			s3Delete(paramsSmall);
-
 			await Images.deleteOne({_id: {$eq: i._id}});
 		}
 	}

@@ -12,7 +12,7 @@ const ModalImage: NextPage<Props> = (Props: Props): ReactElement => {
 	return (
 		<Modal modalOpen={Props.modalOpen}>
 			<div className='relative max-h-[92vh] overflow-hidden flex-grow pb-4 px-8'>
-				<img src={Props.image.imageURL} alt={Props.image.alt} className='max-w-full max-h-[88vh]'/>
+				<img src={Props.image.imageURLMedium} alt={Props.image.alt} className='max-w-full max-h-[88vh]'/>
 				<p className='pt-2'>
 					<i>Location: {Props.image.location}, Date: {Props.image.date}, Shot on: Fujifilm XT-4</i>
 				</p>

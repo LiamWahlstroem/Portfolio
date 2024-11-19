@@ -1,6 +1,8 @@
 export type ImageResponse = {
     _id: string;
-    imageURL: string;
+    imageName: string;
+    imageURLFull: string;
+    imageURLMedium: string;
     imageURLSmall: string;
     alt: string;
     location: string;

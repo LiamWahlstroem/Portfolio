@@ -1,11 +1,13 @@
 import {S3DeleteParams} from './Types/AwsTypes';
-import * as AWS from 'aws-sdk';
+import {S3Client, DeleteObjectCommand} from '@aws-sdk/client-s3';
 
-const s3Delete = (params: S3DeleteParams) =>{
-	const s3 = new AWS.S3();
-	AWS.config.update({region: 'eu-central-2'});
-
-	s3.deleteObject(params);
+const s3Delete = async (client: S3Client, params: S3DeleteParams) =>{
+	try {
+		const command = new DeleteObjectCommand(params);
+		await client.send(command);
+	} catch (err) {
+		alert('Something went wrong: ' + err);
+	}
 };
 
 export default s3Delete;

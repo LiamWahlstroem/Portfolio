@@ -15,7 +15,7 @@ const getCollections = async (req: NextApiRequest, res: NextApiResponse) => {
 
 	const collection: CollectionResponse = await ImageCollections.findOne({_id: {$eq: id}}).exec();
 	const images: ImageResponse[] = await Images.find();
-	 images.filter((el: ImageResponse) => el.imageCollection === id);
+	const filteredImages = images.filter((el: ImageResponse) => el.imageCollection === id);
 
 	if(!collection) {
 		res.json('No Collection found.');
@@ -27,7 +27,7 @@ const getCollections = async (req: NextApiRequest, res: NextApiResponse) => {
 		res.status(404).end();
 	}
 
-	res.json({data: {collection: collection, images: images}});
+	res.json({data: {collection: collection, images: filteredImages}});
 	res.status(200).end();
 };
 

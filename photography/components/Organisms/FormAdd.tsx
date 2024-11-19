@@ -31,7 +31,7 @@ const FormAdd = (Props: Props) => {
 					<TextInputSmall placeholder='Alt Text' inputValue={Props.setAltText} defaultValue={undefined}/>
 					<TextInputSmall placeholder='Location' inputValue={Props.setLocationText} defaultValue={undefined} />
 					<TextInputSmall placeholder='Date' inputValue={Props.setDate} defaultValue={Props.date} />
-					<Dropdown inputValue={Props.setCollection} collections={Props.collections} name='Collection'/>
+					<Dropdown inputValue={Props.setCollection} collections={Props.collections} name='Collection' defaultID={''}/>
 					<ButtonSubmit buttonText='Upload'/>
 				</div>
 			</div>
