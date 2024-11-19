@@ -5,32 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d1afe9e8-03d2-4a4e-8f86-d1c0f86e4d89" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.eslintrc.js" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(main)/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(main)/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(main)/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(main)/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/admin/(editing)/createCollection/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/admin/(editing)/createCollection/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/admin/(editing)/edit/[id]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/admin/(editing)/edit/[id]/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Atoms/Button.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Atoms/Button.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Atoms/ButtonDanger.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Atoms/ButtonDanger.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Atoms/ButtonIcon.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Atoms/ButtonIcon.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Atoms/ButtonSubmit.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Atoms/ButtonSubmit.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Atoms/FooterItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Atoms/FooterItem.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Atoms/Heading.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Atoms/Heading.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Atoms/NavbarContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Atoms/NavbarContainer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Atoms/NavbarItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Atoms/NavbarItem.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Molecules/FormChangePassword.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Molecules/FormChangePassword.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Organisms/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Organisms/Footer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Organisms/ModalChangePassword.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Organisms/ModalChangePassword.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eslint.config.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/eslint.config.mjs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Types/TokenPayload.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Types/TokenPayload.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/authenticateToken.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/authenticateToken.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/getTemporaryCredentials.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/getTemporaryCredentials.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/hooks/useIsAuthenticated.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/hooks/useIsAuthenticated.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/next.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/_app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_app.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/api/collection/delete/[id].ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/api/collection/delete/[id].ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/postcss.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/postcss.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/admin/(editing)/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/admin/(editing)/layout.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,7 +64,7 @@
       <workItem from="1731508419899" duration="2747000" />
       <workItem from="1731679604000" duration="396000" />
       <workItem from="1731933588287" duration="7835000" />
-      <workItem from="1731997263563" duration="5791000" />
+      <workItem from="1731997263563" duration="5927000" />
     </task>
     <servers />
   </component>

@@ -6,7 +6,6 @@ import {NavbarProvider} from '../../shared/NavbarContext';
 
 type Props = {
 	children: React.ReactNode;
-	currentPage: string;
 }
 
 const AdminLayout = (Props: Props): ReactElement => {
