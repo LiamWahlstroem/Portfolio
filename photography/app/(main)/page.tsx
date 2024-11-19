@@ -3,10 +3,8 @@
 import type {NextPage} from 'next';
 import React, {ReactElement, useEffect, useState} from 'react';
 import {useRouter} from 'next/navigation';
-import {ImageResponse} from '../../lib/Types/ImageType';
 import {CollectionResponse} from '../../lib/Types/CollectionType';
 import CollectionCard from '../../components/Molecules/CollectionCard';
-import IsUserAuthenticated from '../../lib/hooks/useIsAuthenticated';
 import {useNavbar} from '../shared/NavbarContext';
 
 const HomePage: NextPage = (): ReactElement => {

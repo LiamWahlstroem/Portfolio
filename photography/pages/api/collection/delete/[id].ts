@@ -1,7 +1,6 @@
 import {NextApiRequest, NextApiResponse} from 'next';
 import authenticateToken from '../../../../lib/authenticateToken';
 import {ImageCollections, Images} from '../../schema';
-import s3Delete from '../../../../lib/s3Delete';
 import {DeleteResult} from 'mongodb';
 
 const deleteHandler = async (req: NextApiRequest, res: NextApiResponse) => {

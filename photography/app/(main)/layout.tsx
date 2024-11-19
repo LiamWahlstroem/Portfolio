@@ -10,10 +10,9 @@ import '../globals.css';
 
 type Props = {
     children: React.ReactNode;
-    currentPage: string;
 };
 
-const RootLayout = ({ children, currentPage }: Props): ReactElement => {
+const RootLayout = ({ children }: Props): ReactElement => {
 	return (
 		<html lang="en">
 			<Head>

@@ -11,6 +11,7 @@ import IsUserAuthenticated from '../../../../../lib/hooks/useIsAuthenticated';
 import {S3Client} from '@aws-sdk/client-s3';
 import {STSResponse} from '../../../../../lib/Types/AwsTypes';
 import s3Delete from '../../../../../lib/s3Delete';
+import {useNavbar} from '../../../../shared/NavbarContext';
 
 const CollectionGallery = (): ReactElement => {
 	const params = useParams<{ id: string }>();
@@ -20,9 +21,11 @@ const CollectionGallery = (): ReactElement => {
 	const [selectedImage, setSelectedImage] = useState<ImageResponse>();
 	const collections = useRef<CollectionResponse[]>([]);
 	const router = useRouter();
+	const { setValue } = useNavbar();
 	let token = '';
 
 	useEffect(() => {
+		setValue('edit');
 		if(!IsUserAuthenticated())
 		{
 			router.push('/admin/login');
@@ -128,7 +131,6 @@ const CollectionGallery = (): ReactElement => {
 		});
 
 		for(const image of data.images) {
-			console.log(image);
 			const paramsMedium = {
 				Bucket: 'photography-portoflio-1',
 				Key: decodeURIComponent(image.imageURLMedium.split('.net/')[1]),

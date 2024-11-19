@@ -30,8 +30,6 @@ const createCollectionPage: NextPage = (): ReactElement => {
 		const URL = '/api/collection/createCollection';
 		const token = 'Bearer ' + sessionStorage.getItem('JWT');
 
-		console.log(title.current);
-
 		fetch(URL, {
 			method: 'POST',
 			headers: {
