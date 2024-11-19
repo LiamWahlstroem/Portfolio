@@ -13,7 +13,6 @@ const AdminLayout = (Props: Props): ReactElement => {
 		<html lang="en">
 			<Head>
 				<title>Admin</title>
-				<link rel="icon" href="/favicon.ico"/>
 			</Head>
 			<body>
 				<NavbarProvider>

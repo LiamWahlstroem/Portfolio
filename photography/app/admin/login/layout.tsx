@@ -13,7 +13,6 @@ const RootLayout = ({ children }: Props): ReactElement => {
 		<html lang="en">
 			<Head>
 				<title>Login</title>
-				<link rel="icon" href="/favicon.ico" />
 			</Head>
 			<body>
 				<main>

@@ -1,4 +1,3 @@
-// app/layout.tsx
 'use client';
 
 import React, {ReactElement} from 'react';
@@ -17,7 +16,6 @@ const RootLayout = ({ children }: Props): ReactElement => {
 		<html lang="en">
 			<Head>
 				<title>Hey There</title>
-				<link rel="icon" href="/favicon.ico" />
 			</Head>
 			<body>
 				<NavbarProvider>
