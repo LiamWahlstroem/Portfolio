@@ -14,16 +14,16 @@ export const handler = async (event) => {
       };
       const { Body } = await client.send(new GetObjectCommand(getObjectParams));
 
-    let image = Body;
+    let image = await streamToBuffer(Body);
+
     const sizeX = sizeOf(image).width;
-    const sizeY = sizeOf(image).height;
     let resizedImageBuffer = await sharp(image)
       .rotate(0)
-      .resize({ width: sizeX / 3, height: sizeY / 3 })
+      .resize({ width: Math.round(sizeX / 3), height: null })
       .webp({ quality: 85 })
       .toBuffer();
 
-    let resizedKey = key.split('/')[1] + key.split('/')[2] + '_medium.webp';
+    let resizedKey = key.split('/')[1] + '/' + key.split('/')[2].split('.')[0] + '_medium.webp';
 
     let putObjectParams = {
       Bucket: bucket,
@@ -35,11 +35,11 @@ export const handler = async (event) => {
 
     resizedImageBuffer = await sharp(image)
       .rotate(0)
-      .resize({ width: sizeX / 5, height: sizeY / 5 })
+      .resize({ width: Math.round(sizeX / 5), height: null })
       .webp({ quality: 85 })
       .toBuffer();
 
-    resizedKey = key.split('/')[1] + key.split('/')[2] + '_small.webp';
+    resizedKey = key.split('/')[1] + '/' + key.split('/')[2].split('.')[0] + '_small.webp';
 
     putObjectParams = {
       Bucket: bucket,
@@ -61,4 +61,13 @@ export const handler = async (event) => {
     console.error(error);
     throw new Error('Image processing or S3 putObject failed.');
   }
+};
+
+const streamToBuffer = async (stream) => {
+  return new Promise((resolve, reject) => {
+    const chunks = [];
+    stream.on('data', (chunk) => chunks.push(chunk));
+    stream.on('end', () => resolve(Buffer.concat(chunks)));
+    stream.on('error', reject);
+  });
 };
