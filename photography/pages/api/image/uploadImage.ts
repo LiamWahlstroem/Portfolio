@@ -4,26 +4,30 @@ import authenticateToken from '../../../lib/authenticateToken';
 
 const uploadImage = async (req: NextApiRequest, res: NextApiResponse ) => {
 	if(req.method !== 'POST') {
-		return res.status(405).end();
+		res.status(405).end();
 	}
 
 	const token = req.headers['authorization']?.split(' ')[1] || '';
 	const [authenticated, role] = await authenticateToken(token);
 
+	const collectionName = encodeURIComponent(encodeURIComponent(req.body.collectionName));
+	const fileName = encodeURIComponent(encodeURIComponent(req.body.fileName));
+
 	if(!authenticated || role !== 'admin') res.status(401).end();
 	else {
 		const imageData = new Images({
 			imageName: req.body.fileName,
-			imageURLFull: process.env.CLOUDFRONT_DOMAIN + req.body.fileName + '.webp',
-			imageURLMedium: process.env.CLOUDFRONT_DOMAIN + 'processed/' + req.body.fileName + '_medium.webp',
-			imageURLSmall: process.env.CLOUDFRONT_DOMAIN+ 'processed/' + req.body.fileName + '_small.webp',
+			imageURLFull: process.env.CLOUDFRONT_DOMAIN + collectionName + '/' + fileName + '.webp',
+			imageURLMedium: process.env.CLOUDFRONT_DOMAIN + collectionName + '/' + fileName + '_medium.webp',
+			imageURLSmall: process.env.CLOUDFRONT_DOMAIN+ collectionName + '/' + fileName + '_small.webp',
 			alt: req.body.alt,
 			location: req.body.location,
-			date: req.body.date
+			date: req.body.date,
+			imageCollection: req.body.collectionId
 		});
 		await imageData.save();
 
-		return res.status(200).end();
+		res.status(200).end();
 	}
 };
 

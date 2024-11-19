@@ -8,20 +8,20 @@ const hashPassword = async (password: string): Promise<string> => {
 };
 
 const Register = async (req: NextApiRequest, res: NextApiResponse) => {
-	if(req.method !== 'POST') return res.status(405).end();
+	if(req.method !== 'POST') res.status(405).end();
 
 	const token = req.headers['authorization']?.split(' ')[1] || '';
 	const [authenticated, role] = await authenticateToken(token);
 
-	if(!authenticated || role !== 'admin') return res.status(401).end();
+	if(!authenticated || role !== 'admin') res.status(401).end();
 
 	const username: string = req.body.username;
 	const password: string = req.body.password;
 
-	const userWithUsername = await Users.findOne({username: username});
+	const userWithUsername = await Users.findOne({username: {$eq: username}});
 
 	if(userWithUsername != undefined) {
-		return res.status(500).end();
+		res.status(500).end();
 	}
 
 	const hash: string = await hashPassword(password);
@@ -33,7 +33,7 @@ const Register = async (req: NextApiRequest, res: NextApiResponse) => {
 	});
 
 	newUser.save().then(() => {
-		return res.status(200).end();
+		res.status(200).end();
 	});
 };
 

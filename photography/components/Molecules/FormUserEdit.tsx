@@ -1,11 +1,11 @@
 import React, {useRef} from 'react';
 import TextInputSmall from '../Atoms/TextInputSmall';
 import ButtonSubmit from '../Atoms/ButtonSubmit';
-import userResponse from '../../lib/Types/UserResponse';
+import {UserResponse} from '../../lib/Types/UserTypes';
 import TextInputPassword from '../Atoms/TextInputPassword';
 
 type Props = {
-	user: userResponse;
+	user: UserResponse;
 	isOpen: (value: boolean) => void;
 	editUser: boolean;
 	fetchData: () => void;

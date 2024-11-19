@@ -1,9 +1,9 @@
 import {useRef, useEffect, useState} from 'react';
-import {Seal, drawSeal} from './sealNJump/seal';
-import {getRandom} from '../utilities/functions';
-import {Stone, drawStones} from './sealNJump/stone';
-import scoreCounter from './sealNJump/scoreCounter';
-import collisions from './sealNJump/collisions';
+import {Seal, drawSeal} from '../lib/sealNJump/seal';
+import {getRandom} from '../utils/functions';
+import {Stone, drawStones} from '../lib/sealNJump/stone';
+import scoreCounter from '../lib/sealNJump/scoreCounter';
+import collisions from '../lib/sealNJump/collisions';
 
 const SealNJump = () => {
 	const URL = '/api/addLeaderboard';

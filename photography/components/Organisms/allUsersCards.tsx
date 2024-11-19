@@ -1,12 +1,12 @@
 import React from 'react';
 import Button from '../Atoms/Button';
-import userResponse from '../../lib/Types/UserResponse';
 import UserCard from '../Molecules/UserCard';
 import Heading from '../Atoms/Heading';
+import {UserResponse} from '../../lib/Types/UserTypes';
 
 type Props = {
-	users: userResponse[];
-	handleSelectEdit: (value: userResponse, edit: boolean) => void;
+	users: UserResponse[];
+	handleSelectEdit: (value: UserResponse, edit: boolean) => void;
 	fetchData: () => void;
 }
 
@@ -18,7 +18,7 @@ const AllUsersCards = (Props: Props) => {
 				<Button handleClick={() => Props.handleSelectEdit({username: '', role: 'admin', id: ''}, false)} text='Create User'/>
 			</div>
 			<div>
-				{Props.users.map((el: userResponse) => <UserCard user={el} edit={true} password={false} handleSelectEdit={() => Props.handleSelectEdit(el, true)} handleSelectPassword={undefined} key={el.id} fetchData={Props.fetchData}/>)}
+				{Props.users.map((el: UserResponse) => <UserCard user={el} edit={true} password={false} handleSelectEdit={() => Props.handleSelectEdit(el, true)} handleSelectPassword={undefined} key={el.id} fetchData={Props.fetchData}/>)}
 			</div>
 		</div>
 	);

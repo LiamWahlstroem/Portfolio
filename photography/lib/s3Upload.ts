@@ -1,9 +1,14 @@
-import S3Params from './Types/S3Params';
-import * as AWS from 'aws-sdk';
+import {S3Params} from './Types/AwsTypes';
+import {PutObjectCommand, S3Client} from '@aws-sdk/client-s3';
 
-const s3Upload = async (params: S3Params): Promise<void> => {
-	const s3 = new AWS.S3(AWS.config);
-	await s3.upload(params).promise();
+const s3Upload = async (client: S3Client, params: S3Params): Promise<void> => {
+	const command = new PutObjectCommand(params);
+
+	try {
+		await client.send(command);
+	} catch (err) {
+		alert('Error when uploading image: ' + err);
+	}
 };
 
 export default s3Upload;

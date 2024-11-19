@@ -1,51 +1,59 @@
-import AWS from 'aws-sdk';
+import {S3Client, GetObjectCommand, PutObjectCommand, DeleteObjectCommand} from '@aws-sdk/client-s3';
 import sharp from 'sharp';
 import sizeOf from 'image-size'
 
 export const handler = async (event) => {
+  const client = new S3Client({});
+  const bucket = event.Records[0].s3.bucket.name;
+  const key = decodeURIComponent(event.Records[0].s3.object.key.replace(/\+/g, ' '));
+
   try {
-    const s3 = new AWS.S3();
-    const s3Event = event.Records[0].s3;
+      const getObjectParams = {
+        Bucket: bucket,
+        Key: key,
+      };
+      const { Body } = await client.send(new GetObjectCommand(getObjectParams));
 
-    const getObjectParams = {
-      Bucket: s3Event.bucket.name,
-      Key: s3Event.object.key
-    };
+    let image = await streamToBuffer(Body);
 
-    const s3Object = await s3.getObject(getObjectParams).promise();
-
-    let image = s3Object.Body;
     const sizeX = sizeOf(image).width;
-    const sizeY = sizeOf(image).height;
     let resizedImageBuffer = await sharp(image)
       .rotate(0)
-      .resize({ width: sizeX / 3, height: sizeY / 3 })
+      .resize({ width: Math.round(sizeX / 3), height: null })
       .webp({ quality: 85 })
       .toBuffer();
 
-    let resizedKey = `processed/${s3Event.object.key.split('/')[1].split('.')[0] + '_medium.webp'}`;
-    
-    await s3.upload({
-      Bucket: s3Event.bucket.name,
+    let resizedKey = key.split('/')[1] + '/' + key.split('/')[2].split('.')[0] + '_medium.webp';
+
+    let putObjectParams = {
+      Bucket: bucket,
       Key: resizedKey,
       Body: resizedImageBuffer,
       ContentType: 'image/webp'
-    }).promise();
+    };
+    await client.send(new PutObjectCommand(putObjectParams));
 
     resizedImageBuffer = await sharp(image)
       .rotate(0)
-      .resize({ width: sizeX / 5, height: sizeY / 5 })
+      .resize({ width: Math.round(sizeX / 5), height: null })
       .webp({ quality: 85 })
       .toBuffer();
 
-    resizedKey = `processed/${s3Event.object.key.split('/')[1].split('.')[0] + '_small.webp'}`;
-    
-    await s3.upload({
-      Bucket: s3Event.bucket.name,
+    resizedKey = key.split('/')[1] + '/' + key.split('/')[2].split('.')[0] + '_small.webp';
+
+    putObjectParams = {
+      Bucket: bucket,
       Key: resizedKey,
       Body: resizedImageBuffer,
       ContentType: 'image/webp'
-    }).promise();
+    };
+    await client.send(new PutObjectCommand(putObjectParams));
+
+    const deleteObjectParams = {
+      Bucket: bucket,
+      Key: key,
+    };
+    await client.send(new DeleteObjectCommand(deleteObjectParams));
 
     return `Successfully resized object and saved to "${resizedKey}"`;
 
@@ -53,4 +61,13 @@ export const handler = async (event) => {
     console.error(error);
     throw new Error('Image processing or S3 putObject failed.');
   }
+};
+
+const streamToBuffer = async (stream) => {
+  return new Promise((resolve, reject) => {
+    const chunks = [];
+    stream.on('data', (chunk) => chunks.push(chunk));
+    stream.on('end', () => resolve(Buffer.concat(chunks)));
+    stream.on('error', reject);
+  });
 };

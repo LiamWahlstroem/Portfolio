@@ -1,14 +1,14 @@
 import React from 'react';
 import Button from '../Atoms/Button';
-import userResponse from '../../lib/Types/UserResponse';
+import {UserResponse} from '../../lib/Types/UserTypes';
 import ButtonDanger from '../Atoms/ButtonDanger';
 
 type Props = {
-	user: userResponse;
+	user: UserResponse;
 	edit: boolean;
 	password: boolean;
-	handleSelectEdit: (value: userResponse, edit: boolean) => void;
-	handleSelectPassword: ((value: userResponse) => void) | undefined;
+	handleSelectEdit: (value: UserResponse, edit: boolean) => void;
+	handleSelectPassword: ((value: UserResponse) => void) | undefined;
 	fetchData: () => void;
 }
 

@@ -14,6 +14,12 @@ interface IImage {
 	alt: string;
 	location: string;
     date: string;
+	imageCollection: string;
+}
+
+interface IImageCollection {
+	collectionName: string;
+	collectionDate: string;
 }
 
 const userSchema = new mongoose.Schema<IUser>({
@@ -30,9 +36,16 @@ const imageSchema = new mongoose.Schema<IImage>({
 	alt: String,
 	location: String,
 	date: String,
+	imageCollection: String,
+});
+
+const imageCollectionSchema = new mongoose.Schema<IImageCollection>({
+	collectionName: String,
+	collectionDate: String,
 });
 
 export const Users = mongoose.models.Users || mongoose.model<IUser>('Users', userSchema, 'Users');
 
-export const Images = mongoose.models.Image || mongoose.model<IImage>('Image', imageSchema, 'Images');
+export const Images = mongoose.models.Images || mongoose.model<IImage>('Images', imageSchema, 'Images');
 
+export const ImageCollections = mongoose.models.ImageCollections || mongoose.model<IImageCollection>('ImageCollections', imageCollectionSchema, 'ImageCollections');

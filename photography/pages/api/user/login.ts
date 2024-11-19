@@ -1,6 +1,6 @@
 import * as jwt from 'jsonwebtoken';
 import * as bcrypt from 'bcrypt';
-import { Users } from '../schema';
+import {Users} from '../schema';
 import useDatabase from '../../../lib/hooks/useDatabase';
 import {NextApiRequest, NextApiResponse} from 'next';
 
@@ -10,7 +10,7 @@ const validatePassword = async (p1: string, p2: string): Promise<boolean> => {
 
 const Login = async (req: NextApiRequest, res: NextApiResponse) => {
 	if(req.method !== 'POST') {
-		return res.status(405).end();
+		res.status(405).end();
 	}
 
 	await useDatabase();
@@ -39,7 +39,7 @@ const Login = async (req: NextApiRequest, res: NextApiResponse) => {
 	}
 
 	res.status(401);
-	return res.send('Invalid username or password');
+	res.send('Invalid username or password');
 };
 
 export default Login;

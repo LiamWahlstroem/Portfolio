@@ -1,0 +1,18 @@
+{
+  "projects": [
+    {
+      "id": 0,
+      "name": "Portfolio Website",
+      "description": "My Portfolio Website is written in Typescript, Next.js and TailwindCSS, while using Vercel to host the website.",
+      "linkGithub": "https://github.com/LiamWahlstroem/Portfolio",
+      "linkWebpage": "https://wahlstroem.dev"
+    },
+    {
+      "id": 1,
+      "name": "Photography Portfolio",
+      "description": "My Portfolio Website for showing off my photography is written in Typescript, Next.js and Tailwindcss. The Website as well as backend are hosted on Vercel, whilst the data is store in a MongoDB Atlas Database. The Pictures are prepared for being served with an AWS Lambda Function, and then stored in an AWS S3 Bucket.",
+      "linkGithub": "https://github.com/LiamWahlstroem/Portfolio",
+      "linkWebpage": "https://photo.wahlstroem.dev"
+    }
+  ]
+}

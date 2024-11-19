@@ -1,1 +1,0 @@
-export type ModalOpenMethod = (value: boolean) => void;
