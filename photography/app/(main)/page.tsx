@@ -33,7 +33,7 @@ const HomePage: NextPage = (): ReactElement => {
 	};
 
 	return (
-		<div className="flex flex-col md:flex-row justify-center md:space-x-6 md:space-y-0 space-y-6">
+		<div className="flex flex-wrap justify-center gap-6">
 			{collections.map((el: CollectionResponse) =>
 				<CollectionCard
 					CollectionCardDate={el.collectionDate}

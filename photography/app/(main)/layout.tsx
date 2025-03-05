@@ -20,7 +20,7 @@ const RootLayout = ({ children }: Props): ReactElement => {
 			<body>
 				<NavbarProvider>
 					<Navbar />
-					<main>
+					<main className='px-6 pt-6 min-h-screen'>
 						{children}
 					</main>
 					<Footer />
