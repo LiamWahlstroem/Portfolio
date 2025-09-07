@@ -5,6 +5,9 @@
     "build": "next build",
     "start": "next start"
   },
+  "engines": {
+  "node": ">=22.0.0"
+},
   "dependencies": {
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "clsx": "^2.1.0",
