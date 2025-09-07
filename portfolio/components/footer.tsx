@@ -14,7 +14,7 @@ const Footer = () => {
 				</li>
 				<li className='hover:cursor-pointer'>
 					<Link href='https://github.com/LiamWahlstroem'>
-						<Image src={GithubLogo} alt='GitHub Logo' width='50%' height='50%'/>
+						<Image src={GithubLogo} alt='GitHub Logo'/>
 					</Link>
 				</li>
 			</ul>
