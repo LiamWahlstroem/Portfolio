@@ -6,14 +6,14 @@ import GithubLogo from '../public/Logos/GitHubWhite.png';
 const Footer = () => {
 	return (
 		<div className='flex flex-col max-w-[100%] py-6 text-center bg-neutral-900 mt-auto z-10'>
-			<ul className='flex space-x-10 justify-center text-[1.5rem] text-gray-400'>
+			<ul className='flex space-x-10 justify-center items-center text-[1.5rem] text-gray-400'>
 				<li className='hover:cursor-pointer'>
 					<Link href='https://www.linkedin.com/in/liam-wahlstr%C3%B6m-16040a228/'>
 						<Image src={LinkedinLogo} alt='LinkedIN Logo' />
 					</Link>
 				</li>
 				<li className='hover:cursor-pointer'>
-					<Link href='https://github.com/L-390'>
+					<Link href='https://github.com/LiamWahlstroem'>
 						<Image src={GithubLogo} alt='GitHub Logo' width='50%' height='50%'/>
 					</Link>
 				</li>

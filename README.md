@@ -3,7 +3,7 @@
 This Repository contains my Personal Portfolio, as well as my photography Portfolio. They are treated as seperate Websites. They were built using Next.js and Tailwind. The project runs on Vercel, MongoDB Atlas and AWS.
 
 # Development set-up
-To run this project locally Node.js and NPM are required. A local MongoDB database and an AWS account are also required.
+To run this project locally Node.js and NPM are required. A local MongoDB database and an AWS account are also required for the photography portfolio.
 
 Additionally following environment variables are required to be able to run the project properly:
 

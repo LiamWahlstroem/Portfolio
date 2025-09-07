@@ -1,18 +1,22 @@
 {
   "projects": [
     {
-      "id": 0,
-      "name": "Portfolio Website",
-      "description": "My Portfolio Website is written in Typescript, Next.js and TailwindCSS, while using Vercel to host the website.",
-      "linkGithub": "https://github.com/LiamWahlstroem/Portfolio",
-      "linkWebpage": "https://wahlstroem.dev"
-    },
-    {
       "id": 1,
       "name": "Photography Portfolio",
+      "short": "My Portfolio Website to showcase my pictures",
       "description": "My Portfolio Website for showing off my photography is written in Typescript, Next.js and Tailwindcss. The Website as well as backend are hosted on Vercel, whilst the data is store in a MongoDB Atlas Database. The Pictures are prepared for being served with an AWS Lambda Function, and then stored in an AWS S3 Bucket.",
-      "linkGithub": "https://github.com/LiamWahlstroem/Portfolio",
+      "technologies": "Next.js, AWS, MongoDB",
+      "linkGithub": "https://github.com/LiamWahlstroem/Portfolio/tree/main/photography",
       "linkWebpage": "https://photo.wahlstroem.dev"
+    },
+    {
+      "id": 2,
+      "name": "Macro-pad",
+      "short": "Self designed Macro-pad using a ESP32 Microcontroller and touchscreen.",
+      "description": "The Macro-Pad is a group project started in school and continued individually later on. The device utilizes a ESP32-C3 Microcontroller to parse inputs and display commands passed from the host side. The device utilizes 3 rotary encoder and a TFT Touchscreen for inputs and displaying information to the user. All components are mounted on a custom PCB mounted in a 3D printed case, both designed in Autodesk Fusion. The software on the client is written in C++ and designed to allow the user to write their own software to control it.",
+      "technologies": "C++, PlatformIO IDE, C#, AvalonUI",
+      "linkGithub": "https://github.com/OSDeck",
+      "linkWebpage": ""
     }
   ]
 }

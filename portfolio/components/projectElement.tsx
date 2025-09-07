@@ -1,11 +1,13 @@
 import React from 'react';
-import { ArrowRight } from 'lucide-react';
+import Modal from './modal';
 import Link from 'next/link';
 
 type Props = {
 	title: string;
 	id: number;
-	content: string;
+    short: string;
+    description: string;
+	technologies: string;
 	linkGithub: string;
 	linkWebsite: string;
 };
@@ -15,24 +17,24 @@ const ProjectElement = (props: Props) => {
 
 	return (
 		<div
+			className='text-white mb-2'
 			onClick={() => setIsOpen(!isOpen)}
-			className={`text-white border-y-2 border-y-white mx-48 my-2 py-2 px-2 transition-all duration-150 hover:cursor-pointer ease-linear ${
-				isOpen ? 'max-h-96' : 'max-h-12'
-			}`}
 		>
-			<div className='w-full flex flex-row items-center justify-between space-x-8'>
-				<h1 className={`text-lg transition-all ${isOpen ? 'text-2xl' : ''}`}>
-					{props.title}
-				</h1>
-				<ArrowRight strokeWidth={2} size={32} />
+			<div className='max-w-fit hover:cursor-pointer'>
+			    <h1>{props.title}</h1>
+			    <p className='ml-4 text-green-600'>{'>'} {props.short}</p>
 			</div>
-			<div className={'overflow-hidden ' + (isOpen ? 'block' : 'hidden')}>
-				<p className='mt-4 mb-6'>{props.content}</p>
-				<div className='flex flex-col items-center text-gray-200 italic'>
-					<Link href={props.linkWebsite} className=''>Website</Link>
-					<Link href={props.linkGithub}>Github</Link>
-				</div>
-			</div>
+			{isOpen &&
+                <Modal modalOpen={setIsOpen}>
+                	<h1>{props.title}</h1>
+                	<p className='italic mt-0.5 mb-2'>{props.technologies}</p>
+                	<p>{props.description}</p>
+                	<div className='flex flex-col my-2 text-green-600'>
+                		<Link href={props.linkGithub} target='_blank' className='max-w-fit hover:cursor-pointer'>{'>'} GitHub</Link>
+                		{props.linkWebsite !== '' && <Link href={props.linkWebsite} target='_blank' className='max-w-fit hover:cursor-pointer'> {'>'} Website</Link>}
+                	</div>
+                </Modal>
+			}
 		</div>
 	);
 };

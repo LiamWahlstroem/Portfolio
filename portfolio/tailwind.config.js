@@ -8,7 +8,11 @@ module.exports = {
 		'./src/**/*.{js,ts,jsx,tsx,mdx}',
 	],
 	theme: {
-		extend: {},
+		extend: {
+			fontFamily: {
+				body: ['Source Code Pro', 'monospace'],
+			},
+		},
 	},
 	plugins: [],
 };

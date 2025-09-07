@@ -7,11 +7,16 @@
     <list default="true" id="577f8b35-f983-449f-b184-0f61b29a384a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(main)/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(main)/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(main)/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(main)/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Molecules/CollectionCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Molecules/CollectionCard.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/Organisms/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Organisms/Footer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Organisms/GalleryComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Organisms/GalleryComponent.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../portfolio/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../portfolio/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../portfolio/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../portfolio/app/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../portfolio/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../portfolio/app/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../portfolio/components/Atoms/Background.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../portfolio/components/Atoms/Background.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../portfolio/components/footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../portfolio/components/footer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../portfolio/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../portfolio/package-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,7 +122,12 @@
       <workItem from="1730917538491" duration="650000" />
       <workItem from="1738411448720" duration="520000" />
       <workItem from="1738518615775" duration="156000" />
-      <workItem from="1741185755884" duration="5882000" />
+      <workItem from="1741185755884" duration="6202000" />
+      <workItem from="1741277082511" duration="3266000" />
+      <workItem from="1741888355592" duration="800000" />
+      <workItem from="1742754912404" duration="619000" />
+      <workItem from="1745741944020" duration="606000" />
+      <workItem from="1753514804063" duration="1498000" />
     </task>
     <servers />
   </component>

@@ -17,10 +17,10 @@ const RootLayout = ({ children }: Props): ReactElement => {
 			<Head>
 				<title>Hey There</title>
 			</Head>
-			<body>
+			<body className='flex flex-col min-h-screen'>
 				<NavbarProvider>
 					<Navbar />
-					<main className='px-6 pt-6 min-h-screen'>
+					<main className='px-6 pt-6 flex-grow'>
 						{children}
 					</main>
 					<Footer />

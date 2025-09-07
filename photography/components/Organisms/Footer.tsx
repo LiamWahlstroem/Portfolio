@@ -7,10 +7,6 @@ const Footer = (): ReactElement => {
 	const footerImageItems = [{image: GithubLogo, imageAlt: 'Github Logo', link: 'https://github.com/LiamWahlstroem'}];
 	return (
 		<>
-			<Head>
-				<title>Gallery</title>
-				<meta property='og:title' key='Gallery' content='A gallery view of some of my photographs.'/>
-			</Head>
 			<div className='flex flex-col max-w-[100%] py-6 text-center bg-black'>
 				<ul className='flex space-x-10 justify-center text-[1.5rem] text-gray-400'>
 					{footerImageItems.map(el => <FooterItem image={el.image} imageAlt={el.imageAlt} link={el.link} key={el.link} />)}

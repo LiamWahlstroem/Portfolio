@@ -1,4 +1,6 @@
 import '../styles/globals.css';
+import Head from 'next/head';
+import React from 'react';
 
 export const metadata = {
 	title: 'Next.js',
@@ -12,6 +14,9 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="en">
+			<Head>
+				<title>Hey There</title>
+			</Head>
 			<body>{children}</body>
 		</html>
 	);
