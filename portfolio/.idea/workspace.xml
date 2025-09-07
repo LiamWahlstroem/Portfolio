@@ -5,42 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1359148a-4e80-46cc-aa44-e301e1d85eb7" name="Changes" comment="First version of portfolio">
-      <change afterPath="$PROJECT_DIR$/components/buttonIcon.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/modal.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/.idea/lib.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../photography/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../photography/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../photography/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../photography/app/(main)/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../photography/app/(main)/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../photography/components/Organisms/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../photography/components/Organisms/Footer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../photography/components/Organisms/GalleryComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../photography/components/Organisms/GalleryComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../photography/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../photography/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../photography/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../photography/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/not-found.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/not-found.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/projects/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/projects/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Atoms/Background.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Atoms/Title.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/footer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/navbar.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/projectElement.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/projectElement.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/sealNJump.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/drawMovingShape.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/projectData.json" beforeDir="false" afterPath="$PROJECT_DIR$/lib/projectData.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/sealNJump/collisions.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/sealNJump/scoreCounter.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/sealNJump/seal.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/sealNJump/stone.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/globals.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,6 +17,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;LiamWahlstroem&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/LiamWahlstroem/Portfolio.git&quot;,
+    &quot;accountId&quot;: &quot;8ba71e43-4bf5-4f89-a2c3-e6b3dbe91fcd&quot;
+  }
+}</component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -67,28 +46,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;JavaScript Debug.localhost:3000.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;js.debugger.nextJs.config.created.client&quot;: &quot;true&quot;,
-    &quot;js.debugger.nextJs.config.created.server&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;X:/Portfolio/portfolio&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;X:\\Portfolio\\portfolio\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "JavaScript Debug.localhost:3000.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "js.debugger.nextJs.config.created.client": "true",
+    "js.debugger.nextJs.config.created.server": "true",
+    "last_opened_file_path": "X:/Portfolio/portfolio",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.sourceCode",
+    "ts.external.directory.path": "X:\\Portfolio\\portfolio\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Personal\Portfolio\portfolio\components" />
@@ -153,8 +133,18 @@
       <workItem from="1755424786390" duration="12386000" />
       <workItem from="1757135298365" duration="3855000" />
       <workItem from="1757155248859" duration="3786000" />
-      <workItem from="1757222812560" duration="15906000" />
+      <workItem from="1757222812560" duration="16333000" />
+      <workItem from="1757256557310" duration="410000" />
     </task>
+    <task id="LOCAL-00001" summary="First version of portfolio">
+      <option name="closed" value="true" />
+      <created>1757255426711</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1757255426711</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

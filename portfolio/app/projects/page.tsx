@@ -21,11 +21,11 @@ const Page = () => {
 							title={project.name}
 							id={project.id}
 							short={project.short}
-                            description={project.description}
+							description={project.description}
 							technologies={project.technologies}
 							linkGithub={project.linkGithub}
 							linkWebsite={project.linkWebpage}
-                            key={project.id}
+							key={project.id}
 						/>)}
 					</div>
 				</div>
